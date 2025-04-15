@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Event{% endblock %}
+
+{% block content %}
+<h2>Add New Event</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="mb-3">
+        <label for="name" class="form-label">Event Name</label>
+        {{ form.name(class="form-control", id="name") }}
+    </div>
+    <div class="mb-3">
+        <label for="date" class="form-label">Event Date</label>
+        {{ form.date(class="form-control", id="date") }}
+    </div>
+    <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        {{ form.location(class="form-control", id="location") }}
+    </div>
+    <div class="mb-3">
+        <label for="time" class="form-label">Time</label>
+        {{ form.time(class="form-control", id="time") }}
+    </div>
+    <button type="submit" class="btn btn-primary">Add Event</button>
+    <a href="{{ url_for('view_events') }}" class="btn btn-secondary ms-2">View Events</a>
+</form>
+{% endblock %}

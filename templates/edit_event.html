@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Event{% endblock %}
+
+{% block content %}
+<h2>Edit Event</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="mb-3">
+        <label for="name" class="form-label">Event Name</label>
+        <input type="text" class="form-control" id="name" name="name" value="{{ event.name }}" required>
+    </div>
+    <div class="mb-3">
+        <label for="date" class="form-label">Event Date</label>
+        <input type="date" class="form-control" id="date" name="date" value="{{ event.date }}" required>
+    </div>
+    <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input type="text" class="form-control" id="location" name="location" value="{{ event.location }}" required>
+    </div>
+    <div class="mb-3">
+        <label for="time" class="form-label">Time</label>
+        <input type="time" class="form-control" id="time" name="time" value="{{ event.time }}" required>
+    </div>
+    <button type="submit" class="btn btn-success">Update Event</button>
+    <a href="{{ url_for('view_events') }}" class="btn btn-secondary ms-2">Cancel</a>
+</form>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}All Events{% endblock %}
+
+{% block content %}
+<h2>Event List</h2>
+
+<form method="GET" action="{{ url_for('view_events') }}" class="mb-4">
+    <input type="text" name="q" class="form-control" placeholder="Search events by name..." value="{{ query or '' }}">
+</form>
+
+{% if events %}
+    <ul class="list-group">
+        {% for event in events %}
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="me-3">
+                    <strong>{{ event.name }}</strong><br>
+                    {{ event.date.strftime('%Y-%m-%d') }} at {{ event.time }}<br>
+                    Location: {{ event.location }}<br>
+                    <small class="text-muted">Added by: {{ event.creator.username }}</small>
+                </div>
+                {% if current_user.is_authenticated and current_user.id == event.creator_id %}
+                <div>
+                    <a href="{{ url_for('edit_event', event_id=event.id) }}" class="btn btn-sm btn-warning me-2">Edit</a>
+                    <form action="{{ url_for('delete_event', event_id=event.id) }}" method="POST" style="display:inline-block">
+                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                    </form>
+                </div>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No events found.</p>
+{% endif %}
+
+<a href="{{ url_for('add_event') }}" class="btn btn-primary mt-4">Add New Event</a>
+{% endblock %}
