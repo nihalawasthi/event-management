@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="description" content="Streamline your event planning with EventMaster.">
+
+    <!-- Fonts & Tailwind -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Custom Theme -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: { DEFAULT: '#4A6FDC' },
+                            secondary: { DEFAULT: '#34D399' },
+                        },
+                        fontFamily: {
+                            sans: ['Nunito', 'Inter', 'system-ui'],
+                            heading: ['DM Sans', 'Inter'],
+                            body: ['DM Sans', 'Inter'],
+                        }
+                    },
+                },
+            }
+        });
+    </script>
+
+    <!-- Scripts & Icons -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+</head>
+
+<body class="antialiased text-gray-800 min-h-screen flex flex-col bg-gray-50">
+    <div class="flex flex-1 h-screen overflow-hidden">
+
+        <!-- Sidebar -->
+        <nav class="hidden lg:flex flex-col w-64 bg-white border-r border-gray-200 shadow-sm">
+            <div class="p-5 border-b border-gray-200">
+                <div class="flex items-center space-x-2">
+                    <svg class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <span class="text-xl font-semibold text-gray-800">EventMaster</span>
+                </div>
+            </div>
+
+            <div class="flex-1 overflow-y-auto py-4">
+                <ul class="space-y-2 px-3">
+                    <li>
+                        <a href="/login"
+                            class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-blue-100 transition duration-200">
+                            <i class="fas fa-sign-in-alt mr-3 text-blue-600"></i>
+                            <span>Login</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/events"
+                            class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-blue-100 transition duration-200">
+                            <i class="fas fa-calendar-alt mr-3 text-blue-600"></i>
+                            <span>Events</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/add"
+                            class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-blue-100 transition duration-200">
+                            <i class="fas fa-plus mr-3 text-blue-600"></i>
+                            <span>Add Event</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="p-4 border-t border-gray-200">
+                <a href="{{ url_for('logout') }}"
+                    class="flex items-center p-2 text-gray-700 rounded-lg hover:bg-red-50 hover:text-red-600 transition duration-200">
+                    <i class="fas fa-sign-out-alt mr-3"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Mobile Nav -->
+        <div x-data="{ isOpen: false }" class="lg:hidden">
+            <nav class="bg-white border-b border-gray-200 fixed w-full z-10">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex justify-between h-16">
+                        <div class="flex items-center">
+                            <svg class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            <span class="text-xl font-semibold text-gray-800 ml-2">EventMaster</span>
+                        </div>
+                        <button @click="isOpen = !isOpen" class="p-2 rounded-md text-gray-600 hover:bg-gray-100">
+                            <svg x-show="!isOpen" x-cloak class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                            <svg x-show="isOpen" x-cloak class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div x-show="isOpen" x-cloak @click.away="isOpen = false"
+                    class="px-2 pt-2 pb-3 space-y-1 bg-white border-b border-gray-200">
+                    <a href="/events" class="block px-3 py-2 rounded-md text-base text-gray-700 hover:bg-blue-100">Events</a>
+                    <a href="/add" class="block px-3 py-2 rounded-md text-base text-gray-700 hover:bg-blue-100">Add Event</a>
+                    <a href="{{ url_for('logout') }}"
+                        class="block px-3 py-2 rounded-md text-base text-red-600 hover:bg-red-100">Logout</a>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 overflow-y-auto p-6 mt-16 lg:mt-0">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+
+    <!-- Flash Toasts -->
+    <div class="fixed bottom-4 right-4 z-50 space-y-4">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div x-data="{ show: true }" x-init="setTimeout(() => show = false, 4000)" x-show="show" x-transition
+                        class="flex items-center justify-between max-w-sm p-4 rounded shadow-lg text-white
+                        {% if category == 'success' %} bg-green-500
+                        {% elif category == 'danger' %} bg-red-500
+                        {% elif category == 'warning' %} bg-yellow-500
+                        {% else %} bg-blue-500
+                        {% endif %}">
+                        <span>{{ message }}</span>
+                        <button @click="show = false" class="ml-4 hover:text-gray-200">
+                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>
