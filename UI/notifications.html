@@ -1,0 +1,4148 @@
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <style>
+        .gm-err-container {
+            height: 100%;
+            width: 100%;
+            display: table;
+            background-color: #e8eaed;
+            position: relative;
+            left: 0;
+            top: 0
+        }
+
+        .gm-err-content {
+            border-radius: 1px;
+            padding-top: 0;
+            padding-left: 10%;
+            padding-right: 10%;
+            position: static;
+            vertical-align: middle;
+            display: table-cell
+        }
+
+        .gm-err-content a {
+            color: #3c4043
+        }
+
+        .gm-err-icon {
+            text-align: center
+        }
+
+        .gm-err-title {
+            margin: 5px;
+            margin-bottom: 20px;
+            color: #3c4043;
+            font-family: Roboto, Arial, sans-serif;
+            text-align: center;
+            font-size: 24px
+        }
+
+        .gm-err-message {
+            margin: 5px;
+            color: #3c4043;
+            font-family: Roboto, Arial, sans-serif;
+            text-align: center;
+            font-size: 12px
+        }
+
+        .gm-err-autocomplete {
+            padding-left: 20px;
+            background-repeat: no-repeat;
+            -webkit-background-size: 15px 15px;
+            background-size: 15px 15px
+        }
+    </style>
+    <style>
+        .gm-style-moc {
+            background-color: rgba(0, 0, 0, .59);
+            pointer-events: none;
+            text-align: center;
+            -webkit-transition: opacity ease-in-out;
+            transition: opacity ease-in-out
+        }
+
+        .gm-style-mot {
+            color: white;
+            font-family: Roboto, Arial, sans-serif;
+            font-size: 22px;
+            margin: 0;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%)
+        }
+    </style>
+    <style>
+        .gm-style img {
+            max-width: none;
+        }
+
+        .gm-style {
+            font: 400 11px Roboto, Arial, sans-serif;
+            text-decoration: none;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description"
+        content="Discover, create, and manage events with EventHub's comprehensive platform. Register for events, track attendance, and manage payments all in one place.">
+    <meta name="theme-color" content="#ffffff">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="">
+
+    <!-- Alpine.js - Load first -->
+    <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400..700;1,400..700&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet">
+    <style>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "DM Sans", sans-serif !important;
+        }
+
+        body,
+        div,
+        p {
+            font-family: "Inter", sans-serif !important;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+    <title>EventHub - Modern Event Management Platform</title>
+    <!-- SEO Description -->
+    <meta name="description"
+        content="Discover, create, and manage events with EventHub's comprehensive platform. Register for events, track attendance, and manage payments all in one place.">
+
+    <!-- Performance optimization: Preload critical resources -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+
+    <!-- Header Scripts -->
+    <script id="header-scripts">
+        // This script tag will be replaced with actual scripts.head content
+        if (window.scripts && window.scripts.head) {
+            document.getElementById('header-scripts').outerHTML = window.scripts.head;
+        }
+    </script>
+
+    <!-- Core CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // render the settings object
+        //console.log('settings', [object Object]);
+        document.addEventListener('DOMContentLoaded', function () {
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: {
+                                DEFAULT: '#2A2D3E',
+                                50: '#f8f8f8',
+                                100: '#e8e8e8',
+                                200: '#d3d3d3',
+                                300: '#a3a3a3',
+                                400: '#737373',
+                                500: '#525252',
+                                600: '#404040',
+                                700: '#262626',
+                                800: '#171717',
+                                900: '#0a0a0a',
+                                950: '#030303',
+                            },
+                            secondary: {
+                                DEFAULT: '#1F2235',
+                                50: '#f8f8f8',
+                                100: '#e8e8e8',
+                                200: '#d3d3d3',
+                                300: '#a3a3a3',
+                                400: '#737373',
+                                500: '#525252',
+                                600: '#404040',
+                                700: '#262626',
+                                800: '#171717',
+                                900: '#0a0a0a',
+                                950: '#030303',
+                            },
+                            accent: {
+                                DEFAULT: '',
+                                50: '#f8f8f8',
+                                100: '#e8e8e8',
+                                200: '#d3d3d3',
+                                300: '#a3a3a3',
+                                400: '#737373',
+                                500: '#525252',
+                                600: '#404040',
+                                700: '#262626',
+                                800: '#171717',
+                                900: '#0a0a0a',
+                                950: '#030303',
+                            },
+                        },
+                        fontFamily: {
+                            sans: ['DM Sans', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                            heading: ['Inter', 'Inter', 'system-ui', 'sans-serif'],
+                            body: ['Inter', 'Inter', 'system-ui', 'sans-serif'],
+                        },
+                        spacing: {
+                            '18': '4.5rem',
+                            '22': '5.5rem',
+                            '30': '7.5rem',
+                        },
+                        maxWidth: {
+                            '8xl': '88rem',
+                            '9xl': '96rem',
+                        },
+                        aspectRatio: {
+                            'portrait': '3/4',
+                            'landscape': '4/3',
+                            'ultrawide': '21/9',
+                        },
+                    },
+                },
+                variants: {
+                    extend: {
+                        opacity: ['disabled'],
+                        cursor: ['disabled'],
+                        backgroundColor: ['active', 'disabled'],
+                        textColor: ['active', 'disabled'],
+                    },
+                },
+            }
+        });
+    </script>
+
+    <!-- Utilities and Components -->
+    <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.1/apexcharts.min.js"></script>
+
+    <!-- Optimized Font Loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <style>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: DM Sans, Inter, system-ui, sans-serif;
+        }
+
+        body {
+            font-family: Inter, Inter, system-ui, sans-serif;
+        }
+    </style>
+    <style>
+        *,
+        ::before,
+        ::after {
+            --tw-border-spacing-x: 0;
+            --tw-border-spacing-y: 0;
+            --tw-translate-x: 0;
+            --tw-translate-y: 0;
+            --tw-rotate: 0;
+            --tw-skew-x: 0;
+            --tw-skew-y: 0;
+            --tw-scale-x: 1;
+            --tw-scale-y: 1;
+            --tw-pan-x: ;
+            --tw-pan-y: ;
+            --tw-pinch-zoom: ;
+            --tw-scroll-snap-strictness: proximity;
+            --tw-gradient-from-position: ;
+            --tw-gradient-via-position: ;
+            --tw-gradient-to-position: ;
+            --tw-ordinal: ;
+            --tw-slashed-zero: ;
+            --tw-numeric-figure: ;
+            --tw-numeric-spacing: ;
+            --tw-numeric-fraction: ;
+            --tw-ring-inset: ;
+            --tw-ring-offset-width: 0px;
+            --tw-ring-offset-color: #fff;
+            --tw-ring-color: rgb(59 130 246 / 0.5);
+            --tw-ring-offset-shadow: 0 0 #0000;
+            --tw-ring-shadow: 0 0 #0000;
+            --tw-shadow: 0 0 #0000;
+            --tw-shadow-colored: 0 0 #0000;
+            --tw-blur: ;
+            --tw-brightness: ;
+            --tw-contrast: ;
+            --tw-grayscale: ;
+            --tw-hue-rotate: ;
+            --tw-invert: ;
+            --tw-saturate: ;
+            --tw-sepia: ;
+            --tw-drop-shadow: ;
+            --tw-backdrop-blur: ;
+            --tw-backdrop-brightness: ;
+            --tw-backdrop-contrast: ;
+            --tw-backdrop-grayscale: ;
+            --tw-backdrop-hue-rotate: ;
+            --tw-backdrop-invert: ;
+            --tw-backdrop-opacity: ;
+            --tw-backdrop-saturate: ;
+            --tw-backdrop-sepia: ;
+            --tw-contain-size: ;
+            --tw-contain-layout: ;
+            --tw-contain-paint: ;
+            --tw-contain-style:
+        }
+
+        ::backdrop {
+            --tw-border-spacing-x: 0;
+            --tw-border-spacing-y: 0;
+            --tw-translate-x: 0;
+            --tw-translate-y: 0;
+            --tw-rotate: 0;
+            --tw-skew-x: 0;
+            --tw-skew-y: 0;
+            --tw-scale-x: 1;
+            --tw-scale-y: 1;
+            --tw-pan-x: ;
+            --tw-pan-y: ;
+            --tw-pinch-zoom: ;
+            --tw-scroll-snap-strictness: proximity;
+            --tw-gradient-from-position: ;
+            --tw-gradient-via-position: ;
+            --tw-gradient-to-position: ;
+            --tw-ordinal: ;
+            --tw-slashed-zero: ;
+            --tw-numeric-figure: ;
+            --tw-numeric-spacing: ;
+            --tw-numeric-fraction: ;
+            --tw-ring-inset: ;
+            --tw-ring-offset-width: 0px;
+            --tw-ring-offset-color: #fff;
+            --tw-ring-color: rgb(59 130 246 / 0.5);
+            --tw-ring-offset-shadow: 0 0 #0000;
+            --tw-ring-shadow: 0 0 #0000;
+            --tw-shadow: 0 0 #0000;
+            --tw-shadow-colored: 0 0 #0000;
+            --tw-blur: ;
+            --tw-brightness: ;
+            --tw-contrast: ;
+            --tw-grayscale: ;
+            --tw-hue-rotate: ;
+            --tw-invert: ;
+            --tw-saturate: ;
+            --tw-sepia: ;
+            --tw-drop-shadow: ;
+            --tw-backdrop-blur: ;
+            --tw-backdrop-brightness: ;
+            --tw-backdrop-contrast: ;
+            --tw-backdrop-grayscale: ;
+            --tw-backdrop-hue-rotate: ;
+            --tw-backdrop-invert: ;
+            --tw-backdrop-opacity: ;
+            --tw-backdrop-saturate: ;
+            --tw-backdrop-sepia: ;
+            --tw-contain-size: ;
+            --tw-contain-layout: ;
+            --tw-contain-paint: ;
+            --tw-contain-style:
+        }
+
+        /* ! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com */
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+            border-color: #e5e7eb
+        }
+
+        ::after,
+        ::before {
+            --tw-content: ''
+        }
+
+        :host,
+        html {
+            line-height: 1.5;
+            -webkit-text-size-adjust: 100%;
+            -moz-tab-size: 4;
+            tab-size: 4;
+            font-family: DM Sans, Inter, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;
+            font-feature-settings: normal;
+            font-variation-settings: normal;
+            -webkit-tap-highlight-color: transparent
+        }
+
+        body {
+            margin: 0;
+            line-height: inherit
+        }
+
+        hr {
+            height: 0;
+            color: inherit;
+            border-top-width: 1px
+        }
+
+        abbr:where([title]) {
+            -webkit-text-decoration: underline dotted;
+            text-decoration: underline dotted
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: inherit;
+            font-weight: inherit
+        }
+
+        a {
+            color: inherit;
+            text-decoration: inherit
+        }
+
+        b,
+        strong {
+            font-weight: bolder
+        }
+
+        code,
+        kbd,
+        pre,
+        samp {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-feature-settings: normal;
+            font-variation-settings: normal;
+            font-size: 1em
+        }
+
+        small {
+            font-size: 80%
+        }
+
+        sub,
+        sup {
+            font-size: 75%;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline
+        }
+
+        sub {
+            bottom: -.25em
+        }
+
+        sup {
+            top: -.5em
+        }
+
+        table {
+            text-indent: 0;
+            border-color: inherit;
+            border-collapse: collapse
+        }
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            font-family: inherit;
+            font-feature-settings: inherit;
+            font-variation-settings: inherit;
+            font-size: 100%;
+            font-weight: inherit;
+            line-height: inherit;
+            letter-spacing: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0
+        }
+
+        button,
+        select {
+            text-transform: none
+        }
+
+        button,
+        input:where([type=button]),
+        input:where([type=reset]),
+        input:where([type=submit]) {
+            -webkit-appearance: button;
+            appearance: button;
+            background-color: transparent;
+            background-image: none
+        }
+
+        :-moz-focusring {
+            outline: auto
+        }
+
+        :-moz-ui-invalid {
+            box-shadow: none
+        }
+
+        progress {
+            vertical-align: baseline
+        }
+
+        ::-webkit-inner-spin-button,
+        ::-webkit-outer-spin-button {
+            height: auto
+        }
+
+        [type=search] {
+            -webkit-appearance: textfield;
+            appearance: textfield;
+            outline-offset: -2px
+        }
+
+        ::-webkit-search-decoration {
+            -webkit-appearance: none
+        }
+
+        ::-webkit-file-upload-button {
+            -webkit-appearance: button;
+            font: inherit
+        }
+
+        summary {
+            display: list-item
+        }
+
+        blockquote,
+        dd,
+        dl,
+        figure,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        hr,
+        p,
+        pre {
+            margin: 0
+        }
+
+        fieldset {
+            margin: 0;
+            padding: 0
+        }
+
+        legend {
+            padding: 0
+        }
+
+        menu,
+        ol,
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0
+        }
+
+        dialog {
+            padding: 0
+        }
+
+        textarea {
+            resize: vertical
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            opacity: 1;
+            color: #9ca3af
+        }
+
+        [role=button],
+        button {
+            cursor: pointer
+        }
+
+        :disabled {
+            cursor: default
+        }
+
+        audio,
+        canvas,
+        embed,
+        iframe,
+        img,
+        object,
+        svg,
+        video {
+            display: block;
+        }
+
+        img,
+        video {
+            max-width: 100%;
+            height: auto
+        }
+
+        [hidden]:where(:not([hidden=until-found])) {
+            display: none
+        }
+
+        .container {
+            width: 100%
+        }
+
+        @media (min-width: 640px) {
+            .container {
+                max-width: 640px
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 768px
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 1024px
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .container {
+                max-width: 1280px
+            }
+        }
+
+        @media (min-width: 1536px) {
+            .container {
+                max-width: 1536px
+            }
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0
+        }
+
+        .pointer-events-none {
+            pointer-events: none
+        }
+
+        .fixed {
+            position: fixed
+        }
+
+        .absolute {
+            position: absolute
+        }
+
+        .relative {
+            position: relative
+        }
+
+        .sticky {
+            position: sticky
+        }
+
+        .inset-0 {
+            inset: 0px
+        }
+
+        .inset-y-0 {
+            top: 0px;
+            bottom: 0px
+        }
+
+        .-bottom-24 {
+            bottom: -6rem
+        }
+
+        .-bottom-8 {
+            bottom: -2rem
+        }
+
+        .-left-20 {
+            left: -5rem
+        }
+
+        .-right-1 {
+            right: -0.25rem
+        }
+
+        .-right-24 {
+            right: -6rem
+        }
+
+        .-top-1 {
+            top: -0.25rem
+        }
+
+        .-top-8 {
+            top: -2rem
+        }
+
+        .bottom-0 {
+            bottom: 0px
+        }
+
+        .bottom-6 {
+            bottom: 1.5rem
+        }
+
+        .bottom-\[88px\] {
+            bottom: 88px
+        }
+
+        .left-0 {
+            left: 0px
+        }
+
+        .left-1\/2 {
+            left: 50%
+        }
+
+        .left-3 {
+            left: 0.75rem
+        }
+
+        .right-0 {
+            right: 0px
+        }
+
+        .right-20 {
+            right: 5rem
+        }
+
+        .right-3 {
+            right: 0.75rem
+        }
+
+        .right-4 {
+            right: 1rem
+        }
+
+        .right-6 {
+            right: 1.5rem
+        }
+
+        .top-0 {
+            top: 0px
+        }
+
+        .top-10 {
+            top: 2.5rem
+        }
+
+        .top-2 {
+            top: 0.5rem
+        }
+
+        .top-2\.5 {
+            top: 0.625rem
+        }
+
+        .top-3 {
+            top: 0.75rem
+        }
+
+        .top-4 {
+            top: 1rem
+        }
+
+        .top-6 {
+            top: 1.5rem
+        }
+
+        .top-8 {
+            top: 2rem
+        }
+
+        .z-10 {
+            z-index: 10
+        }
+
+        .z-30 {
+            z-index: 30
+        }
+
+        .z-40 {
+            z-index: 40
+        }
+
+        .z-50 {
+            z-index: 50
+        }
+
+        .z-\[60\] {
+            z-index: 60
+        }
+
+        .m-2 {
+            margin: 0.5rem
+        }
+
+        .m-4 {
+            margin: 1rem
+        }
+
+        .mx-1 {
+            margin-left: 0.25rem;
+            margin-right: 0.25rem
+        }
+
+        .mx-2 {
+            margin-left: 0.5rem;
+            margin-right: 0.5rem
+        }
+
+        .mx-4 {
+            margin-left: 1rem;
+            margin-right: 1rem
+        }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .-mb-px {
+            margin-bottom: -1px
+        }
+
+        .-ml-1 {
+            margin-left: -0.25rem
+        }
+
+        .mb-1 {
+            margin-bottom: 0.25rem
+        }
+
+        .mb-10 {
+            margin-bottom: 2.5rem
+        }
+
+        .mb-12 {
+            margin-bottom: 3rem
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem
+        }
+
+        .mb-3 {
+            margin-bottom: 0.75rem
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem
+        }
+
+        .mb-8 {
+            margin-bottom: 2rem
+        }
+
+        .ml-1 {
+            margin-left: 0.25rem
+        }
+
+        .ml-2 {
+            margin-left: 0.5rem
+        }
+
+        .ml-3 {
+            margin-left: 0.75rem
+        }
+
+        .ml-4 {
+            margin-left: 1rem
+        }
+
+        .ml-5 {
+            margin-left: 1.25rem
+        }
+
+        .ml-auto {
+            margin-left: auto
+        }
+
+        .mr-1 {
+            margin-right: 0.25rem
+        }
+
+        .mr-2 {
+            margin-right: 0.5rem
+        }
+
+        .mr-3 {
+            margin-right: 0.75rem
+        }
+
+        .mr-4 {
+            margin-right: 1rem
+        }
+
+        .mt-0\.5 {
+            margin-top: 0.125rem
+        }
+
+        .mt-1 {
+            margin-top: 0.25rem
+        }
+
+        .mt-10 {
+            margin-top: 2.5rem
+        }
+
+        .mt-12 {
+            margin-top: 3rem
+        }
+
+        .mt-16 {
+            margin-top: 4rem
+        }
+
+        .mt-2 {
+            margin-top: 0.5rem
+        }
+
+        .mt-20 {
+            margin-top: 5rem
+        }
+
+        .mt-4 {
+            margin-top: 1rem
+        }
+
+        .mt-6 {
+            margin-top: 1.5rem
+        }
+
+        .mt-8 {
+            margin-top: 2rem
+        }
+
+        .mt-auto {
+            margin-top: auto
+        }
+
+        .block {
+            display: block
+        }
+
+        .inline-block {
+            display: inline-block
+        }
+
+        .inline {
+            display: inline
+        }
+
+        .flex {
+            display: flex
+        }
+
+        .inline-flex {
+            display: inline-flex
+        }
+
+        .grid {
+            display: grid
+        }
+
+        .hidden {
+            display: none
+        }
+
+        .aspect-\[16\/9\] {
+            aspect-ratio: 16/9
+        }
+
+        .h-1 {
+            height: 0.25rem
+        }
+
+        .h-1\.5 {
+            height: 0.375rem
+        }
+
+        .h-10 {
+            height: 2.5rem
+        }
+
+        .h-12 {
+            height: 3rem
+        }
+
+        .h-14 {
+            height: 3.5rem
+        }
+
+        .h-16 {
+            height: 4rem
+        }
+
+        .h-2 {
+            height: 0.5rem
+        }
+
+        .h-2\.5 {
+            height: 0.625rem
+        }
+
+        .h-20 {
+            height: 5rem
+        }
+
+        .h-24 {
+            height: 6rem
+        }
+
+        .h-3 {
+            height: 0.75rem
+        }
+
+        .h-3\.5 {
+            height: 0.875rem
+        }
+
+        .h-32 {
+            height: 8rem
+        }
+
+        .h-36 {
+            height: 9rem
+        }
+
+        .h-4 {
+            height: 1rem
+        }
+
+        .h-40 {
+            height: 10rem
+        }
+
+        .h-48 {
+            height: 12rem
+        }
+
+        .h-5 {
+            height: 1.25rem
+        }
+
+        .h-6 {
+            height: 1.5rem
+        }
+
+        .h-64 {
+            height: 16rem
+        }
+
+        .h-7 {
+            height: 1.75rem
+        }
+
+        .h-72 {
+            height: 18rem
+        }
+
+        .h-8 {
+            height: 2rem
+        }
+
+        .h-96 {
+            height: 24rem
+        }
+
+        .h-\[10\%\] {
+            height: 10%
+        }
+
+        .h-\[100\%\] {
+            height: 100%
+        }
+
+        .h-\[30\%\] {
+            height: 30%
+        }
+
+        .h-\[40\%\] {
+            height: 40%
+        }
+
+        .h-\[45\%\] {
+            height: 45%
+        }
+
+        .h-\[50\%\] {
+            height: 50%
+        }
+
+        .h-\[500px\] {
+            height: 500px
+        }
+
+        .h-\[50vh\] {
+            height: 50vh
+        }
+
+        .h-\[60\%\] {
+            height: 60%
+        }
+
+        .h-\[70\%\] {
+            height: 70%
+        }
+
+        .h-\[75\%\] {
+            height: 75%
+        }
+
+        .h-\[80\%\] {
+            height: 80%
+        }
+
+        .h-\[90\%\] {
+            height: 90%
+        }
+
+        .h-\[95\%\] {
+            height: 95%
+        }
+
+        .h-full {
+            height: 100%
+        }
+
+        .h-screen {
+            height: 100vh
+        }
+
+        .max-h-\[600px\] {
+            max-height: 600px
+        }
+
+        .max-h-\[80vh\] {
+            max-height: 80vh
+        }
+
+        .max-h-\[90vh\] {
+            max-height: 90vh
+        }
+
+        .min-h-screen {
+            min-height: 100vh
+        }
+
+        .w-0 {
+            width: 0px
+        }
+
+        .w-1\/12 {
+            width: 8.333333%
+        }
+
+        .w-10 {
+            width: 2.5rem
+        }
+
+        .w-11 {
+            width: 2.75rem
+        }
+
+        .w-12 {
+            width: 3rem
+        }
+
+        .w-14 {
+            width: 3.5rem
+        }
+
+        .w-16 {
+            width: 4rem
+        }
+
+        .w-2 {
+            width: 0.5rem
+        }
+
+        .w-2\.5 {
+            width: 0.625rem
+        }
+
+        .w-20 {
+            width: 5rem
+        }
+
+        .w-24 {
+            width: 6rem
+        }
+
+        .w-3 {
+            width: 0.75rem
+        }
+
+        .w-3\.5 {
+            width: 0.875rem
+        }
+
+        .w-32 {
+            width: 8rem
+        }
+
+        .w-36 {
+            width: 9rem
+        }
+
+        .w-4 {
+            width: 1rem
+        }
+
+        .w-5 {
+            width: 1.25rem
+        }
+
+        .w-6 {
+            width: 1.5rem
+        }
+
+        .w-64 {
+            width: 16rem
+        }
+
+        .w-7 {
+            width: 1.75rem
+        }
+
+        .w-72 {
+            width: 18rem
+        }
+
+        .w-8 {
+            width: 2rem
+        }
+
+        .w-96 {
+            width: 24rem
+        }
+
+        .w-\[350px\] {
+            width: 350px
+        }
+
+        .w-auto {
+            width: auto
+        }
+
+        .w-full {
+            width: 100%
+        }
+
+        .min-w-full {
+            min-width: 100%
+        }
+
+        .max-w-2xl {
+            max-width: 42rem
+        }
+
+        .max-w-3xl {
+            max-width: 48rem
+        }
+
+        .max-w-4xl {
+            max-width: 56rem
+        }
+
+        .max-w-6xl {
+            max-width: 72rem
+        }
+
+        .max-w-7xl {
+            max-width: 80rem
+        }
+
+        .max-w-\[80\%\] {
+            max-width: 80%
+        }
+
+        .max-w-\[calc\(100vw-2rem\)\] {
+            max-width: calc(100vw - 2rem)
+        }
+
+        .max-w-md {
+            max-width: 28rem
+        }
+
+        .max-w-none {
+            max-width: none
+        }
+
+        .flex-1 {
+            flex: 1 1 0%
+        }
+
+        .flex-shrink-0 {
+            flex-shrink: 0
+        }
+
+        .flex-grow {
+            flex-grow: 1
+        }
+
+        .table-auto {
+            table-layout: auto
+        }
+
+        .-translate-x-1\/2 {
+            --tw-translate-x: -50%;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .translate-y-10 {
+            --tw-translate-y: 2.5rem;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .transform {
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .transform-gpu {
+            transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        @keyframes pulse {
+            50% {
+                opacity: .5
+            }
+        }
+
+        .animate-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        .animate-spin {
+            animation: spin 1s linear infinite
+        }
+
+        .cursor-pointer {
+            cursor: pointer
+        }
+
+        .list-inside {
+            list-style-position: inside
+        }
+
+        .list-disc {
+            list-style-type: disc
+        }
+
+        .appearance-none {
+            -webkit-appearance: none;
+            appearance: none
+        }
+
+        .grid-cols-1 {
+            grid-template-columns: repeat(1, minmax(0, 1fr))
+        }
+
+        .grid-cols-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr))
+        }
+
+        .flex-col {
+            flex-direction: column
+        }
+
+        .flex-wrap {
+            flex-wrap: wrap
+        }
+
+        .items-start {
+            align-items: flex-start
+        }
+
+        .items-end {
+            align-items: flex-end
+        }
+
+        .items-center {
+            align-items: center
+        }
+
+        .justify-end {
+            justify-content: flex-end
+        }
+
+        .justify-center {
+            justify-content: center
+        }
+
+        .justify-between {
+            justify-content: space-between
+        }
+
+        .gap-12 {
+            gap: 3rem
+        }
+
+        .gap-2 {
+            gap: 0.5rem
+        }
+
+        .gap-3 {
+            gap: 0.75rem
+        }
+
+        .gap-4 {
+            gap: 1rem
+        }
+
+        .gap-6 {
+            gap: 1.5rem
+        }
+
+        .gap-8 {
+            gap: 2rem
+        }
+
+        .gap-x-4 {
+            column-gap: 1rem
+        }
+
+        .gap-x-6 {
+            column-gap: 1.5rem
+        }
+
+        .gap-y-2 {
+            row-gap: 0.5rem
+        }
+
+        .gap-y-6 {
+            row-gap: 1.5rem
+        }
+
+        .-space-x-px> :not([hidden])~ :not([hidden]) {
+            --tw-space-x-reverse: 0;
+            margin-right: calc(-1px * var(--tw-space-x-reverse));
+            margin-left: calc(-1px * calc(1 - var(--tw-space-x-reverse)))
+        }
+
+        .space-x-1> :not([hidden])~ :not([hidden]) {
+            --tw-space-x-reverse: 0;
+            margin-right: calc(0.25rem * var(--tw-space-x-reverse));
+            margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)))
+        }
+
+        .space-x-2> :not([hidden])~ :not([hidden]) {
+            --tw-space-x-reverse: 0;
+            margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+            margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)))
+        }
+
+        .space-x-3> :not([hidden])~ :not([hidden]) {
+            --tw-space-x-reverse: 0;
+            margin-right: calc(0.75rem * var(--tw-space-x-reverse));
+            margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)))
+        }
+
+        .space-x-4> :not([hidden])~ :not([hidden]) {
+            --tw-space-x-reverse: 0;
+            margin-right: calc(1rem * var(--tw-space-x-reverse));
+            margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)))
+        }
+
+        .space-x-8> :not([hidden])~ :not([hidden]) {
+            --tw-space-x-reverse: 0;
+            margin-right: calc(2rem * var(--tw-space-x-reverse));
+            margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)))
+        }
+
+        .space-y-1> :not([hidden])~ :not([hidden]) {
+            --tw-space-y-reverse: 0;
+            margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
+            margin-bottom: calc(0.25rem * var(--tw-space-y-reverse))
+        }
+
+        .space-y-2> :not([hidden])~ :not([hidden]) {
+            --tw-space-y-reverse: 0;
+            margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+            margin-bottom: calc(0.5rem * var(--tw-space-y-reverse))
+        }
+
+        .space-y-3> :not([hidden])~ :not([hidden]) {
+            --tw-space-y-reverse: 0;
+            margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+            margin-bottom: calc(0.75rem * var(--tw-space-y-reverse))
+        }
+
+        .space-y-4> :not([hidden])~ :not([hidden]) {
+            --tw-space-y-reverse: 0;
+            margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+            margin-bottom: calc(1rem * var(--tw-space-y-reverse))
+        }
+
+        .space-y-6> :not([hidden])~ :not([hidden]) {
+            --tw-space-y-reverse: 0;
+            margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+            margin-bottom: calc(1.5rem * var(--tw-space-y-reverse))
+        }
+
+        .divide-y> :not([hidden])~ :not([hidden]) {
+            --tw-divide-y-reverse: 0;
+            border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+            border-bottom-width: calc(1px * var(--tw-divide-y-reverse))
+        }
+
+        .divide-neutral-700\/30> :not([hidden])~ :not([hidden]) {
+            border-color: rgb(64 64 64 / 0.3)
+        }
+
+        .overflow-hidden {
+            overflow: hidden
+        }
+
+        .overflow-x-auto {
+            overflow-x: auto
+        }
+
+        .overflow-y-auto {
+            overflow-y: auto
+        }
+
+        .scroll-smooth {
+            scroll-behavior: smooth
+        }
+
+        .whitespace-nowrap {
+            white-space: nowrap
+        }
+
+        .rounded {
+            border-radius: 0.25rem
+        }
+
+        .rounded-full {
+            border-radius: 9999px
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem
+        }
+
+        .rounded-md {
+            border-radius: 0.375rem
+        }
+
+        .rounded-xl {
+            border-radius: 0.75rem
+        }
+
+        .rounded-l-lg {
+            border-top-left-radius: 0.5rem;
+            border-bottom-left-radius: 0.5rem
+        }
+
+        .rounded-l-md {
+            border-top-left-radius: 0.375rem;
+            border-bottom-left-radius: 0.375rem
+        }
+
+        .rounded-r-lg {
+            border-top-right-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem
+        }
+
+        .rounded-r-md {
+            border-top-right-radius: 0.375rem;
+            border-bottom-right-radius: 0.375rem
+        }
+
+        .rounded-t-lg {
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem
+        }
+
+        .rounded-t-sm {
+            border-top-left-radius: 0.125rem;
+            border-top-right-radius: 0.125rem
+        }
+
+        .rounded-t-xl {
+            border-top-left-radius: 0.75rem;
+            border-top-right-radius: 0.75rem
+        }
+
+        .rounded-tl-none {
+            border-top-left-radius: 0px
+        }
+
+        .rounded-tr-none {
+            border-top-right-radius: 0px
+        }
+
+        .border {
+            border-width: 1px
+        }
+
+        .border-2 {
+            border-width: 2px
+        }
+
+        .border-4 {
+            border-width: 4px
+        }
+
+        .border-b {
+            border-bottom-width: 1px
+        }
+
+        .border-b-2 {
+            border-bottom-width: 2px
+        }
+
+        .border-l-4 {
+            border-left-width: 4px
+        }
+
+        .border-r {
+            border-right-width: 1px
+        }
+
+        .border-t {
+            border-top-width: 1px
+        }
+
+        .border-dashed {
+            border-style: dashed
+        }
+
+        .border-blue-500 {
+            --tw-border-opacity: 1;
+            border-color: rgb(59 130 246 / var(--tw-border-opacity, 1))
+        }
+
+        .border-blue-500\/30 {
+            border-color: rgb(59 130 246 / 0.3)
+        }
+
+        .border-gray-600 {
+            --tw-border-opacity: 1;
+            border-color: rgb(75 85 99 / var(--tw-border-opacity, 1))
+        }
+
+        .border-gray-700 {
+            --tw-border-opacity: 1;
+            border-color: rgb(55 65 81 / var(--tw-border-opacity, 1))
+        }
+
+        .border-green-700 {
+            --tw-border-opacity: 1;
+            border-color: rgb(21 128 61 / var(--tw-border-opacity, 1))
+        }
+
+        .border-neutral-200\/10 {
+            border-color: rgb(229 229 229 / 0.1)
+        }
+
+        .border-neutral-200\/20 {
+            border-color: rgb(229 229 229 / 0.2)
+        }
+
+        .border-neutral-200\/30 {
+            border-color: rgb(229 229 229 / 0.3)
+        }
+
+        .border-neutral-600 {
+            --tw-border-opacity: 1;
+            border-color: rgb(82 82 82 / var(--tw-border-opacity, 1))
+        }
+
+        .border-neutral-600\/30 {
+            border-color: rgb(82 82 82 / 0.3)
+        }
+
+        .border-neutral-700 {
+            --tw-border-opacity: 1;
+            border-color: rgb(64 64 64 / var(--tw-border-opacity, 1))
+        }
+
+        .border-neutral-700\/20 {
+            border-color: rgb(64 64 64 / 0.2)
+        }
+
+        .border-neutral-700\/30 {
+            border-color: rgb(64 64 64 / 0.3)
+        }
+
+        .border-neutral-700\/50 {
+            border-color: rgb(64 64 64 / 0.5)
+        }
+
+        .border-neutral-800\/40 {
+            border-color: rgb(38 38 38 / 0.4)
+        }
+
+        .border-purple-500 {
+            --tw-border-opacity: 1;
+            border-color: rgb(168 85 247 / var(--tw-border-opacity, 1))
+        }
+
+        .border-purple-600 {
+            --tw-border-opacity: 1;
+            border-color: rgb(147 51 234 / var(--tw-border-opacity, 1))
+        }
+
+        .border-purple-800\/50 {
+            border-color: rgb(107 33 168 / 0.5)
+        }
+
+        .border-transparent {
+            border-color: transparent
+        }
+
+        .bg-\[\#111827\] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-\[\#1F2937\] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-\[\#1e2130\] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(30 33 48 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-\[\#2D3748\] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(45 55 72 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-\[\#2a2d3e\] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(42 45 62 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-amber-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(245 158 11 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-amber-500\/20 {
+            background-color: rgb(245 158 11 / 0.2)
+        }
+
+        .bg-black {
+            --tw-bg-opacity: 1;
+            background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-black\/50 {
+            background-color: rgb(0 0 0 / 0.5)
+        }
+
+        .bg-black\/70 {
+            background-color: rgb(0 0 0 / 0.7)
+        }
+
+        .bg-blue-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(59 130 246 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-blue-500\/20 {
+            background-color: rgb(59 130 246 / 0.2)
+        }
+
+        .bg-blue-500\/70 {
+            background-color: rgb(59 130 246 / 0.7)
+        }
+
+        .bg-blue-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(37 99 235 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-blue-900\/10 {
+            background-color: rgb(30 58 138 / 0.1)
+        }
+
+        .bg-blue-900\/20 {
+            background-color: rgb(30 58 138 / 0.2)
+        }
+
+        .bg-emerald-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(16 185 129 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-emerald-500\/20 {
+            background-color: rgb(16 185 129 / 0.2)
+        }
+
+        .bg-gray-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(107 114 128 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-gray-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(75 85 99 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-gray-700 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(55 65 81 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-gray-800 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-gray-900 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-green-100 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(220 252 231 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-green-400 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(74 222 128 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-green-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(34 197 94 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-green-500\/20 {
+            background-color: rgb(34 197 94 / 0.2)
+        }
+
+        .bg-green-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(22 163 74 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-green-600\/20 {
+            background-color: rgb(22 163 74 / 0.2)
+        }
+
+        .bg-green-800\/50 {
+            background-color: rgb(22 101 52 / 0.5)
+        }
+
+        .bg-indigo-500\/20 {
+            background-color: rgb(99 102 241 / 0.2)
+        }
+
+        .bg-neutral-500\/20 {
+            background-color: rgb(115 115 115 / 0.2)
+        }
+
+        .bg-neutral-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(82 82 82 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-neutral-700 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(64 64 64 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-neutral-700\/30 {
+            background-color: rgb(64 64 64 / 0.3)
+        }
+
+        .bg-neutral-700\/40 {
+            background-color: rgb(64 64 64 / 0.4)
+        }
+
+        .bg-neutral-700\/50 {
+            background-color: rgb(64 64 64 / 0.5)
+        }
+
+        .bg-neutral-700\/80 {
+            background-color: rgb(64 64 64 / 0.8)
+        }
+
+        .bg-neutral-800 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(38 38 38 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-neutral-800\/30 {
+            background-color: rgb(38 38 38 / 0.3)
+        }
+
+        .bg-neutral-800\/40 {
+            background-color: rgb(38 38 38 / 0.4)
+        }
+
+        .bg-neutral-800\/50 {
+            background-color: rgb(38 38 38 / 0.5)
+        }
+
+        .bg-neutral-800\/60 {
+            background-color: rgb(38 38 38 / 0.6)
+        }
+
+        .bg-neutral-800\/70 {
+            background-color: rgb(38 38 38 / 0.7)
+        }
+
+        .bg-neutral-800\/80 {
+            background-color: rgb(38 38 38 / 0.8)
+        }
+
+        .bg-neutral-900 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(23 23 23 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-orange-500\/20 {
+            background-color: rgb(249 115 22 / 0.2)
+        }
+
+        .bg-pink-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(236 72 153 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-pink-500\/20 {
+            background-color: rgb(236 72 153 / 0.2)
+        }
+
+        .bg-pink-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(219 39 119 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-purple-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(168 85 247 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-purple-500\/20 {
+            background-color: rgb(168 85 247 / 0.2)
+        }
+
+        .bg-purple-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(147 51 234 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-purple-600\/20 {
+            background-color: rgb(147 51 234 / 0.2)
+        }
+
+        .bg-purple-600\/50 {
+            background-color: rgb(147 51 234 / 0.5)
+        }
+
+        .bg-purple-900\/30 {
+            background-color: rgb(88 28 135 / 0.3)
+        }
+
+        .bg-red-100 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(254 226 226 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-red-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(239 68 68 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-red-500\/20 {
+            background-color: rgb(239 68 68 / 0.2)
+        }
+
+        .bg-red-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(220 38 38 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-teal-500\/20 {
+            background-color: rgb(20 184 166 / 0.2)
+        }
+
+        .bg-transparent {
+            background-color: transparent
+        }
+
+        .bg-yellow-100 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(254 249 195 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-yellow-400 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(250 204 21 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-yellow-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(234 179 8 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-yellow-500\/20 {
+            background-color: rgb(234 179 8 / 0.2)
+        }
+
+        .bg-yellow-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(202 138 4 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-opacity-50 {
+            --tw-bg-opacity: 0.5
+        }
+
+        .bg-gradient-to-br {
+            background-image: linear-gradient(to bottom right, var(--tw-gradient-stops))
+        }
+
+        .bg-gradient-to-r {
+            background-image: linear-gradient(to right, var(--tw-gradient-stops))
+        }
+
+        .bg-gradient-to-t {
+            background-image: linear-gradient(to top, var(--tw-gradient-stops))
+        }
+
+        .from-\[\#1a1c2e\] {
+            --tw-gradient-from: #1a1c2e var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(26 28 46 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+        }
+
+        .from-black\/70 {
+            --tw-gradient-from: rgb(0 0 0 / 0.7) var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+        }
+
+        .from-black\/80 {
+            --tw-gradient-from: rgb(0 0 0 / 0.8) var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+        }
+
+        .from-gray-900 {
+            --tw-gradient-from: #111827 var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(17 24 39 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+        }
+
+        .from-neutral-900 {
+            --tw-gradient-from: #171717 var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(23 23 23 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+        }
+
+        .from-purple-500 {
+            --tw-gradient-from: #a855f7 var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(168 85 247 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+        }
+
+        .from-purple-600 {
+            --tw-gradient-from: #9333ea var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(147 51 234 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+        }
+
+        .from-purple-800 {
+            --tw-gradient-from: #6b21a8 var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(107 33 168 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+        }
+
+        .via-neutral-900\/70 {
+            --tw-gradient-to: rgb(23 23 23 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), rgb(23 23 23 / 0.7) var(--tw-gradient-via-position), var(--tw-gradient-to)
+        }
+
+        .to-\[\#2d3748\] {
+            --tw-gradient-to: #2d3748 var(--tw-gradient-to-position)
+        }
+
+        .to-blue-500 {
+            --tw-gradient-to: #3b82f6 var(--tw-gradient-to-position)
+        }
+
+        .to-gray-800 {
+            --tw-gradient-to: #1f2937 var(--tw-gradient-to-position)
+        }
+
+        .to-indigo-900 {
+            --tw-gradient-to: #312e81 var(--tw-gradient-to-position)
+        }
+
+        .to-neutral-800 {
+            --tw-gradient-to: #262626 var(--tw-gradient-to-position)
+        }
+
+        .to-transparent {
+            --tw-gradient-to: transparent var(--tw-gradient-to-position)
+        }
+
+        .bg-clip-text {
+            -webkit-background-clip: text;
+            background-clip: text
+        }
+
+        .fill-current {
+            fill: currentColor
+        }
+
+        .object-contain {
+            object-fit: contain
+        }
+
+        .object-cover {
+            object-fit: cover
+        }
+
+        .p-1 {
+            padding: 0.25rem
+        }
+
+        .p-1\.5 {
+            padding: 0.375rem
+        }
+
+        .p-2 {
+            padding: 0.5rem
+        }
+
+        .p-2\.5 {
+            padding: 0.625rem
+        }
+
+        .p-3 {
+            padding: 0.75rem
+        }
+
+        .p-4 {
+            padding: 1rem
+        }
+
+        .p-5 {
+            padding: 1.25rem
+        }
+
+        .p-6 {
+            padding: 1.5rem
+        }
+
+        .p-8 {
+            padding: 2rem
+        }
+
+        .px-2 {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem
+        }
+
+        .px-2\.5 {
+            padding-left: 0.625rem;
+            padding-right: 0.625rem
+        }
+
+        .px-3 {
+            padding-left: 0.75rem;
+            padding-right: 0.75rem
+        }
+
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem
+        }
+
+        .px-6 {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem
+        }
+
+        .py-0 {
+            padding-top: 0px;
+            padding-bottom: 0px
+        }
+
+        .py-0\.5 {
+            padding-top: 0.125rem;
+            padding-bottom: 0.125rem
+        }
+
+        .py-1 {
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem
+        }
+
+        .py-1\.5 {
+            padding-top: 0.375rem;
+            padding-bottom: 0.375rem
+        }
+
+        .py-12 {
+            padding-top: 3rem;
+            padding-bottom: 3rem
+        }
+
+        .py-16 {
+            padding-top: 4rem;
+            padding-bottom: 4rem
+        }
+
+        .py-2 {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem
+        }
+
+        .py-2\.5 {
+            padding-top: 0.625rem;
+            padding-bottom: 0.625rem
+        }
+
+        .py-3 {
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem
+        }
+
+        .py-4 {
+            padding-top: 1rem;
+            padding-bottom: 1rem
+        }
+
+        .py-5 {
+            padding-top: 1.25rem;
+            padding-bottom: 1.25rem
+        }
+
+        .py-8 {
+            padding-top: 2rem;
+            padding-bottom: 2rem
+        }
+
+        .pb-3 {
+            padding-bottom: 0.75rem
+        }
+
+        .pb-6 {
+            padding-bottom: 1.5rem
+        }
+
+        .pl-10 {
+            padding-left: 2.5rem
+        }
+
+        .pl-3 {
+            padding-left: 0.75rem
+        }
+
+        .pl-6 {
+            padding-left: 1.5rem
+        }
+
+        .pl-7 {
+            padding-left: 1.75rem
+        }
+
+        .pr-4 {
+            padding-right: 1rem
+        }
+
+        .pt-16 {
+            padding-top: 4rem
+        }
+
+        .pt-2 {
+            padding-top: 0.5rem
+        }
+
+        .pt-3 {
+            padding-top: 0.75rem
+        }
+
+        .pt-4 {
+            padding-top: 1rem
+        }
+
+        .pt-5 {
+            padding-top: 1.25rem
+        }
+
+        .pt-6 {
+            padding-top: 1.5rem
+        }
+
+        .pt-8 {
+            padding-top: 2rem
+        }
+
+        .text-left {
+            text-align: left
+        }
+
+        .text-center {
+            text-align: center
+        }
+
+        .text-right {
+            text-align: right
+        }
+
+        .text-2xl {
+            font-size: 1.5rem;
+            line-height: 2rem
+        }
+
+        .text-3xl {
+            font-size: 1.875rem;
+            line-height: 2.25rem
+        }
+
+        .text-5xl {
+            font-size: 3rem;
+            line-height: 1
+        }
+
+        .text-base {
+            font-size: 1rem;
+            line-height: 1.5rem
+        }
+
+        .text-lg {
+            font-size: 1.125rem;
+            line-height: 1.75rem
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+            line-height: 1.25rem
+        }
+
+        .text-xl {
+            font-size: 1.25rem;
+            line-height: 1.75rem
+        }
+
+        .text-xs {
+            font-size: 0.75rem;
+            line-height: 1rem
+        }
+
+        .font-bold {
+            font-weight: 700
+        }
+
+        .font-medium {
+            font-weight: 500
+        }
+
+        .font-semibold {
+            font-weight: 600
+        }
+
+        .uppercase {
+            text-transform: uppercase
+        }
+
+        .leading-5 {
+            line-height: 1.25rem
+        }
+
+        .tracking-wider {
+            letter-spacing: 0.05em
+        }
+
+        .text-amber-300 {
+            --tw-text-opacity: 1;
+            color: rgb(252 211 77 / var(--tw-text-opacity, 1))
+        }
+
+        .text-amber-400 {
+            --tw-text-opacity: 1;
+            color: rgb(251 191 36 / var(--tw-text-opacity, 1))
+        }
+
+        .text-amber-500 {
+            --tw-text-opacity: 1;
+            color: rgb(245 158 11 / var(--tw-text-opacity, 1))
+        }
+
+        .text-blue-300 {
+            --tw-text-opacity: 1;
+            color: rgb(147 197 253 / var(--tw-text-opacity, 1))
+        }
+
+        .text-blue-400 {
+            --tw-text-opacity: 1;
+            color: rgb(96 165 250 / var(--tw-text-opacity, 1))
+        }
+
+        .text-blue-500 {
+            --tw-text-opacity: 1;
+            color: rgb(59 130 246 / var(--tw-text-opacity, 1))
+        }
+
+        .text-blue-600 {
+            --tw-text-opacity: 1;
+            color: rgb(37 99 235 / var(--tw-text-opacity, 1))
+        }
+
+        .text-emerald-400 {
+            --tw-text-opacity: 1;
+            color: rgb(52 211 153 / var(--tw-text-opacity, 1))
+        }
+
+        .text-emerald-500 {
+            --tw-text-opacity: 1;
+            color: rgb(16 185 129 / var(--tw-text-opacity, 1))
+        }
+
+        .text-gray-200 {
+            --tw-text-opacity: 1;
+            color: rgb(229 231 235 / var(--tw-text-opacity, 1))
+        }
+
+        .text-gray-300 {
+            --tw-text-opacity: 1;
+            color: rgb(209 213 219 / var(--tw-text-opacity, 1))
+        }
+
+        .text-gray-400 {
+            --tw-text-opacity: 1;
+            color: rgb(156 163 175 / var(--tw-text-opacity, 1))
+        }
+
+        .text-gray-500 {
+            --tw-text-opacity: 1;
+            color: rgb(107 114 128 / var(--tw-text-opacity, 1))
+        }
+
+        .text-gray-800 {
+            --tw-text-opacity: 1;
+            color: rgb(31 41 55 / var(--tw-text-opacity, 1))
+        }
+
+        .text-green-200 {
+            --tw-text-opacity: 1;
+            color: rgb(187 247 208 / var(--tw-text-opacity, 1))
+        }
+
+        .text-green-300 {
+            --tw-text-opacity: 1;
+            color: rgb(134 239 172 / var(--tw-text-opacity, 1))
+        }
+
+        .text-green-400 {
+            --tw-text-opacity: 1;
+            color: rgb(74 222 128 / var(--tw-text-opacity, 1))
+        }
+
+        .text-green-500 {
+            --tw-text-opacity: 1;
+            color: rgb(34 197 94 / var(--tw-text-opacity, 1))
+        }
+
+        .text-green-800 {
+            --tw-text-opacity: 1;
+            color: rgb(22 101 52 / var(--tw-text-opacity, 1))
+        }
+
+        .text-indigo-400 {
+            --tw-text-opacity: 1;
+            color: rgb(129 140 248 / var(--tw-text-opacity, 1))
+        }
+
+        .text-neutral-200 {
+            --tw-text-opacity: 1;
+            color: rgb(229 229 229 / var(--tw-text-opacity, 1))
+        }
+
+        .text-neutral-300 {
+            --tw-text-opacity: 1;
+            color: rgb(212 212 212 / var(--tw-text-opacity, 1))
+        }
+
+        .text-neutral-400 {
+            --tw-text-opacity: 1;
+            color: rgb(163 163 163 / var(--tw-text-opacity, 1))
+        }
+
+        .text-neutral-500 {
+            --tw-text-opacity: 1;
+            color: rgb(115 115 115 / var(--tw-text-opacity, 1))
+        }
+
+        .text-orange-400 {
+            --tw-text-opacity: 1;
+            color: rgb(251 146 60 / var(--tw-text-opacity, 1))
+        }
+
+        .text-pink-400 {
+            --tw-text-opacity: 1;
+            color: rgb(244 114 182 / var(--tw-text-opacity, 1))
+        }
+
+        .text-purple-200 {
+            --tw-text-opacity: 1;
+            color: rgb(233 213 255 / var(--tw-text-opacity, 1))
+        }
+
+        .text-purple-300 {
+            --tw-text-opacity: 1;
+            color: rgb(216 180 254 / var(--tw-text-opacity, 1))
+        }
+
+        .text-purple-400 {
+            --tw-text-opacity: 1;
+            color: rgb(192 132 252 / var(--tw-text-opacity, 1))
+        }
+
+        .text-purple-500 {
+            --tw-text-opacity: 1;
+            color: rgb(168 85 247 / var(--tw-text-opacity, 1))
+        }
+
+        .text-purple-600 {
+            --tw-text-opacity: 1;
+            color: rgb(147 51 234 / var(--tw-text-opacity, 1))
+        }
+
+        .text-red-400 {
+            --tw-text-opacity: 1;
+            color: rgb(248 113 113 / var(--tw-text-opacity, 1))
+        }
+
+        .text-red-500 {
+            --tw-text-opacity: 1;
+            color: rgb(239 68 68 / var(--tw-text-opacity, 1))
+        }
+
+        .text-red-800 {
+            --tw-text-opacity: 1;
+            color: rgb(153 27 27 / var(--tw-text-opacity, 1))
+        }
+
+        .text-teal-400 {
+            --tw-text-opacity: 1;
+            color: rgb(45 212 191 / var(--tw-text-opacity, 1))
+        }
+
+        .text-transparent {
+            color: transparent
+        }
+
+        .text-white {
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity, 1))
+        }
+
+        .text-yellow-400 {
+            --tw-text-opacity: 1;
+            color: rgb(250 204 21 / var(--tw-text-opacity, 1))
+        }
+
+        .text-yellow-800 {
+            --tw-text-opacity: 1;
+            color: rgb(133 77 14 / var(--tw-text-opacity, 1))
+        }
+
+        .line-through {
+            -webkit-text-decoration-line: line-through;
+            text-decoration-line: line-through
+        }
+
+        .antialiased {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale
+        }
+
+        .placeholder-gray-400::placeholder {
+            --tw-placeholder-opacity: 1;
+            color: rgb(156 163 175 / var(--tw-placeholder-opacity, 1))
+        }
+
+        .placeholder-neutral-400::placeholder {
+            --tw-placeholder-opacity: 1;
+            color: rgb(163 163 163 / var(--tw-placeholder-opacity, 1))
+        }
+
+        .opacity-0 {
+            opacity: 0
+        }
+
+        .opacity-10 {
+            opacity: 0.1
+        }
+
+        .opacity-20 {
+            opacity: 0.2
+        }
+
+        .opacity-25 {
+            opacity: 0.25
+        }
+
+        .opacity-75 {
+            opacity: 0.75
+        }
+
+        .mix-blend-multiply {
+            mix-blend-mode: multiply
+        }
+
+        .shadow-2xl {
+            --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+            --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+        }
+
+        .shadow-lg {
+            --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+        }
+
+        .shadow-md {
+            --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+        }
+
+        .shadow-sm {
+            --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+        }
+
+        .shadow-xl {
+            --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+        }
+
+        .blur-3xl {
+            --tw-blur: blur(64px);
+            filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
+        }
+
+        .filter {
+            filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
+        }
+
+        .backdrop-blur-lg {
+            --tw-backdrop-blur: blur(16px);
+            -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+            backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)
+        }
+
+        .backdrop-blur-sm {
+            --tw-backdrop-blur: blur(4px);
+            -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+            backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)
+        }
+
+        .transition-all {
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms
+        }
+
+        .transition-colors {
+            transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms
+        }
+
+        .transition-opacity {
+            transition-property: opacity;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms
+        }
+
+        .transition-transform {
+            transition-property: transform;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms
+        }
+
+        .delay-150 {
+            transition-delay: 150ms
+        }
+
+        .delay-75 {
+            transition-delay: 75ms
+        }
+
+        .duration-200 {
+            transition-duration: 200ms
+        }
+
+        .duration-300 {
+            transition-duration: 300ms
+        }
+
+        .after\:absolute::after {
+            content: var(--tw-content);
+            position: absolute
+        }
+
+        .after\:left-\[2px\]::after {
+            content: var(--tw-content);
+            left: 2px
+        }
+
+        .after\:top-\[2px\]::after {
+            content: var(--tw-content);
+            top: 2px
+        }
+
+        .after\:h-5::after {
+            content: var(--tw-content);
+            height: 1.25rem
+        }
+
+        .after\:w-5::after {
+            content: var(--tw-content);
+            width: 1.25rem
+        }
+
+        .after\:rounded-full::after {
+            content: var(--tw-content);
+            border-radius: 9999px
+        }
+
+        .after\:border::after {
+            content: var(--tw-content);
+            border-width: 1px
+        }
+
+        .after\:border-gray-300::after {
+            content: var(--tw-content);
+            --tw-border-opacity: 1;
+            border-color: rgb(209 213 219 / var(--tw-border-opacity, 1))
+        }
+
+        .after\:border-neutral-300::after {
+            content: var(--tw-content);
+            --tw-border-opacity: 1;
+            border-color: rgb(212 212 212 / var(--tw-border-opacity, 1))
+        }
+
+        .after\:bg-white::after {
+            content: var(--tw-content);
+            --tw-bg-opacity: 1;
+            background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1))
+        }
+
+        .after\:transition-all::after {
+            content: var(--tw-content);
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms
+        }
+
+        .after\:content-\[\'\'\]::after {
+            --tw-content: '';
+            content: var(--tw-content)
+        }
+
+        .hover\:-translate-y-1:hover {
+            --tw-translate-y: -0.25rem;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .hover\:translate-x-1:hover {
+            --tw-translate-x: 0.25rem;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .hover\:translate-y-\[-4px\]:hover {
+            --tw-translate-y: -4px;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .hover\:scale-105:hover {
+            --tw-scale-x: 1.05;
+            --tw-scale-y: 1.05;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .hover\:scale-110:hover {
+            --tw-scale-x: 1.1;
+            --tw-scale-y: 1.1;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .hover\:scale-\[1\.01\]:hover {
+            --tw-scale-x: 1.01;
+            --tw-scale-y: 1.01;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .hover\:border-neutral-200\/40:hover {
+            border-color: rgb(229 229 229 / 0.4)
+        }
+
+        .hover\:border-neutral-400:hover {
+            --tw-border-opacity: 1;
+            border-color: rgb(163 163 163 / var(--tw-border-opacity, 1))
+        }
+
+        .hover\:border-purple-500\/30:hover {
+            border-color: rgb(168 85 247 / 0.3)
+        }
+
+        .hover\:bg-\[\#374151\]:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(55 65 81 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-\[\#3a3d4e\]:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(58 61 78 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-blue-500\/30:hover {
+            background-color: rgb(59 130 246 / 0.3)
+        }
+
+        .hover\:bg-blue-700:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(29 78 216 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-gray-600:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(75 85 99 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-gray-700:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(55 65 81 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-gray-900:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-green-500:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(34 197 94 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-green-600:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(22 163 74 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-neutral-500\/30:hover {
+            background-color: rgb(115 115 115 / 0.3)
+        }
+
+        .hover\:bg-neutral-600:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(82 82 82 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-neutral-700:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(64 64 64 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-neutral-700\/20:hover {
+            background-color: rgb(64 64 64 / 0.2)
+        }
+
+        .hover\:bg-neutral-700\/30:hover {
+            background-color: rgb(64 64 64 / 0.3)
+        }
+
+        .hover\:bg-neutral-700\/40:hover {
+            background-color: rgb(64 64 64 / 0.4)
+        }
+
+        .hover\:bg-neutral-700\/50:hover {
+            background-color: rgb(64 64 64 / 0.5)
+        }
+
+        .hover\:bg-neutral-700\/70:hover {
+            background-color: rgb(64 64 64 / 0.7)
+        }
+
+        .hover\:bg-neutral-800\/80:hover {
+            background-color: rgb(38 38 38 / 0.8)
+        }
+
+        .hover\:bg-orange-500:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(249 115 22 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-purple-500\/40:hover {
+            background-color: rgb(168 85 247 / 0.4)
+        }
+
+        .hover\:bg-purple-700:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(126 34 206 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-red-500:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(239 68 68 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-red-500\/30:hover {
+            background-color: rgb(239 68 68 / 0.3)
+        }
+
+        .hover\:bg-yellow-500:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(234 179 8 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:from-purple-700:hover {
+            --tw-gradient-from: #7e22ce var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(126 34 206 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+        }
+
+        .hover\:to-blue-600:hover {
+            --tw-gradient-to: #2563eb var(--tw-gradient-to-position)
+        }
+
+        .hover\:text-blue-300:hover {
+            --tw-text-opacity: 1;
+            color: rgb(147 197 253 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:text-blue-400:hover {
+            --tw-text-opacity: 1;
+            color: rgb(96 165 250 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:text-gray-200:hover {
+            --tw-text-opacity: 1;
+            color: rgb(229 231 235 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:text-gray-300:hover {
+            --tw-text-opacity: 1;
+            color: rgb(209 213 219 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:text-neutral-300:hover {
+            --tw-text-opacity: 1;
+            color: rgb(212 212 212 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:text-purple-300:hover {
+            --tw-text-opacity: 1;
+            color: rgb(216 180 254 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:text-purple-400:hover {
+            --tw-text-opacity: 1;
+            color: rgb(192 132 252 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:text-red-300:hover {
+            --tw-text-opacity: 1;
+            color: rgb(252 165 165 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:text-red-500:hover {
+            --tw-text-opacity: 1;
+            color: rgb(239 68 68 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:text-white:hover {
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:text-yellow-400:hover {
+            --tw-text-opacity: 1;
+            color: rgb(250 204 21 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:opacity-100:hover {
+            opacity: 1
+        }
+
+        .hover\:shadow-xl:hover {
+            --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+        }
+
+        .focus\:not-sr-only:focus {
+            position: static;
+            width: auto;
+            height: auto;
+            padding: 0;
+            margin: 0;
+            overflow: visible;
+            clip: auto;
+            white-space: normal
+        }
+
+        .focus\:absolute:focus {
+            position: absolute
+        }
+
+        .focus\:left-0:focus {
+            left: 0px
+        }
+
+        .focus\:top-0:focus {
+            top: 0px
+        }
+
+        .focus\:z-50:focus {
+            z-index: 50
+        }
+
+        .focus\:border-blue-500:focus {
+            --tw-border-opacity: 1;
+            border-color: rgb(59 130 246 / var(--tw-border-opacity, 1))
+        }
+
+        .focus\:border-blue-500\/40:focus {
+            border-color: rgb(59 130 246 / 0.4)
+        }
+
+        .focus\:border-neutral-200\/40:focus {
+            border-color: rgb(229 229 229 / 0.4)
+        }
+
+        .focus\:border-purple-500:focus {
+            --tw-border-opacity: 1;
+            border-color: rgb(168 85 247 / var(--tw-border-opacity, 1))
+        }
+
+        .focus\:border-red-500:focus {
+            --tw-border-opacity: 1;
+            border-color: rgb(239 68 68 / var(--tw-border-opacity, 1))
+        }
+
+        .focus\:border-transparent:focus {
+            border-color: transparent
+        }
+
+        .focus\:bg-white:focus {
+            --tw-bg-opacity: 1;
+            background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1))
+        }
+
+        .focus\:p-4:focus {
+            padding: 1rem
+        }
+
+        .focus\:text-black:focus {
+            --tw-text-opacity: 1;
+            color: rgb(0 0 0 / var(--tw-text-opacity, 1))
+        }
+
+        .focus\:text-white:focus {
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity, 1))
+        }
+
+        .focus\:outline-none:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px
+        }
+
+        .focus\:ring-1:focus {
+            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+            box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)
+        }
+
+        .focus\:ring-2:focus {
+            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+            box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)
+        }
+
+        .focus\:ring-inset:focus {
+            --tw-ring-inset: inset
+        }
+
+        .focus\:ring-blue-500:focus {
+            --tw-ring-opacity: 1;
+            --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity, 1))
+        }
+
+        .focus\:ring-blue-500\/40:focus {
+            --tw-ring-color: rgb(59 130 246 / 0.4)
+        }
+
+        .focus\:ring-blue-500\/50:focus {
+            --tw-ring-color: rgb(59 130 246 / 0.5)
+        }
+
+        .focus\:ring-neutral-400:focus {
+            --tw-ring-opacity: 1;
+            --tw-ring-color: rgb(163 163 163 / var(--tw-ring-opacity, 1))
+        }
+
+        .focus\:ring-neutral-400\/40:focus {
+            --tw-ring-color: rgb(163 163 163 / 0.4)
+        }
+
+        .focus\:ring-neutral-400\/50:focus {
+            --tw-ring-color: rgb(163 163 163 / 0.5)
+        }
+
+        .focus\:ring-purple-500:focus {
+            --tw-ring-opacity: 1;
+            --tw-ring-color: rgb(168 85 247 / var(--tw-ring-opacity, 1))
+        }
+
+        .focus\:ring-white:focus {
+            --tw-ring-opacity: 1;
+            --tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity, 1))
+        }
+
+        .focus\:ring-opacity-50:focus {
+            --tw-ring-opacity: 0.5
+        }
+
+        .focus\:ring-offset-2:focus {
+            --tw-ring-offset-width: 2px
+        }
+
+        .focus\:ring-offset-gray-800:focus {
+            --tw-ring-offset-color: #1f2937
+        }
+
+        .focus\:ring-offset-neutral-800:focus {
+            --tw-ring-offset-color: #262626
+        }
+
+        .disabled\:cursor-not-allowed:disabled {
+            cursor: not-allowed
+        }
+
+        .disabled\:opacity-50:disabled {
+            opacity: 0.5
+        }
+
+        .group:focus-within .group-focus-within\:-top-2 {
+            top: -0.5rem
+        }
+
+        .group:focus-within .group-focus-within\:text-xs {
+            font-size: 0.75rem;
+            line-height: 1rem
+        }
+
+        .group:focus-within .group-focus-within\:text-purple-400 {
+            --tw-text-opacity: 1;
+            color: rgb(192 132 252 / var(--tw-text-opacity, 1))
+        }
+
+        .group:hover .group-hover\:translate-x-1 {
+            --tw-translate-x: 0.25rem;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .group:hover .group-hover\:text-purple-400 {
+            --tw-text-opacity: 1;
+            color: rgb(192 132 252 / var(--tw-text-opacity, 1))
+        }
+
+        .group:hover .group-hover\:opacity-100 {
+            opacity: 1
+        }
+
+        .peer:checked~.peer-checked\:bg-blue-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(37 99 235 / var(--tw-bg-opacity, 1))
+        }
+
+        .peer:checked~.peer-checked\:bg-purple-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(147 51 234 / var(--tw-bg-opacity, 1))
+        }
+
+        .peer:checked~.peer-checked\:after\:translate-x-full::after {
+            content: var(--tw-content);
+            --tw-translate-x: 100%;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .peer:checked~.peer-checked\:after\:border-white::after {
+            content: var(--tw-content);
+            --tw-border-opacity: 1;
+            border-color: rgb(255 255 255 / var(--tw-border-opacity, 1))
+        }
+
+        .peer:focus~.peer-focus\:outline-none {
+            outline: 2px solid transparent;
+            outline-offset: 2px
+        }
+
+        .peer:focus~.peer-focus\:ring-2 {
+            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+            box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)
+        }
+
+        .peer:focus~.peer-focus\:ring-4 {
+            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+            box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)
+        }
+
+        .peer:focus~.peer-focus\:ring-blue-300\/20 {
+            --tw-ring-color: rgb(147 197 253 / 0.2)
+        }
+
+        .peer:focus~.peer-focus\:ring-purple-500 {
+            --tw-ring-opacity: 1;
+            --tw-ring-color: rgb(168 85 247 / var(--tw-ring-opacity, 1))
+        }
+
+        @media (min-width: 640px) {
+            .sm\:col-span-2 {
+                grid-column: span 2 / span 2
+            }
+
+            .sm\:col-span-3 {
+                grid-column: span 3 / span 3
+            }
+
+            .sm\:col-span-6 {
+                grid-column: span 6 / span 6
+            }
+
+            .sm\:mb-0 {
+                margin-bottom: 0px
+            }
+
+            .sm\:mt-0 {
+                margin-top: 0px
+            }
+
+            .sm\:h-56 {
+                height: 14rem
+            }
+
+            .sm\:h-\[60vh\] {
+                height: 60vh
+            }
+
+            .sm\:grid-cols-2 {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+
+            .sm\:grid-cols-4 {
+                grid-template-columns: repeat(4, minmax(0, 1fr))
+            }
+
+            .sm\:grid-cols-6 {
+                grid-template-columns: repeat(6, minmax(0, 1fr))
+            }
+
+            .sm\:flex-row {
+                flex-direction: row
+            }
+
+            .sm\:items-center {
+                align-items: center
+            }
+
+            .sm\:p-6 {
+                padding: 1.5rem
+            }
+
+            .sm\:p-8 {
+                padding: 2rem
+            }
+
+            .sm\:px-6 {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem
+            }
+
+            .sm\:py-0 {
+                padding-top: 0px;
+                padding-bottom: 0px
+            }
+
+            .sm\:text-3xl {
+                font-size: 1.875rem;
+                line-height: 2.25rem
+            }
+
+            .sm\:text-4xl {
+                font-size: 2.25rem;
+                line-height: 2.5rem
+            }
+        }
+
+        @media (min-width: 768px) {
+            .md\:right-6 {
+                right: 1.5rem
+            }
+
+            .md\:mb-0 {
+                margin-bottom: 0px
+            }
+
+            .md\:mr-8 {
+                margin-right: 2rem
+            }
+
+            .md\:mt-0 {
+                margin-top: 0px
+            }
+
+            .md\:block {
+                display: block
+            }
+
+            .md\:flex {
+                display: flex
+            }
+
+            .md\:h-96 {
+                height: 24rem
+            }
+
+            .md\:h-auto {
+                height: auto
+            }
+
+            .md\:w-1\/3 {
+                width: 33.333333%
+            }
+
+            .md\:w-1\/4 {
+                width: 25%
+            }
+
+            .md\:w-2\/3 {
+                width: 66.666667%
+            }
+
+            .md\:w-3\/4 {
+                width: 75%
+            }
+
+            .md\:grid-cols-2 {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+
+            .md\:grid-cols-3 {
+                grid-template-columns: repeat(3, minmax(0, 1fr))
+            }
+
+            .md\:grid-cols-4 {
+                grid-template-columns: repeat(4, minmax(0, 1fr))
+            }
+
+            .md\:flex-row {
+                flex-direction: row
+            }
+
+            .md\:items-center {
+                align-items: center
+            }
+
+            .md\:justify-between {
+                justify-content: space-between
+            }
+
+            .md\:p-10 {
+                padding: 2.5rem
+            }
+
+            .md\:p-12 {
+                padding: 3rem
+            }
+
+            .md\:p-6 {
+                padding: 1.5rem
+            }
+
+            .md\:text-2xl {
+                font-size: 1.5rem;
+                line-height: 2rem
+            }
+
+            .md\:text-4xl {
+                font-size: 2.25rem;
+                line-height: 2.5rem
+            }
+
+            .md\:text-5xl {
+                font-size: 3rem;
+                line-height: 1
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .lg\:col-span-1 {
+                grid-column: span 1 / span 1
+            }
+
+            .lg\:col-span-2 {
+                grid-column: span 2 / span 2
+            }
+
+            .lg\:mb-0 {
+                margin-bottom: 0px
+            }
+
+            .lg\:mt-0 {
+                margin-top: 0px
+            }
+
+            .lg\:block {
+                display: block
+            }
+
+            .lg\:flex {
+                display: flex
+            }
+
+            .lg\:grid {
+                display: grid
+            }
+
+            .lg\:hidden {
+                display: none
+            }
+
+            .lg\:h-\[70vh\] {
+                height: 70vh
+            }
+
+            .lg\:w-1\/3 {
+                width: 33.333333%
+            }
+
+            .lg\:w-2\/3 {
+                width: 66.666667%
+            }
+
+            .lg\:grid-cols-2 {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+
+            .lg\:grid-cols-3 {
+                grid-template-columns: repeat(3, minmax(0, 1fr))
+            }
+
+            .lg\:grid-cols-4 {
+                grid-template-columns: repeat(4, minmax(0, 1fr))
+            }
+
+            .lg\:gap-12 {
+                gap: 3rem
+            }
+
+            .lg\:space-x-8> :not([hidden])~ :not([hidden]) {
+                --tw-space-x-reverse: 0;
+                margin-right: calc(2rem * var(--tw-space-x-reverse));
+                margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)))
+            }
+
+            .lg\:p-8 {
+                padding: 2rem
+            }
+
+            .lg\:px-8 {
+                padding-left: 2rem;
+                padding-right: 2rem
+            }
+        }
+    </style>
+    <style>
+        @keyframes blob {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+    </style>
+
+    <style>
+        @keyframes blob {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&amp;callback=initMap" async=""
+        defer=""></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/60/9/common.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/60/9/util.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/60/9/map.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/60/9/marker.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/60/9/infowindow.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/60/9/log.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/60/9/onion.js"></script>
+</head>
+
+<body class="antialiased text-gray-800 min-h-screen flex flex-col">
+
+    <div id="70c75b78-8681-4766-ad92-ac29f0199394"
+    data-section_id="70c75b78-8681-4766-ad92-ac29f0199394" data-type="content"
+    data-order="11" class="sectionCode"
+    data-section-id="70c75b78-8681-4766-ad92-ac29f0199394">
+
+    <div id="root">
+        <section id="notifications"
+            class="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 py-16 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto" id="el-vb8ejgmu">
+                <!-- Header with Mark All as Read button -->
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8"
+                    id="el-miuob5rf">
+                    <div id="el-z9ikl9mj">
+                        <h1 class="text-3xl sm:text-4xl font-bold text-white mb-2"
+                            id="el-if75sbvg">Notifications</h1>
+                        <p class="text-gray-300" id="el-o2dn6bi2">Stay updated on your
+                            events and activities</p>
+                    </div>
+                    <div class="mt-4 sm:mt-0" id="el-qmldpy27">
+                        <button id="mark-all-read"
+                            class="flex items-center px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-800">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2"
+                                viewBox="0 0 20 20" fill="currentColor" id="el-e56bkdsm">
+                                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"
+                                    id="el-5t08p5tn"></path>
+                                <path fill-rule="evenodd"
+                                    d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd" id="el-ezbxsc1l"></path>
+                            </svg>
+                            Mark All as Read
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Filter Tabs -->
+                <div class="flex border-b border-gray-700 mb-6 overflow-x-auto"
+                    id="el-jym7zfqi">
+                    <button
+                        class="px-6 py-3 text-purple-400 border-b-2 border-purple-500 font-medium focus:outline-none"
+                        id="el-3i6m1njh">
+                        All
+                    </button>
+                    <button
+                        class="px-6 py-3 text-gray-400 hover:text-gray-200 font-medium focus:outline-none"
+                        id="el-wyzf5bbm">
+                        Events
+                    </button>
+                    <button
+                        class="px-6 py-3 text-gray-400 hover:text-gray-200 font-medium focus:outline-none"
+                        id="el-a2iz9a13">
+                        Messages
+                    </button>
+                    <button
+                        class="px-6 py-3 text-gray-400 hover:text-gray-200 font-medium focus:outline-none"
+                        id="el-blduavz6">
+                        Payments
+                    </button>
+                    <button
+                        class="px-6 py-3 text-gray-400 hover:text-gray-200 font-medium focus:outline-none"
+                        id="el-64e6ekgc">
+                        System
+                    </button>
+                </div>
+
+                <!-- Main Content Split -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8" id="el-omz2vt32">
+                    <!-- Notifications List -->
+                    <div class="lg:col-span-2" id="el-ciyn5o8h">
+                        <div class="space-y-4" id="el-gl95xdd1">
+                            <!-- Unread Notification 1 -->
+                            <div class="bg-gray-800 border-l-4 border-purple-500 rounded-lg shadow-lg p-4 transition-all hover:translate-x-1 hover:shadow-xl"
+                                id="el-8hq7wkh6">
+                                <div class="flex items-start" id="el-ijkrrvf6">
+                                    <div class="flex-shrink-0 bg-purple-600 rounded-full p-2 mr-4"
+                                        id="el-l4q97ncz">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="h-6 w-6 text-white" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor"
+                                            id="el-pmegmmq9">
+                                            <path stroke-linecap="round"
+                                                stroke-linejoin="round" stroke-width="2"
+                                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                                                id="el-fvlqlbyu"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1" id="el-hfvvjkzy">
+                                        <div class="flex justify-between items-start"
+                                            id="el-yef1tp0c">
+                                            <h3 class="text-lg font-semibold text-white"
+                                                id="el-hqt9rhxp">Summer Music Festival
+                                                starts tomorrow</h3>
+                                            <div class="flex items-center" id="el-rdafa5na">
+                                                <span
+                                                    class="h-2 w-2 bg-purple-500 rounded-full mr-2"
+                                                    id="el-gp3n05tk"></span>
+                                                <span class="text-gray-400 text-sm"
+                                                    id="el-to2ahz6a">Just now</span>
+                                            </div>
+                                        </div>
+                                        <p class="text-gray-300 mt-1" id="el-lapeyevf">Don't
+                                            forget to check in at the venue entrance. Your
+                                            e-ticket has been sent to your email.</p>
+                                        <div class="mt-2 flex items-center"
+                                            id="el-0bv7eh8c">
+                                            <button
+                                                class="text-purple-400 hover:text-purple-300 text-sm mr-4"
+                                                id="el-kbfwkn4q">View Details</button>
+                                            <button
+                                                class="text-gray-400 hover:text-gray-300 text-sm"
+                                                id="el-mvff2e2u">Dismiss</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Unread Notification 2 -->
+                            <div class="bg-gray-800 border-l-4 border-purple-500 rounded-lg shadow-lg p-4 transition-all hover:translate-x-1 hover:shadow-xl"
+                                id="el-gqvkwawb">
+                                <div class="flex items-start" id="el-t6s76hov">
+                                    <div class="flex-shrink-0 bg-green-600 rounded-full p-2 mr-4"
+                                        id="el-m2aua48m">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="h-6 w-6 text-white" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor"
+                                            id="el-93m3wcb2">
+                                            <path stroke-linecap="round"
+                                                stroke-linejoin="round" stroke-width="2"
+                                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                                id="el-kd2c79g8"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1" id="el-1x3v6tp3">
+                                        <div class="flex justify-between items-start"
+                                            id="el-xe6k5gav">
+                                            <h3 class="text-lg font-semibold text-white"
+                                                id="el-37u6bdys">Payment confirmed for VIP
+                                                Upgrade</h3>
+                                            <div class="flex items-center" id="el-2gs1r518">
+                                                <span
+                                                    class="h-2 w-2 bg-purple-500 rounded-full mr-2"
+                                                    id="el-szc68fso"></span>
+                                                <span class="text-gray-400 text-sm"
+                                                    id="el-ftntmlax">2 hours ago</span>
+                                            </div>
+                                        </div>
+                                        <p class="text-gray-300 mt-1" id="el-mdnggxbe">Your
+                                            payment of $149.99 for the VIP upgrade has been
+                                            processed. Your new passes are now available.
+                                        </p>
+                                        <div class="mt-2 flex items-center"
+                                            id="el-qjd9cqof">
+                                            <button
+                                                class="text-purple-400 hover:text-purple-300 text-sm mr-4"
+                                                id="el-i8rlqorp">View Receipt</button>
+                                            <button
+                                                class="text-gray-400 hover:text-gray-300 text-sm"
+                                                id="el-1x13hrgu">Dismiss</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Read Notification 1 -->
+                            <div class="bg-gray-800 border-l-4 border-gray-700 rounded-lg shadow-lg p-4 transition-all hover:translate-x-1 hover:shadow-xl"
+                                id="el-96uhp0rm">
+                                <div class="flex items-start" id="el-q40kn0z0">
+                                    <div class="flex-shrink-0 bg-blue-600 rounded-full p-2 mr-4"
+                                        id="el-0x8fs0ta">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="h-6 w-6 text-white" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor"
+                                            id="el-1ivorfo3">
+                                            <path stroke-linecap="round"
+                                                stroke-linejoin="round" stroke-width="2"
+                                                d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"
+                                                id="el-fyrsuxkb"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1" id="el-7p91bqws">
+                                        <div class="flex justify-between items-start"
+                                            id="el-mkx6921f">
+                                            <h3 class="text-lg font-semibold text-white"
+                                                id="el-pjrqa61g">New message from Event
+                                                Organizer</h3>
+                                            <span class="text-gray-400 text-sm"
+                                                id="el-bxvz14d0">Yesterday</span>
+                                        </div>
+                                        <p class="text-gray-300 mt-1" id="el-sgotngdz">Jane
+                                            from Summer Festival has sent you information
+                                            about parking and accommodation options.</p>
+                                        <div class="mt-2 flex items-center"
+                                            id="el-4rip9ipm">
+                                            <button
+                                                class="text-purple-400 hover:text-purple-300 text-sm mr-4"
+                                                id="el-hco1eoj2">View Message</button>
+                                            <button
+                                                class="text-gray-400 hover:text-gray-300 text-sm"
+                                                id="el-1e7pgq1v">Dismiss</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Read Notification 2 -->
+                            <div class="bg-gray-800 border-l-4 border-gray-700 rounded-lg shadow-lg p-4 transition-all hover:translate-x-1 hover:shadow-xl"
+                                id="el-ycb899q6">
+                                <div class="flex items-start" id="el-hw0svyrp">
+                                    <div class="flex-shrink-0 bg-yellow-600 rounded-full p-2 mr-4"
+                                        id="el-ym7ix0bx">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="h-6 w-6 text-white" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor"
+                                            id="el-vwu567ix">
+                                            <path stroke-linecap="round"
+                                                stroke-linejoin="round" stroke-width="2"
+                                                d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"
+                                                id="el-4cb5ag1m"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1" id="el-0qofzpx4">
+                                        <div class="flex justify-between items-start"
+                                            id="el-krzyh72t">
+                                            <h3 class="text-lg font-semibold text-white"
+                                                id="el-e5sikelr">Early Bird tickets now on
+                                                sale</h3>
+                                            <span class="text-gray-400 text-sm"
+                                                id="el-odqmabyc">2 days ago</span>
+                                        </div>
+                                        <p class="text-gray-300 mt-1" id="el-ja9yali2">Get
+                                            30% off on all tickets for the Winter Concert
+                                            Series. Limited spots available!</p>
+                                        <div class="mt-2 flex items-center"
+                                            id="el-a7g3lcky">
+                                            <button
+                                                class="text-purple-400 hover:text-purple-300 text-sm mr-4"
+                                                id="el-mmlr7feg">Buy Tickets</button>
+                                            <button
+                                                class="text-gray-400 hover:text-gray-300 text-sm"
+                                                id="el-9h61tu1m">Dismiss</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Read Notification 3 -->
+                            <div class="bg-gray-800 border-l-4 border-gray-700 rounded-lg shadow-lg p-4 transition-all hover:translate-x-1 hover:shadow-xl"
+                                id="el-fx7w7edo">
+                                <div class="flex items-start" id="el-gx7cjr98">
+                                    <div class="flex-shrink-0 bg-red-600 rounded-full p-2 mr-4"
+                                        id="el-8m4s65au">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="h-6 w-6 text-white" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor"
+                                            id="el-9duh8utx">
+                                            <path stroke-linecap="round"
+                                                stroke-linejoin="round" stroke-width="2"
+                                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                                                id="el-00bl64x5"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1" id="el-o0znyo5f">
+                                        <div class="flex justify-between items-start"
+                                            id="el-csk5efjs">
+                                            <h3 class="text-lg font-semibold text-white"
+                                                id="el-3sxh4yvw">Event location has changed
+                                            </h3>
+                                            <span class="text-gray-400 text-sm"
+                                                id="el-a8gw7j6w">1 week ago</span>
+                                        </div>
+                                        <p class="text-gray-300 mt-1" id="el-uwu6rv5h">The
+                                            Tech Conference has been relocated to Central
+                                            Convention Hall due to venue maintenance issues.
+                                        </p>
+                                        <div class="mt-2 flex items-center"
+                                            id="el-n7gonv7a">
+                                            <button
+                                                class="text-purple-400 hover:text-purple-300 text-sm mr-4"
+                                                id="el-g46vow43">View Map</button>
+                                            <button
+                                                class="text-gray-400 hover:text-gray-300 text-sm"
+                                                id="el-frsca579">Dismiss</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Load More Button -->
+                            <div class="text-center py-4" id="el-66o0b6s4">
+                                <button
+                                    class="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-800"
+                                    id="el-l9rkp9ft">
+                                    Load More
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Sidebar -->
+                    <div class="lg:col-span-1" id="el-enwpmimn">
+                        <!-- Notification Settings Card -->
+                        <div class="bg-gray-800 rounded-lg shadow-lg p-6 mb-6 border border-gray-700"
+                            id="el-6u3owaum">
+                            <h3 class="text-xl font-bold text-white mb-4" id="el-qtvg835e">
+                                Notification Settings</h3>
+
+                            <div class="space-y-4" id="el-733pu6zh">
+                                <div class="flex items-center justify-between"
+                                    id="el-aieka23i">
+                                    <div id="el-1pnzmpm4">
+                                        <h4 class="text-white font-medium" id="el-fxijkeqr">
+                                            Email Notifications</h4>
+                                        <p class="text-gray-400 text-sm" id="el-1zmszydf">
+                                            Receive notifications via email</p>
+                                    </div>
+                                    <label
+                                        class="relative inline-flex items-center cursor-pointer"
+                                        id="el-ojkpplr7">
+                                        <input type="checkbox" class="sr-only peer"
+                                            checked="" id="el-zbtiiynv">
+                                        <div class="w-11 h-6 bg-gray-700 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-purple-500 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-purple-600"
+                                            id="el-btlqx2uy"></div>
+                                    </label>
+                                </div>
+
+                                <div class="flex items-center justify-between"
+                                    id="el-5q4nesfd">
+                                    <div id="el-sqsc463h">
+                                        <h4 class="text-white font-medium" id="el-gf1guqp4">
+                                            Push Notifications</h4>
+                                        <p class="text-gray-400 text-sm" id="el-4vlst3il">
+                                            Receive push notifications in browser</p>
+                                    </div>
+                                    <label
+                                        class="relative inline-flex items-center cursor-pointer"
+                                        id="el-ofph392u">
+                                        <input type="checkbox" class="sr-only peer"
+                                            checked="" id="el-vn15uchz">
+                                        <div class="w-11 h-6 bg-gray-700 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-purple-500 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-purple-600"
+                                            id="el-1oo8qrdg"></div>
+                                    </label>
+                                </div>
+
+                                <div class="flex items-center justify-between"
+                                    id="el-e10ep2cr">
+                                    <div id="el-vgebsv17">
+                                        <h4 class="text-white font-medium" id="el-llrkb7yt">
+                                            SMS Notifications</h4>
+                                        <p class="text-gray-400 text-sm" id="el-5n2xxphw">
+                                            Receive notifications via SMS</p>
+                                    </div>
+                                    <label
+                                        class="relative inline-flex items-center cursor-pointer"
+                                        id="el-iyqggsms">
+                                        <input type="checkbox" class="sr-only peer"
+                                            id="el-i4bk4q4r">
+                                        <div class="w-11 h-6 bg-gray-700 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-purple-500 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-purple-600"
+                                            id="el-sspxrfui"></div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 pt-4 border-t border-gray-700"
+                                id="el-mxlmzooq">
+                                <h4 class="text-white font-medium mb-3" id="el-jmjurj58">
+                                    Notify me about:</h4>
+
+                                <div class="space-y-2" id="el-x116zu14">
+                                    <div class="flex items-center" id="el-h3mdagnn">
+                                        <input id="events" type="checkbox"
+                                            class="w-4 h-4 text-purple-600 bg-gray-700 border-gray-600 rounded focus:ring-purple-500 focus:ring-offset-gray-800"
+                                            checked="">
+                                        <label for="events"
+                                            class="ml-2 text-sm text-gray-300"
+                                            id="el-tke1p7wd">Event updates &amp;
+                                            reminders</label>
+                                    </div>
+
+                                    <div class="flex items-center" id="el-7p84r2hv">
+                                        <input id="messages" type="checkbox"
+                                            class="w-4 h-4 text-purple-600 bg-gray-700 border-gray-600 rounded focus:ring-purple-500 focus:ring-offset-gray-800"
+                                            checked="">
+                                        <label for="messages"
+                                            class="ml-2 text-sm text-gray-300"
+                                            id="el-mwqz7pt4">New messages</label>
+                                    </div>
+
+                                    <div class="flex items-center" id="el-7d34erl4">
+                                        <input id="payments" type="checkbox"
+                                            class="w-4 h-4 text-purple-600 bg-gray-700 border-gray-600 rounded focus:ring-purple-500 focus:ring-offset-gray-800"
+                                            checked="">
+                                        <label for="payments"
+                                            class="ml-2 text-sm text-gray-300"
+                                            id="el-e2de61qd">Payment confirmations</label>
+                                    </div>
+
+                                    <div class="flex items-center" id="el-9gxzdrhy">
+                                        <input id="promotions" type="checkbox"
+                                            class="w-4 h-4 text-purple-600 bg-gray-700 border-gray-600 rounded focus:ring-purple-500 focus:ring-offset-gray-800">
+                                        <label for="promotions"
+                                            class="ml-2 text-sm text-gray-300"
+                                            id="el-a2jd09lq">Promotions &amp; offers</label>
+                                    </div>
+
+                                    <div class="flex items-center" id="el-nxusj9jh">
+                                        <input id="system" type="checkbox"
+                                            class="w-4 h-4 text-purple-600 bg-gray-700 border-gray-600 rounded focus:ring-purple-500 focus:ring-offset-gray-800"
+                                            checked="">
+                                        <label for="system"
+                                            class="ml-2 text-sm text-gray-300"
+                                            id="el-edtvu3ui">System updates</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button
+                                class="w-full mt-6 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-800"
+                                id="el-hy12nsa3">
+                                Save Preferences
+                            </button>
+                        </div>
+
+                        <!-- Quick Access Card -->
+                        <div class="bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-700"
+                            id="el-p3g2q6wy">
+                            <h3 class="text-xl font-bold text-white mb-4" id="el-l605bbjf">
+                                At a Glance</h3>
+
+                            <div class="grid grid-cols-2 gap-4" id="el-j8csyxrm">
+                                <div class="bg-gray-700 rounded-lg p-4 text-center"
+                                    id="el-bc2b526e">
+                                    <div class="text-3xl font-bold text-purple-400 mb-1"
+                                        id="el-zn78x5dx">7</div>
+                                    <div class="text-gray-300 text-sm" id="el-pgc99def">
+                                        Upcoming Events</div>
+                                </div>
+
+                                <div class="bg-gray-700 rounded-lg p-4 text-center"
+                                    id="el-bfm7owv2">
+                                    <div class="text-3xl font-bold text-purple-400 mb-1"
+                                        id="el-01st0ccv">3</div>
+                                    <div class="text-gray-300 text-sm" id="el-bxti30wf">
+                                        Unread Notifications</div>
+                                </div>
+
+                                <div class="bg-gray-700 rounded-lg p-4 text-center"
+                                    id="el-x9ax2qpn">
+                                    <div class="text-3xl font-bold text-purple-400 mb-1"
+                                        id="el-ea2c72z3">2</div>
+                                    <div class="text-gray-300 text-sm" id="el-qq62gzup">
+                                        Pending Payments</div>
+                                </div>
+
+                                <div class="bg-gray-700 rounded-lg p-4 text-center"
+                                    id="el-5yak8715">
+                                    <div class="text-3xl font-bold text-purple-400 mb-1"
+                                        id="el-584tc7fy">5</div>
+                                    <div class="text-gray-300 text-sm" id="el-puv67tpv">New
+                                        Messages</div>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 flex flex-col space-y-2" id="el-5ovxu2fo">
+                                <a href="#"
+                                    class="flex items-center text-purple-400 hover:text-purple-300 transition-colors"
+                                    id="el-imrn3od1">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                                        fill="currentColor" id="el-vdmwb73o">
+                                        <path fill-rule="evenodd"
+                                            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                                            clip-rule="evenodd" id="el-w1ohpma1"></path>
+                                    </svg>
+                                    View All Events
+                                </a>
+                                <a href="#"
+                                    class="flex items-center text-purple-400 hover:text-purple-300 transition-colors"
+                                    id="el-xf5g1kzm">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                                        fill="currentColor" id="el-8rllyjh9">
+                                        <path fill-rule="evenodd"
+                                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                                            clip-rule="evenodd" id="el-ltpbcan6"></path>
+                                    </svg>
+                                    Account Settings
+                                </a>
+                                <a href="#"
+                                    class="flex items-center text-purple-400 hover:text-purple-300 transition-colors"
+                                    id="el-gs0j2i9u">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                                        fill="currentColor" id="el-059phkvz">
+                                        <path
+                                            d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z"
+                                            id="el-9kruek8x"></path>
+                                        <path
+                                            d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z"
+                                            id="el-9bger1c2"></path>
+                                    </svg>
+                                    Support Chat
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile App Promo -->
+                <div class="mt-12 bg-gradient-to-r from-purple-800 to-indigo-900 rounded-xl p-6 relative overflow-hidden"
+                    id="el-nircux4a">
+                    <div class="absolute right-0 bottom-0 opacity-20" id="el-skmxmgt6">
+                        <img src="https://images.unsplash.com/photo-1584091377126-3817650725fc?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w2MzQ2fDB8MXxzZWFyY2h8Mnx8bm90aWZpY2F0aW9ucyUyNTIwcHJvZmVzc2lvbmFsfGVufDB8MHx8fDE3NDUwNzQ5MTZ8MA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080?q=80"
+                            alt="person holding black android smartphone"
+                            onerror="this.onerror=null; this.src='https://placehold.co/400x300?text=Mobile+App'"
+                            class="h-40 object-contain" id="el-s6lke9tu">
+                    </div>
+                    <div class="max-w-md relative z-10" id="el-jlm3q09i">
+                        <h3 class="text-2xl font-bold text-white mb-2" id="el-1oizj51s">Get
+                            the Mobile App</h3>
+                        <p class="text-purple-200 mb-4" id="el-r2cavg9g">Never miss an
+                            important notification. Download our mobile app for real-time
+                            alerts and easier event management.</p>
+                        <div class="flex flex-wrap gap-3" id="el-oq30jems">
+                            <button
+                                class="flex items-center bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-900 transition-colors"
+                                id="el-0x01bjky">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2"
+                                    fill="currentColor" viewBox="0 0 24 24"
+                                    id="el-9cosxk03">
+                                    <path
+                                        d="M17.6 5.2C16.3 3.9 14.6 3 12.9 3 10.1 3 8.4 4.2 7.6 5.2 6.5 6.5 6 8.2 6 9.7c0 2.5 1.8 4.7 4 4.9v3.8c0 .6.4 1 1 1h2c.6 0 1-.4 1-1v-3.8c2.2-.2 4-2.4 4-4.9 0-1.5-.5-3.2-1.4-4.5zM10 9H8V7h2v2zm6 0h-2V7h2v2zm-8 11c0 .6.4 1 1 1h6c.6 0 1-.4 1-1v-1H8v1z"
+                                        id="el-ausctz3j"></path>
+                                </svg>
+                                App Store
+                            </button>
+                            <button
+                                class="flex items-center bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-900 transition-colors"
+                                id="el-wg3xn277">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2"
+                                    fill="currentColor" viewBox="0 0 24 24"
+                                    id="el-dzax8zu7">
+                                    <path
+                                        d="M3 3v18l8-3.5L19 21V3H3zm8 13.5L6 19V6h10v13l-5-2.5z"
+                                        id="el-3rh0jqul"></path>
+                                </svg>
+                                Google Play
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attribution -->
+                <div class="mt-10 text-center text-sm text-gray-500" id="el-x33bkgci">
+                    <p id="el-0irv14z6">Smartphone image by Jonas Leupe (@jonasleupe) on
+                        Unsplash</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</div>
+</body>

@@ -1,0 +1,4227 @@
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <style>
+        .gm-err-container {
+            height: 100%;
+            width: 100%;
+            display: table;
+            background-color: #e8eaed;
+            position: relative;
+            left: 0;
+            top: 0
+        }
+
+        .gm-err-content {
+            border-radius: 1px;
+            padding-top: 0;
+            padding-left: 10%;
+            padding-right: 10%;
+            position: static;
+            vertical-align: middle;
+            display: table-cell
+        }
+
+        .gm-err-content a {
+            color: #3c4043
+        }
+
+        .gm-err-icon {
+            text-align: center
+        }
+
+        .gm-err-title {
+            margin: 5px;
+            margin-bottom: 20px;
+            color: #3c4043;
+            font-family: Roboto, Arial, sans-serif;
+            text-align: center;
+            font-size: 24px
+        }
+
+        .gm-err-message {
+            margin: 5px;
+            color: #3c4043;
+            font-family: Roboto, Arial, sans-serif;
+            text-align: center;
+            font-size: 12px
+        }
+
+        .gm-err-autocomplete {
+            padding-left: 20px;
+            background-repeat: no-repeat;
+            -webkit-background-size: 15px 15px;
+            background-size: 15px 15px
+        }
+    </style>
+    <style>
+        .gm-style-moc {
+            background-color: rgba(0, 0, 0, .59);
+            pointer-events: none;
+            text-align: center;
+            -webkit-transition: opacity ease-in-out;
+            transition: opacity ease-in-out
+        }
+
+        .gm-style-mot {
+            color: white;
+            font-family: Roboto, Arial, sans-serif;
+            font-size: 22px;
+            margin: 0;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%)
+        }
+    </style>
+    <style>
+        .gm-style img {
+            max-width: none;
+        }
+
+        .gm-style {
+            font: 400 11px Roboto, Arial, sans-serif;
+            text-decoration: none;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description"
+        content="Discover, create, and manage events with EventHub's comprehensive platform. Register for events, track attendance, and manage payments all in one place.">
+    <meta name="theme-color" content="#ffffff">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="">
+
+    <!-- Alpine.js - Load first -->
+    <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400..700;1,400..700&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet">
+    <style>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "DM Sans", sans-serif !important;
+        }
+
+        body,
+        div,
+        p {
+            font-family: "Inter", sans-serif !important;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+    <title>EventHub - Modern Event Management Platform</title>
+    <!-- SEO Description -->
+    <meta name="description"
+        content="Discover, create, and manage events with EventHub's comprehensive platform. Register for events, track attendance, and manage payments all in one place.">
+
+    <!-- Performance optimization: Preload critical resources -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+
+    <!-- Header Scripts -->
+    <script id="header-scripts">
+        // This script tag will be replaced with actual scripts.head content
+        if (window.scripts && window.scripts.head) {
+            document.getElementById('header-scripts').outerHTML = window.scripts.head;
+        }
+    </script>
+
+    <!-- Core CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // render the settings object
+        //console.log('settings', [object Object]);
+        document.addEventListener('DOMContentLoaded', function () {
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: {
+                                DEFAULT: '#2A2D3E',
+                                50: '#f8f8f8',
+                                100: '#e8e8e8',
+                                200: '#d3d3d3',
+                                300: '#a3a3a3',
+                                400: '#737373',
+                                500: '#525252',
+                                600: '#404040',
+                                700: '#262626',
+                                800: '#171717',
+                                900: '#0a0a0a',
+                                950: '#030303',
+                            },
+                            secondary: {
+                                DEFAULT: '#1F2235',
+                                50: '#f8f8f8',
+                                100: '#e8e8e8',
+                                200: '#d3d3d3',
+                                300: '#a3a3a3',
+                                400: '#737373',
+                                500: '#525252',
+                                600: '#404040',
+                                700: '#262626',
+                                800: '#171717',
+                                900: '#0a0a0a',
+                                950: '#030303',
+                            },
+                            accent: {
+                                DEFAULT: '',
+                                50: '#f8f8f8',
+                                100: '#e8e8e8',
+                                200: '#d3d3d3',
+                                300: '#a3a3a3',
+                                400: '#737373',
+                                500: '#525252',
+                                600: '#404040',
+                                700: '#262626',
+                                800: '#171717',
+                                900: '#0a0a0a',
+                                950: '#030303',
+                            },
+                        },
+                        fontFamily: {
+                            sans: ['DM Sans', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                            heading: ['Inter', 'Inter', 'system-ui', 'sans-serif'],
+                            body: ['Inter', 'Inter', 'system-ui', 'sans-serif'],
+                        },
+                        spacing: {
+                            '18': '4.5rem',
+                            '22': '5.5rem',
+                            '30': '7.5rem',
+                        },
+                        maxWidth: {
+                            '8xl': '88rem',
+                            '9xl': '96rem',
+                        },
+                        aspectRatio: {
+                            'portrait': '3/4',
+                            'landscape': '4/3',
+                            'ultrawide': '21/9',
+                        },
+                    },
+                },
+                variants: {
+                    extend: {
+                        opacity: ['disabled'],
+                        cursor: ['disabled'],
+                        backgroundColor: ['active', 'disabled'],
+                        textColor: ['active', 'disabled'],
+                    },
+                },
+            }
+        });
+    </script>
+
+    <!-- Utilities and Components -->
+    <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.1/apexcharts.min.js"></script>
+
+    <!-- Optimized Font Loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <style>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: DM Sans, Inter, system-ui, sans-serif;
+        }
+
+        body {
+            font-family: Inter, Inter, system-ui, sans-serif;
+        }
+    </style>
+    <style>
+        *,
+        ::before,
+        ::after {
+            --tw-border-spacing-x: 0;
+            --tw-border-spacing-y: 0;
+            --tw-translate-x: 0;
+            --tw-translate-y: 0;
+            --tw-rotate: 0;
+            --tw-skew-x: 0;
+            --tw-skew-y: 0;
+            --tw-scale-x: 1;
+            --tw-scale-y: 1;
+            --tw-pan-x: ;
+            --tw-pan-y: ;
+            --tw-pinch-zoom: ;
+            --tw-scroll-snap-strictness: proximity;
+            --tw-gradient-from-position: ;
+            --tw-gradient-via-position: ;
+            --tw-gradient-to-position: ;
+            --tw-ordinal: ;
+            --tw-slashed-zero: ;
+            --tw-numeric-figure: ;
+            --tw-numeric-spacing: ;
+            --tw-numeric-fraction: ;
+            --tw-ring-inset: ;
+            --tw-ring-offset-width: 0px;
+            --tw-ring-offset-color: #fff;
+            --tw-ring-color: rgb(59 130 246 / 0.5);
+            --tw-ring-offset-shadow: 0 0 #0000;
+            --tw-ring-shadow: 0 0 #0000;
+            --tw-shadow: 0 0 #0000;
+            --tw-shadow-colored: 0 0 #0000;
+            --tw-blur: ;
+            --tw-brightness: ;
+            --tw-contrast: ;
+            --tw-grayscale: ;
+            --tw-hue-rotate: ;
+            --tw-invert: ;
+            --tw-saturate: ;
+            --tw-sepia: ;
+            --tw-drop-shadow: ;
+            --tw-backdrop-blur: ;
+            --tw-backdrop-brightness: ;
+            --tw-backdrop-contrast: ;
+            --tw-backdrop-grayscale: ;
+            --tw-backdrop-hue-rotate: ;
+            --tw-backdrop-invert: ;
+            --tw-backdrop-opacity: ;
+            --tw-backdrop-saturate: ;
+            --tw-backdrop-sepia: ;
+            --tw-contain-size: ;
+            --tw-contain-layout: ;
+            --tw-contain-paint: ;
+            --tw-contain-style:
+        }
+
+        ::backdrop {
+            --tw-border-spacing-x: 0;
+            --tw-border-spacing-y: 0;
+            --tw-translate-x: 0;
+            --tw-translate-y: 0;
+            --tw-rotate: 0;
+            --tw-skew-x: 0;
+            --tw-skew-y: 0;
+            --tw-scale-x: 1;
+            --tw-scale-y: 1;
+            --tw-pan-x: ;
+            --tw-pan-y: ;
+            --tw-pinch-zoom: ;
+            --tw-scroll-snap-strictness: proximity;
+            --tw-gradient-from-position: ;
+            --tw-gradient-via-position: ;
+            --tw-gradient-to-position: ;
+            --tw-ordinal: ;
+            --tw-slashed-zero: ;
+            --tw-numeric-figure: ;
+            --tw-numeric-spacing: ;
+            --tw-numeric-fraction: ;
+            --tw-ring-inset: ;
+            --tw-ring-offset-width: 0px;
+            --tw-ring-offset-color: #fff;
+            --tw-ring-color: rgb(59 130 246 / 0.5);
+            --tw-ring-offset-shadow: 0 0 #0000;
+            --tw-ring-shadow: 0 0 #0000;
+            --tw-shadow: 0 0 #0000;
+            --tw-shadow-colored: 0 0 #0000;
+            --tw-blur: ;
+            --tw-brightness: ;
+            --tw-contrast: ;
+            --tw-grayscale: ;
+            --tw-hue-rotate: ;
+            --tw-invert: ;
+            --tw-saturate: ;
+            --tw-sepia: ;
+            --tw-drop-shadow: ;
+            --tw-backdrop-blur: ;
+            --tw-backdrop-brightness: ;
+            --tw-backdrop-contrast: ;
+            --tw-backdrop-grayscale: ;
+            --tw-backdrop-hue-rotate: ;
+            --tw-backdrop-invert: ;
+            --tw-backdrop-opacity: ;
+            --tw-backdrop-saturate: ;
+            --tw-backdrop-sepia: ;
+            --tw-contain-size: ;
+            --tw-contain-layout: ;
+            --tw-contain-paint: ;
+            --tw-contain-style:
+        }
+
+        /* ! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com */
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+            border-color: #e5e7eb
+        }
+
+        ::after,
+        ::before {
+            --tw-content: ''
+        }
+
+        :host,
+        html {
+            line-height: 1.5;
+            -webkit-text-size-adjust: 100%;
+            -moz-tab-size: 4;
+            tab-size: 4;
+            font-family: DM Sans, Inter, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;
+            font-feature-settings: normal;
+            font-variation-settings: normal;
+            -webkit-tap-highlight-color: transparent
+        }
+
+        body {
+            margin: 0;
+            line-height: inherit
+        }
+
+        hr {
+            height: 0;
+            color: inherit;
+            border-top-width: 1px
+        }
+
+        abbr:where([title]) {
+            -webkit-text-decoration: underline dotted;
+            text-decoration: underline dotted
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: inherit;
+            font-weight: inherit
+        }
+
+        a {
+            color: inherit;
+            text-decoration: inherit
+        }
+
+        b,
+        strong {
+            font-weight: bolder
+        }
+
+        code,
+        kbd,
+        pre,
+        samp {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-feature-settings: normal;
+            font-variation-settings: normal;
+            font-size: 1em
+        }
+
+        small {
+            font-size: 80%
+        }
+
+        sub,
+        sup {
+            font-size: 75%;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline
+        }
+
+        sub {
+            bottom: -.25em
+        }
+
+        sup {
+            top: -.5em
+        }
+
+        table {
+            text-indent: 0;
+            border-color: inherit;
+            border-collapse: collapse
+        }
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            font-family: inherit;
+            font-feature-settings: inherit;
+            font-variation-settings: inherit;
+            font-size: 100%;
+            font-weight: inherit;
+            line-height: inherit;
+            letter-spacing: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0
+        }
+
+        button,
+        select {
+            text-transform: none
+        }
+
+        button,
+        input:where([type=button]),
+        input:where([type=reset]),
+        input:where([type=submit]) {
+            -webkit-appearance: button;
+            appearance: button;
+            background-color: transparent;
+            background-image: none
+        }
+
+        :-moz-focusring {
+            outline: auto
+        }
+
+        :-moz-ui-invalid {
+            box-shadow: none
+        }
+
+        progress {
+            vertical-align: baseline
+        }
+
+        ::-webkit-inner-spin-button,
+        ::-webkit-outer-spin-button {
+            height: auto
+        }
+
+        [type=search] {
+            -webkit-appearance: textfield;
+            appearance: textfield;
+            outline-offset: -2px
+        }
+
+        ::-webkit-search-decoration {
+            -webkit-appearance: none
+        }
+
+        ::-webkit-file-upload-button {
+            -webkit-appearance: button;
+            font: inherit
+        }
+
+        summary {
+            display: list-item
+        }
+
+        blockquote,
+        dd,
+        dl,
+        figure,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        hr,
+        p,
+        pre {
+            margin: 0
+        }
+
+        fieldset {
+            margin: 0;
+            padding: 0
+        }
+
+        legend {
+            padding: 0
+        }
+
+        menu,
+        ol,
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0
+        }
+
+        dialog {
+            padding: 0
+        }
+
+        textarea {
+            resize: vertical
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            opacity: 1;
+            color: #9ca3af
+        }
+
+        [role=button],
+        button {
+            cursor: pointer
+        }
+
+        :disabled {
+            cursor: default
+        }
+
+        audio,
+        canvas,
+        embed,
+        iframe,
+        img,
+        object,
+        svg,
+        video {
+            display: block;
+        }
+
+        img,
+        video {
+            max-width: 100%;
+            height: auto
+        }
+
+        [hidden]:where(:not([hidden=until-found])) {
+            display: none
+        }
+
+        .container {
+            width: 100%
+        }
+
+        @media (min-width: 640px) {
+            .container {
+                max-width: 640px
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 768px
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 1024px
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .container {
+                max-width: 1280px
+            }
+        }
+
+        @media (min-width: 1536px) {
+            .container {
+                max-width: 1536px
+            }
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0
+        }
+
+        .pointer-events-none {
+            pointer-events: none
+        }
+
+        .fixed {
+            position: fixed
+        }
+
+        .absolute {
+            position: absolute
+        }
+
+        .relative {
+            position: relative
+        }
+
+        .sticky {
+            position: sticky
+        }
+
+        .inset-0 {
+            inset: 0px
+        }
+
+        .inset-y-0 {
+            top: 0px;
+            bottom: 0px
+        }
+
+        .-bottom-24 {
+            bottom: -6rem
+        }
+
+        .-bottom-8 {
+            bottom: -2rem
+        }
+
+        .-left-20 {
+            left: -5rem
+        }
+
+        .-right-1 {
+            right: -0.25rem
+        }
+
+        .-right-24 {
+            right: -6rem
+        }
+
+        .-top-1 {
+            top: -0.25rem
+        }
+
+        .-top-8 {
+            top: -2rem
+        }
+
+        .bottom-0 {
+            bottom: 0px
+        }
+
+        .bottom-6 {
+            bottom: 1.5rem
+        }
+
+        .bottom-\[88px\] {
+            bottom: 88px
+        }
+
+        .left-0 {
+            left: 0px
+        }
+
+        .left-1\/2 {
+            left: 50%
+        }
+
+        .left-3 {
+            left: 0.75rem
+        }
+
+        .right-0 {
+            right: 0px
+        }
+
+        .right-20 {
+            right: 5rem
+        }
+
+        .right-3 {
+            right: 0.75rem
+        }
+
+        .right-4 {
+            right: 1rem
+        }
+
+        .right-6 {
+            right: 1.5rem
+        }
+
+        .top-0 {
+            top: 0px
+        }
+
+        .top-10 {
+            top: 2.5rem
+        }
+
+        .top-2 {
+            top: 0.5rem
+        }
+
+        .top-2\.5 {
+            top: 0.625rem
+        }
+
+        .top-3 {
+            top: 0.75rem
+        }
+
+        .top-4 {
+            top: 1rem
+        }
+
+        .top-6 {
+            top: 1.5rem
+        }
+
+        .top-8 {
+            top: 2rem
+        }
+
+        .z-10 {
+            z-index: 10
+        }
+
+        .z-30 {
+            z-index: 30
+        }
+
+        .z-40 {
+            z-index: 40
+        }
+
+        .z-50 {
+            z-index: 50
+        }
+
+        .z-\[60\] {
+            z-index: 60
+        }
+
+        .m-2 {
+            margin: 0.5rem
+        }
+
+        .m-4 {
+            margin: 1rem
+        }
+
+        .mx-1 {
+            margin-left: 0.25rem;
+            margin-right: 0.25rem
+        }
+
+        .mx-2 {
+            margin-left: 0.5rem;
+            margin-right: 0.5rem
+        }
+
+        .mx-4 {
+            margin-left: 1rem;
+            margin-right: 1rem
+        }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .-mb-px {
+            margin-bottom: -1px
+        }
+
+        .-ml-1 {
+            margin-left: -0.25rem
+        }
+
+        .mb-1 {
+            margin-bottom: 0.25rem
+        }
+
+        .mb-10 {
+            margin-bottom: 2.5rem
+        }
+
+        .mb-12 {
+            margin-bottom: 3rem
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem
+        }
+
+        .mb-3 {
+            margin-bottom: 0.75rem
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem
+        }
+
+        .mb-8 {
+            margin-bottom: 2rem
+        }
+
+        .ml-1 {
+            margin-left: 0.25rem
+        }
+
+        .ml-2 {
+            margin-left: 0.5rem
+        }
+
+        .ml-3 {
+            margin-left: 0.75rem
+        }
+
+        .ml-4 {
+            margin-left: 1rem
+        }
+
+        .ml-5 {
+            margin-left: 1.25rem
+        }
+
+        .ml-auto {
+            margin-left: auto
+        }
+
+        .mr-1 {
+            margin-right: 0.25rem
+        }
+
+        .mr-2 {
+            margin-right: 0.5rem
+        }
+
+        .mr-3 {
+            margin-right: 0.75rem
+        }
+
+        .mr-4 {
+            margin-right: 1rem
+        }
+
+        .mt-0\.5 {
+            margin-top: 0.125rem
+        }
+
+        .mt-1 {
+            margin-top: 0.25rem
+        }
+
+        .mt-10 {
+            margin-top: 2.5rem
+        }
+
+        .mt-12 {
+            margin-top: 3rem
+        }
+
+        .mt-16 {
+            margin-top: 4rem
+        }
+
+        .mt-2 {
+            margin-top: 0.5rem
+        }
+
+        .mt-20 {
+            margin-top: 5rem
+        }
+
+        .mt-4 {
+            margin-top: 1rem
+        }
+
+        .mt-6 {
+            margin-top: 1.5rem
+        }
+
+        .mt-8 {
+            margin-top: 2rem
+        }
+
+        .mt-auto {
+            margin-top: auto
+        }
+
+        .block {
+            display: block
+        }
+
+        .inline-block {
+            display: inline-block
+        }
+
+        .inline {
+            display: inline
+        }
+
+        .flex {
+            display: flex
+        }
+
+        .inline-flex {
+            display: inline-flex
+        }
+
+        .grid {
+            display: grid
+        }
+
+        .hidden {
+            display: none
+        }
+
+        .aspect-\[16\/9\] {
+            aspect-ratio: 16/9
+        }
+
+        .h-1 {
+            height: 0.25rem
+        }
+
+        .h-1\.5 {
+            height: 0.375rem
+        }
+
+        .h-10 {
+            height: 2.5rem
+        }
+
+        .h-12 {
+            height: 3rem
+        }
+
+        .h-14 {
+            height: 3.5rem
+        }
+
+        .h-16 {
+            height: 4rem
+        }
+
+        .h-2 {
+            height: 0.5rem
+        }
+
+        .h-2\.5 {
+            height: 0.625rem
+        }
+
+        .h-20 {
+            height: 5rem
+        }
+
+        .h-24 {
+            height: 6rem
+        }
+
+        .h-3 {
+            height: 0.75rem
+        }
+
+        .h-3\.5 {
+            height: 0.875rem
+        }
+
+        .h-32 {
+            height: 8rem
+        }
+
+        .h-36 {
+            height: 9rem
+        }
+
+        .h-4 {
+            height: 1rem
+        }
+
+        .h-40 {
+            height: 10rem
+        }
+
+        .h-48 {
+            height: 12rem
+        }
+
+        .h-5 {
+            height: 1.25rem
+        }
+
+        .h-6 {
+            height: 1.5rem
+        }
+
+        .h-64 {
+            height: 16rem
+        }
+
+        .h-7 {
+            height: 1.75rem
+        }
+
+        .h-72 {
+            height: 18rem
+        }
+
+        .h-8 {
+            height: 2rem
+        }
+
+        .h-96 {
+            height: 24rem
+        }
+
+        .h-\[10\%\] {
+            height: 10%
+        }
+
+        .h-\[100\%\] {
+            height: 100%
+        }
+
+        .h-\[30\%\] {
+            height: 30%
+        }
+
+        .h-\[40\%\] {
+            height: 40%
+        }
+
+        .h-\[45\%\] {
+            height: 45%
+        }
+
+        .h-\[50\%\] {
+            height: 50%
+        }
+
+        .h-\[500px\] {
+            height: 500px
+        }
+
+        .h-\[50vh\] {
+            height: 50vh
+        }
+
+        .h-\[60\%\] {
+            height: 60%
+        }
+
+        .h-\[70\%\] {
+            height: 70%
+        }
+
+        .h-\[75\%\] {
+            height: 75%
+        }
+
+        .h-\[80\%\] {
+            height: 80%
+        }
+
+        .h-\[90\%\] {
+            height: 90%
+        }
+
+        .h-\[95\%\] {
+            height: 95%
+        }
+
+        .h-full {
+            height: 100%
+        }
+
+        .h-screen {
+            height: 100vh
+        }
+
+        .max-h-\[600px\] {
+            max-height: 600px
+        }
+
+        .max-h-\[80vh\] {
+            max-height: 80vh
+        }
+
+        .max-h-\[90vh\] {
+            max-height: 90vh
+        }
+
+        .min-h-screen {
+            min-height: 100vh
+        }
+
+        .w-0 {
+            width: 0px
+        }
+
+        .w-1\/12 {
+            width: 8.333333%
+        }
+
+        .w-10 {
+            width: 2.5rem
+        }
+
+        .w-11 {
+            width: 2.75rem
+        }
+
+        .w-12 {
+            width: 3rem
+        }
+
+        .w-14 {
+            width: 3.5rem
+        }
+
+        .w-16 {
+            width: 4rem
+        }
+
+        .w-2 {
+            width: 0.5rem
+        }
+
+        .w-2\.5 {
+            width: 0.625rem
+        }
+
+        .w-20 {
+            width: 5rem
+        }
+
+        .w-24 {
+            width: 6rem
+        }
+
+        .w-3 {
+            width: 0.75rem
+        }
+
+        .w-3\.5 {
+            width: 0.875rem
+        }
+
+        .w-32 {
+            width: 8rem
+        }
+
+        .w-36 {
+            width: 9rem
+        }
+
+        .w-4 {
+            width: 1rem
+        }
+
+        .w-5 {
+            width: 1.25rem
+        }
+
+        .w-6 {
+            width: 1.5rem
+        }
+
+        .w-64 {
+            width: 16rem
+        }
+
+        .w-7 {
+            width: 1.75rem
+        }
+
+        .w-72 {
+            width: 18rem
+        }
+
+        .w-8 {
+            width: 2rem
+        }
+
+        .w-96 {
+            width: 24rem
+        }
+
+        .w-\[350px\] {
+            width: 350px
+        }
+
+        .w-auto {
+            width: auto
+        }
+
+        .w-full {
+            width: 100%
+        }
+
+        .min-w-full {
+            min-width: 100%
+        }
+
+        .max-w-2xl {
+            max-width: 42rem
+        }
+
+        .max-w-3xl {
+            max-width: 48rem
+        }
+
+        .max-w-4xl {
+            max-width: 56rem
+        }
+
+        .max-w-6xl {
+            max-width: 72rem
+        }
+
+        .max-w-7xl {
+            max-width: 80rem
+        }
+
+        .max-w-\[80\%\] {
+            max-width: 80%
+        }
+
+        .max-w-\[calc\(100vw-2rem\)\] {
+            max-width: calc(100vw - 2rem)
+        }
+
+        .max-w-md {
+            max-width: 28rem
+        }
+
+        .max-w-none {
+            max-width: none
+        }
+
+        .flex-1 {
+            flex: 1 1 0%
+        }
+
+        .flex-shrink-0 {
+            flex-shrink: 0
+        }
+
+        .flex-grow {
+            flex-grow: 1
+        }
+
+        .table-auto {
+            table-layout: auto
+        }
+
+        .-translate-x-1\/2 {
+            --tw-translate-x: -50%;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .translate-y-10 {
+            --tw-translate-y: 2.5rem;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .transform {
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .transform-gpu {
+            transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        @keyframes pulse {
+            50% {
+                opacity: .5
+            }
+        }
+
+        .animate-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        .animate-spin {
+            animation: spin 1s linear infinite
+        }
+
+        .cursor-pointer {
+            cursor: pointer
+        }
+
+        .list-inside {
+            list-style-position: inside
+        }
+
+        .list-disc {
+            list-style-type: disc
+        }
+
+        .appearance-none {
+            -webkit-appearance: none;
+            appearance: none
+        }
+
+        .grid-cols-1 {
+            grid-template-columns: repeat(1, minmax(0, 1fr))
+        }
+
+        .grid-cols-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr))
+        }
+
+        .flex-col {
+            flex-direction: column
+        }
+
+        .flex-wrap {
+            flex-wrap: wrap
+        }
+
+        .items-start {
+            align-items: flex-start
+        }
+
+        .items-end {
+            align-items: flex-end
+        }
+
+        .items-center {
+            align-items: center
+        }
+
+        .justify-end {
+            justify-content: flex-end
+        }
+
+        .justify-center {
+            justify-content: center
+        }
+
+        .justify-between {
+            justify-content: space-between
+        }
+
+        .gap-12 {
+            gap: 3rem
+        }
+
+        .gap-2 {
+            gap: 0.5rem
+        }
+
+        .gap-3 {
+            gap: 0.75rem
+        }
+
+        .gap-4 {
+            gap: 1rem
+        }
+
+        .gap-6 {
+            gap: 1.5rem
+        }
+
+        .gap-8 {
+            gap: 2rem
+        }
+
+        .gap-x-4 {
+            column-gap: 1rem
+        }
+
+        .gap-x-6 {
+            column-gap: 1.5rem
+        }
+
+        .gap-y-2 {
+            row-gap: 0.5rem
+        }
+
+        .gap-y-6 {
+            row-gap: 1.5rem
+        }
+
+        .-space-x-px> :not([hidden])~ :not([hidden]) {
+            --tw-space-x-reverse: 0;
+            margin-right: calc(-1px * var(--tw-space-x-reverse));
+            margin-left: calc(-1px * calc(1 - var(--tw-space-x-reverse)))
+        }
+
+        .space-x-1> :not([hidden])~ :not([hidden]) {
+            --tw-space-x-reverse: 0;
+            margin-right: calc(0.25rem * var(--tw-space-x-reverse));
+            margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)))
+        }
+
+        .space-x-2> :not([hidden])~ :not([hidden]) {
+            --tw-space-x-reverse: 0;
+            margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+            margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)))
+        }
+
+        .space-x-3> :not([hidden])~ :not([hidden]) {
+            --tw-space-x-reverse: 0;
+            margin-right: calc(0.75rem * var(--tw-space-x-reverse));
+            margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)))
+        }
+
+        .space-x-4> :not([hidden])~ :not([hidden]) {
+            --tw-space-x-reverse: 0;
+            margin-right: calc(1rem * var(--tw-space-x-reverse));
+            margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)))
+        }
+
+        .space-x-8> :not([hidden])~ :not([hidden]) {
+            --tw-space-x-reverse: 0;
+            margin-right: calc(2rem * var(--tw-space-x-reverse));
+            margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)))
+        }
+
+        .space-y-1> :not([hidden])~ :not([hidden]) {
+            --tw-space-y-reverse: 0;
+            margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
+            margin-bottom: calc(0.25rem * var(--tw-space-y-reverse))
+        }
+
+        .space-y-2> :not([hidden])~ :not([hidden]) {
+            --tw-space-y-reverse: 0;
+            margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+            margin-bottom: calc(0.5rem * var(--tw-space-y-reverse))
+        }
+
+        .space-y-3> :not([hidden])~ :not([hidden]) {
+            --tw-space-y-reverse: 0;
+            margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+            margin-bottom: calc(0.75rem * var(--tw-space-y-reverse))
+        }
+
+        .space-y-4> :not([hidden])~ :not([hidden]) {
+            --tw-space-y-reverse: 0;
+            margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+            margin-bottom: calc(1rem * var(--tw-space-y-reverse))
+        }
+
+        .space-y-6> :not([hidden])~ :not([hidden]) {
+            --tw-space-y-reverse: 0;
+            margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+            margin-bottom: calc(1.5rem * var(--tw-space-y-reverse))
+        }
+
+        .divide-y> :not([hidden])~ :not([hidden]) {
+            --tw-divide-y-reverse: 0;
+            border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+            border-bottom-width: calc(1px * var(--tw-divide-y-reverse))
+        }
+
+        .divide-neutral-700\/30> :not([hidden])~ :not([hidden]) {
+            border-color: rgb(64 64 64 / 0.3)
+        }
+
+        .overflow-hidden {
+            overflow: hidden
+        }
+
+        .overflow-x-auto {
+            overflow-x: auto
+        }
+
+        .overflow-y-auto {
+            overflow-y: auto
+        }
+
+        .scroll-smooth {
+            scroll-behavior: smooth
+        }
+
+        .whitespace-nowrap {
+            white-space: nowrap
+        }
+
+        .rounded {
+            border-radius: 0.25rem
+        }
+
+        .rounded-full {
+            border-radius: 9999px
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem
+        }
+
+        .rounded-md {
+            border-radius: 0.375rem
+        }
+
+        .rounded-xl {
+            border-radius: 0.75rem
+        }
+
+        .rounded-l-lg {
+            border-top-left-radius: 0.5rem;
+            border-bottom-left-radius: 0.5rem
+        }
+
+        .rounded-l-md {
+            border-top-left-radius: 0.375rem;
+            border-bottom-left-radius: 0.375rem
+        }
+
+        .rounded-r-lg {
+            border-top-right-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem
+        }
+
+        .rounded-r-md {
+            border-top-right-radius: 0.375rem;
+            border-bottom-right-radius: 0.375rem
+        }
+
+        .rounded-t-lg {
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem
+        }
+
+        .rounded-t-sm {
+            border-top-left-radius: 0.125rem;
+            border-top-right-radius: 0.125rem
+        }
+
+        .rounded-t-xl {
+            border-top-left-radius: 0.75rem;
+            border-top-right-radius: 0.75rem
+        }
+
+        .rounded-tl-none {
+            border-top-left-radius: 0px
+        }
+
+        .rounded-tr-none {
+            border-top-right-radius: 0px
+        }
+
+        .border {
+            border-width: 1px
+        }
+
+        .border-2 {
+            border-width: 2px
+        }
+
+        .border-4 {
+            border-width: 4px
+        }
+
+        .border-b {
+            border-bottom-width: 1px
+        }
+
+        .border-b-2 {
+            border-bottom-width: 2px
+        }
+
+        .border-l-4 {
+            border-left-width: 4px
+        }
+
+        .border-r {
+            border-right-width: 1px
+        }
+
+        .border-t {
+            border-top-width: 1px
+        }
+
+        .border-dashed {
+            border-style: dashed
+        }
+
+        .border-blue-500 {
+            --tw-border-opacity: 1;
+            border-color: rgb(59 130 246 / var(--tw-border-opacity, 1))
+        }
+
+        .border-blue-500\/30 {
+            border-color: rgb(59 130 246 / 0.3)
+        }
+
+        .border-gray-600 {
+            --tw-border-opacity: 1;
+            border-color: rgb(75 85 99 / var(--tw-border-opacity, 1))
+        }
+
+        .border-gray-700 {
+            --tw-border-opacity: 1;
+            border-color: rgb(55 65 81 / var(--tw-border-opacity, 1))
+        }
+
+        .border-green-700 {
+            --tw-border-opacity: 1;
+            border-color: rgb(21 128 61 / var(--tw-border-opacity, 1))
+        }
+
+        .border-neutral-200\/10 {
+            border-color: rgb(229 229 229 / 0.1)
+        }
+
+        .border-neutral-200\/20 {
+            border-color: rgb(229 229 229 / 0.2)
+        }
+
+        .border-neutral-200\/30 {
+            border-color: rgb(229 229 229 / 0.3)
+        }
+
+        .border-neutral-600 {
+            --tw-border-opacity: 1;
+            border-color: rgb(82 82 82 / var(--tw-border-opacity, 1))
+        }
+
+        .border-neutral-600\/30 {
+            border-color: rgb(82 82 82 / 0.3)
+        }
+
+        .border-neutral-700 {
+            --tw-border-opacity: 1;
+            border-color: rgb(64 64 64 / var(--tw-border-opacity, 1))
+        }
+
+        .border-neutral-700\/20 {
+            border-color: rgb(64 64 64 / 0.2)
+        }
+
+        .border-neutral-700\/30 {
+            border-color: rgb(64 64 64 / 0.3)
+        }
+
+        .border-neutral-700\/50 {
+            border-color: rgb(64 64 64 / 0.5)
+        }
+
+        .border-neutral-800\/40 {
+            border-color: rgb(38 38 38 / 0.4)
+        }
+
+        .border-purple-500 {
+            --tw-border-opacity: 1;
+            border-color: rgb(168 85 247 / var(--tw-border-opacity, 1))
+        }
+
+        .border-purple-600 {
+            --tw-border-opacity: 1;
+            border-color: rgb(147 51 234 / var(--tw-border-opacity, 1))
+        }
+
+        .border-purple-800\/50 {
+            border-color: rgb(107 33 168 / 0.5)
+        }
+
+        .border-transparent {
+            border-color: transparent
+        }
+
+        .bg-\[\#111827\] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-\[\#1F2937\] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-\[\#1e2130\] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(30 33 48 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-\[\#2D3748\] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(45 55 72 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-\[\#2a2d3e\] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(42 45 62 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-amber-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(245 158 11 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-amber-500\/20 {
+            background-color: rgb(245 158 11 / 0.2)
+        }
+
+        .bg-black {
+            --tw-bg-opacity: 1;
+            background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-black\/50 {
+            background-color: rgb(0 0 0 / 0.5)
+        }
+
+        .bg-black\/70 {
+            background-color: rgb(0 0 0 / 0.7)
+        }
+
+        .bg-blue-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(59 130 246 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-blue-500\/20 {
+            background-color: rgb(59 130 246 / 0.2)
+        }
+
+        .bg-blue-500\/70 {
+            background-color: rgb(59 130 246 / 0.7)
+        }
+
+        .bg-blue-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(37 99 235 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-blue-900\/10 {
+            background-color: rgb(30 58 138 / 0.1)
+        }
+
+        .bg-blue-900\/20 {
+            background-color: rgb(30 58 138 / 0.2)
+        }
+
+        .bg-emerald-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(16 185 129 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-emerald-500\/20 {
+            background-color: rgb(16 185 129 / 0.2)
+        }
+
+        .bg-gray-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(107 114 128 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-gray-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(75 85 99 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-gray-700 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(55 65 81 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-gray-800 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-gray-900 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-green-100 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(220 252 231 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-green-400 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(74 222 128 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-green-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(34 197 94 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-green-500\/20 {
+            background-color: rgb(34 197 94 / 0.2)
+        }
+
+        .bg-green-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(22 163 74 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-green-600\/20 {
+            background-color: rgb(22 163 74 / 0.2)
+        }
+
+        .bg-green-800\/50 {
+            background-color: rgb(22 101 52 / 0.5)
+        }
+
+        .bg-indigo-500\/20 {
+            background-color: rgb(99 102 241 / 0.2)
+        }
+
+        .bg-neutral-500\/20 {
+            background-color: rgb(115 115 115 / 0.2)
+        }
+
+        .bg-neutral-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(82 82 82 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-neutral-700 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(64 64 64 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-neutral-700\/30 {
+            background-color: rgb(64 64 64 / 0.3)
+        }
+
+        .bg-neutral-700\/40 {
+            background-color: rgb(64 64 64 / 0.4)
+        }
+
+        .bg-neutral-700\/50 {
+            background-color: rgb(64 64 64 / 0.5)
+        }
+
+        .bg-neutral-700\/80 {
+            background-color: rgb(64 64 64 / 0.8)
+        }
+
+        .bg-neutral-800 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(38 38 38 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-neutral-800\/30 {
+            background-color: rgb(38 38 38 / 0.3)
+        }
+
+        .bg-neutral-800\/40 {
+            background-color: rgb(38 38 38 / 0.4)
+        }
+
+        .bg-neutral-800\/50 {
+            background-color: rgb(38 38 38 / 0.5)
+        }
+
+        .bg-neutral-800\/60 {
+            background-color: rgb(38 38 38 / 0.6)
+        }
+
+        .bg-neutral-800\/70 {
+            background-color: rgb(38 38 38 / 0.7)
+        }
+
+        .bg-neutral-800\/80 {
+            background-color: rgb(38 38 38 / 0.8)
+        }
+
+        .bg-neutral-900 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(23 23 23 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-orange-500\/20 {
+            background-color: rgb(249 115 22 / 0.2)
+        }
+
+        .bg-pink-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(236 72 153 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-pink-500\/20 {
+            background-color: rgb(236 72 153 / 0.2)
+        }
+
+        .bg-pink-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(219 39 119 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-purple-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(168 85 247 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-purple-500\/20 {
+            background-color: rgb(168 85 247 / 0.2)
+        }
+
+        .bg-purple-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(147 51 234 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-purple-600\/20 {
+            background-color: rgb(147 51 234 / 0.2)
+        }
+
+        .bg-purple-600\/50 {
+            background-color: rgb(147 51 234 / 0.5)
+        }
+
+        .bg-purple-900\/30 {
+            background-color: rgb(88 28 135 / 0.3)
+        }
+
+        .bg-red-100 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(254 226 226 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-red-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(239 68 68 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-red-500\/20 {
+            background-color: rgb(239 68 68 / 0.2)
+        }
+
+        .bg-red-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(220 38 38 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-teal-500\/20 {
+            background-color: rgb(20 184 166 / 0.2)
+        }
+
+        .bg-transparent {
+            background-color: transparent
+        }
+
+        .bg-yellow-100 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(254 249 195 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-yellow-400 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(250 204 21 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-yellow-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(234 179 8 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-yellow-500\/20 {
+            background-color: rgb(234 179 8 / 0.2)
+        }
+
+        .bg-yellow-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(202 138 4 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-opacity-50 {
+            --tw-bg-opacity: 0.5
+        }
+
+        .bg-gradient-to-br {
+            background-image: linear-gradient(to bottom right, var(--tw-gradient-stops))
+        }
+
+        .bg-gradient-to-r {
+            background-image: linear-gradient(to right, var(--tw-gradient-stops))
+        }
+
+        .bg-gradient-to-t {
+            background-image: linear-gradient(to top, var(--tw-gradient-stops))
+        }
+
+        .from-\[\#1a1c2e\] {
+            --tw-gradient-from: #1a1c2e var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(26 28 46 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+        }
+
+        .from-black\/70 {
+            --tw-gradient-from: rgb(0 0 0 / 0.7) var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+        }
+
+        .from-black\/80 {
+            --tw-gradient-from: rgb(0 0 0 / 0.8) var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+        }
+
+        .from-gray-900 {
+            --tw-gradient-from: #111827 var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(17 24 39 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+        }
+
+        .from-neutral-900 {
+            --tw-gradient-from: #171717 var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(23 23 23 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+        }
+
+        .from-purple-500 {
+            --tw-gradient-from: #a855f7 var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(168 85 247 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+        }
+
+        .from-purple-600 {
+            --tw-gradient-from: #9333ea var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(147 51 234 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+        }
+
+        .from-purple-800 {
+            --tw-gradient-from: #6b21a8 var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(107 33 168 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+        }
+
+        .via-neutral-900\/70 {
+            --tw-gradient-to: rgb(23 23 23 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), rgb(23 23 23 / 0.7) var(--tw-gradient-via-position), var(--tw-gradient-to)
+        }
+
+        .to-\[\#2d3748\] {
+            --tw-gradient-to: #2d3748 var(--tw-gradient-to-position)
+        }
+
+        .to-blue-500 {
+            --tw-gradient-to: #3b82f6 var(--tw-gradient-to-position)
+        }
+
+        .to-gray-800 {
+            --tw-gradient-to: #1f2937 var(--tw-gradient-to-position)
+        }
+
+        .to-indigo-900 {
+            --tw-gradient-to: #312e81 var(--tw-gradient-to-position)
+        }
+
+        .to-neutral-800 {
+            --tw-gradient-to: #262626 var(--tw-gradient-to-position)
+        }
+
+        .to-transparent {
+            --tw-gradient-to: transparent var(--tw-gradient-to-position)
+        }
+
+        .bg-clip-text {
+            -webkit-background-clip: text;
+            background-clip: text
+        }
+
+        .fill-current {
+            fill: currentColor
+        }
+
+        .object-contain {
+            object-fit: contain
+        }
+
+        .object-cover {
+            object-fit: cover
+        }
+
+        .p-1 {
+            padding: 0.25rem
+        }
+
+        .p-1\.5 {
+            padding: 0.375rem
+        }
+
+        .p-2 {
+            padding: 0.5rem
+        }
+
+        .p-2\.5 {
+            padding: 0.625rem
+        }
+
+        .p-3 {
+            padding: 0.75rem
+        }
+
+        .p-4 {
+            padding: 1rem
+        }
+
+        .p-5 {
+            padding: 1.25rem
+        }
+
+        .p-6 {
+            padding: 1.5rem
+        }
+
+        .p-8 {
+            padding: 2rem
+        }
+
+        .px-2 {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem
+        }
+
+        .px-2\.5 {
+            padding-left: 0.625rem;
+            padding-right: 0.625rem
+        }
+
+        .px-3 {
+            padding-left: 0.75rem;
+            padding-right: 0.75rem
+        }
+
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem
+        }
+
+        .px-6 {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem
+        }
+
+        .py-0 {
+            padding-top: 0px;
+            padding-bottom: 0px
+        }
+
+        .py-0\.5 {
+            padding-top: 0.125rem;
+            padding-bottom: 0.125rem
+        }
+
+        .py-1 {
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem
+        }
+
+        .py-1\.5 {
+            padding-top: 0.375rem;
+            padding-bottom: 0.375rem
+        }
+
+        .py-12 {
+            padding-top: 3rem;
+            padding-bottom: 3rem
+        }
+
+        .py-16 {
+            padding-top: 4rem;
+            padding-bottom: 4rem
+        }
+
+        .py-2 {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem
+        }
+
+        .py-2\.5 {
+            padding-top: 0.625rem;
+            padding-bottom: 0.625rem
+        }
+
+        .py-3 {
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem
+        }
+
+        .py-4 {
+            padding-top: 1rem;
+            padding-bottom: 1rem
+        }
+
+        .py-5 {
+            padding-top: 1.25rem;
+            padding-bottom: 1.25rem
+        }
+
+        .py-8 {
+            padding-top: 2rem;
+            padding-bottom: 2rem
+        }
+
+        .pb-3 {
+            padding-bottom: 0.75rem
+        }
+
+        .pb-6 {
+            padding-bottom: 1.5rem
+        }
+
+        .pl-10 {
+            padding-left: 2.5rem
+        }
+
+        .pl-3 {
+            padding-left: 0.75rem
+        }
+
+        .pl-6 {
+            padding-left: 1.5rem
+        }
+
+        .pl-7 {
+            padding-left: 1.75rem
+        }
+
+        .pr-4 {
+            padding-right: 1rem
+        }
+
+        .pt-16 {
+            padding-top: 4rem
+        }
+
+        .pt-2 {
+            padding-top: 0.5rem
+        }
+
+        .pt-3 {
+            padding-top: 0.75rem
+        }
+
+        .pt-4 {
+            padding-top: 1rem
+        }
+
+        .pt-5 {
+            padding-top: 1.25rem
+        }
+
+        .pt-6 {
+            padding-top: 1.5rem
+        }
+
+        .pt-8 {
+            padding-top: 2rem
+        }
+
+        .text-left {
+            text-align: left
+        }
+
+        .text-center {
+            text-align: center
+        }
+
+        .text-right {
+            text-align: right
+        }
+
+        .text-2xl {
+            font-size: 1.5rem;
+            line-height: 2rem
+        }
+
+        .text-3xl {
+            font-size: 1.875rem;
+            line-height: 2.25rem
+        }
+
+        .text-5xl {
+            font-size: 3rem;
+            line-height: 1
+        }
+
+        .text-base {
+            font-size: 1rem;
+            line-height: 1.5rem
+        }
+
+        .text-lg {
+            font-size: 1.125rem;
+            line-height: 1.75rem
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+            line-height: 1.25rem
+        }
+
+        .text-xl {
+            font-size: 1.25rem;
+            line-height: 1.75rem
+        }
+
+        .text-xs {
+            font-size: 0.75rem;
+            line-height: 1rem
+        }
+
+        .font-bold {
+            font-weight: 700
+        }
+
+        .font-medium {
+            font-weight: 500
+        }
+
+        .font-semibold {
+            font-weight: 600
+        }
+
+        .uppercase {
+            text-transform: uppercase
+        }
+
+        .leading-5 {
+            line-height: 1.25rem
+        }
+
+        .tracking-wider {
+            letter-spacing: 0.05em
+        }
+
+        .text-amber-300 {
+            --tw-text-opacity: 1;
+            color: rgb(252 211 77 / var(--tw-text-opacity, 1))
+        }
+
+        .text-amber-400 {
+            --tw-text-opacity: 1;
+            color: rgb(251 191 36 / var(--tw-text-opacity, 1))
+        }
+
+        .text-amber-500 {
+            --tw-text-opacity: 1;
+            color: rgb(245 158 11 / var(--tw-text-opacity, 1))
+        }
+
+        .text-blue-300 {
+            --tw-text-opacity: 1;
+            color: rgb(147 197 253 / var(--tw-text-opacity, 1))
+        }
+
+        .text-blue-400 {
+            --tw-text-opacity: 1;
+            color: rgb(96 165 250 / var(--tw-text-opacity, 1))
+        }
+
+        .text-blue-500 {
+            --tw-text-opacity: 1;
+            color: rgb(59 130 246 / var(--tw-text-opacity, 1))
+        }
+
+        .text-blue-600 {
+            --tw-text-opacity: 1;
+            color: rgb(37 99 235 / var(--tw-text-opacity, 1))
+        }
+
+        .text-emerald-400 {
+            --tw-text-opacity: 1;
+            color: rgb(52 211 153 / var(--tw-text-opacity, 1))
+        }
+
+        .text-emerald-500 {
+            --tw-text-opacity: 1;
+            color: rgb(16 185 129 / var(--tw-text-opacity, 1))
+        }
+
+        .text-gray-200 {
+            --tw-text-opacity: 1;
+            color: rgb(229 231 235 / var(--tw-text-opacity, 1))
+        }
+
+        .text-gray-300 {
+            --tw-text-opacity: 1;
+            color: rgb(209 213 219 / var(--tw-text-opacity, 1))
+        }
+
+        .text-gray-400 {
+            --tw-text-opacity: 1;
+            color: rgb(156 163 175 / var(--tw-text-opacity, 1))
+        }
+
+        .text-gray-500 {
+            --tw-text-opacity: 1;
+            color: rgb(107 114 128 / var(--tw-text-opacity, 1))
+        }
+
+        .text-gray-800 {
+            --tw-text-opacity: 1;
+            color: rgb(31 41 55 / var(--tw-text-opacity, 1))
+        }
+
+        .text-green-200 {
+            --tw-text-opacity: 1;
+            color: rgb(187 247 208 / var(--tw-text-opacity, 1))
+        }
+
+        .text-green-300 {
+            --tw-text-opacity: 1;
+            color: rgb(134 239 172 / var(--tw-text-opacity, 1))
+        }
+
+        .text-green-400 {
+            --tw-text-opacity: 1;
+            color: rgb(74 222 128 / var(--tw-text-opacity, 1))
+        }
+
+        .text-green-500 {
+            --tw-text-opacity: 1;
+            color: rgb(34 197 94 / var(--tw-text-opacity, 1))
+        }
+
+        .text-green-800 {
+            --tw-text-opacity: 1;
+            color: rgb(22 101 52 / var(--tw-text-opacity, 1))
+        }
+
+        .text-indigo-400 {
+            --tw-text-opacity: 1;
+            color: rgb(129 140 248 / var(--tw-text-opacity, 1))
+        }
+
+        .text-neutral-200 {
+            --tw-text-opacity: 1;
+            color: rgb(229 229 229 / var(--tw-text-opacity, 1))
+        }
+
+        .text-neutral-300 {
+            --tw-text-opacity: 1;
+            color: rgb(212 212 212 / var(--tw-text-opacity, 1))
+        }
+
+        .text-neutral-400 {
+            --tw-text-opacity: 1;
+            color: rgb(163 163 163 / var(--tw-text-opacity, 1))
+        }
+
+        .text-neutral-500 {
+            --tw-text-opacity: 1;
+            color: rgb(115 115 115 / var(--tw-text-opacity, 1))
+        }
+
+        .text-orange-400 {
+            --tw-text-opacity: 1;
+            color: rgb(251 146 60 / var(--tw-text-opacity, 1))
+        }
+
+        .text-pink-400 {
+            --tw-text-opacity: 1;
+            color: rgb(244 114 182 / var(--tw-text-opacity, 1))
+        }
+
+        .text-purple-200 {
+            --tw-text-opacity: 1;
+            color: rgb(233 213 255 / var(--tw-text-opacity, 1))
+        }
+
+        .text-purple-300 {
+            --tw-text-opacity: 1;
+            color: rgb(216 180 254 / var(--tw-text-opacity, 1))
+        }
+
+        .text-purple-400 {
+            --tw-text-opacity: 1;
+            color: rgb(192 132 252 / var(--tw-text-opacity, 1))
+        }
+
+        .text-purple-500 {
+            --tw-text-opacity: 1;
+            color: rgb(168 85 247 / var(--tw-text-opacity, 1))
+        }
+
+        .text-purple-600 {
+            --tw-text-opacity: 1;
+            color: rgb(147 51 234 / var(--tw-text-opacity, 1))
+        }
+
+        .text-red-400 {
+            --tw-text-opacity: 1;
+            color: rgb(248 113 113 / var(--tw-text-opacity, 1))
+        }
+
+        .text-red-500 {
+            --tw-text-opacity: 1;
+            color: rgb(239 68 68 / var(--tw-text-opacity, 1))
+        }
+
+        .text-red-800 {
+            --tw-text-opacity: 1;
+            color: rgb(153 27 27 / var(--tw-text-opacity, 1))
+        }
+
+        .text-teal-400 {
+            --tw-text-opacity: 1;
+            color: rgb(45 212 191 / var(--tw-text-opacity, 1))
+        }
+
+        .text-transparent {
+            color: transparent
+        }
+
+        .text-white {
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity, 1))
+        }
+
+        .text-yellow-400 {
+            --tw-text-opacity: 1;
+            color: rgb(250 204 21 / var(--tw-text-opacity, 1))
+        }
+
+        .text-yellow-800 {
+            --tw-text-opacity: 1;
+            color: rgb(133 77 14 / var(--tw-text-opacity, 1))
+        }
+
+        .line-through {
+            -webkit-text-decoration-line: line-through;
+            text-decoration-line: line-through
+        }
+
+        .antialiased {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale
+        }
+
+        .placeholder-gray-400::placeholder {
+            --tw-placeholder-opacity: 1;
+            color: rgb(156 163 175 / var(--tw-placeholder-opacity, 1))
+        }
+
+        .placeholder-neutral-400::placeholder {
+            --tw-placeholder-opacity: 1;
+            color: rgb(163 163 163 / var(--tw-placeholder-opacity, 1))
+        }
+
+        .opacity-0 {
+            opacity: 0
+        }
+
+        .opacity-10 {
+            opacity: 0.1
+        }
+
+        .opacity-20 {
+            opacity: 0.2
+        }
+
+        .opacity-25 {
+            opacity: 0.25
+        }
+
+        .opacity-75 {
+            opacity: 0.75
+        }
+
+        .mix-blend-multiply {
+            mix-blend-mode: multiply
+        }
+
+        .shadow-2xl {
+            --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+            --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+        }
+
+        .shadow-lg {
+            --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+        }
+
+        .shadow-md {
+            --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+        }
+
+        .shadow-sm {
+            --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+        }
+
+        .shadow-xl {
+            --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+        }
+
+        .blur-3xl {
+            --tw-blur: blur(64px);
+            filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
+        }
+
+        .filter {
+            filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
+        }
+
+        .backdrop-blur-lg {
+            --tw-backdrop-blur: blur(16px);
+            -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+            backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)
+        }
+
+        .backdrop-blur-sm {
+            --tw-backdrop-blur: blur(4px);
+            -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+            backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)
+        }
+
+        .transition-all {
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms
+        }
+
+        .transition-colors {
+            transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms
+        }
+
+        .transition-opacity {
+            transition-property: opacity;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms
+        }
+
+        .transition-transform {
+            transition-property: transform;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms
+        }
+
+        .delay-150 {
+            transition-delay: 150ms
+        }
+
+        .delay-75 {
+            transition-delay: 75ms
+        }
+
+        .duration-200 {
+            transition-duration: 200ms
+        }
+
+        .duration-300 {
+            transition-duration: 300ms
+        }
+
+        .after\:absolute::after {
+            content: var(--tw-content);
+            position: absolute
+        }
+
+        .after\:left-\[2px\]::after {
+            content: var(--tw-content);
+            left: 2px
+        }
+
+        .after\:top-\[2px\]::after {
+            content: var(--tw-content);
+            top: 2px
+        }
+
+        .after\:h-5::after {
+            content: var(--tw-content);
+            height: 1.25rem
+        }
+
+        .after\:w-5::after {
+            content: var(--tw-content);
+            width: 1.25rem
+        }
+
+        .after\:rounded-full::after {
+            content: var(--tw-content);
+            border-radius: 9999px
+        }
+
+        .after\:border::after {
+            content: var(--tw-content);
+            border-width: 1px
+        }
+
+        .after\:border-gray-300::after {
+            content: var(--tw-content);
+            --tw-border-opacity: 1;
+            border-color: rgb(209 213 219 / var(--tw-border-opacity, 1))
+        }
+
+        .after\:border-neutral-300::after {
+            content: var(--tw-content);
+            --tw-border-opacity: 1;
+            border-color: rgb(212 212 212 / var(--tw-border-opacity, 1))
+        }
+
+        .after\:bg-white::after {
+            content: var(--tw-content);
+            --tw-bg-opacity: 1;
+            background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1))
+        }
+
+        .after\:transition-all::after {
+            content: var(--tw-content);
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms
+        }
+
+        .after\:content-\[\'\'\]::after {
+            --tw-content: '';
+            content: var(--tw-content)
+        }
+
+        .hover\:-translate-y-1:hover {
+            --tw-translate-y: -0.25rem;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .hover\:translate-x-1:hover {
+            --tw-translate-x: 0.25rem;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .hover\:translate-y-\[-4px\]:hover {
+            --tw-translate-y: -4px;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .hover\:scale-105:hover {
+            --tw-scale-x: 1.05;
+            --tw-scale-y: 1.05;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .hover\:scale-110:hover {
+            --tw-scale-x: 1.1;
+            --tw-scale-y: 1.1;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .hover\:scale-\[1\.01\]:hover {
+            --tw-scale-x: 1.01;
+            --tw-scale-y: 1.01;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .hover\:border-neutral-200\/40:hover {
+            border-color: rgb(229 229 229 / 0.4)
+        }
+
+        .hover\:border-neutral-400:hover {
+            --tw-border-opacity: 1;
+            border-color: rgb(163 163 163 / var(--tw-border-opacity, 1))
+        }
+
+        .hover\:border-purple-500\/30:hover {
+            border-color: rgb(168 85 247 / 0.3)
+        }
+
+        .hover\:bg-\[\#374151\]:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(55 65 81 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-\[\#3a3d4e\]:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(58 61 78 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-blue-500\/30:hover {
+            background-color: rgb(59 130 246 / 0.3)
+        }
+
+        .hover\:bg-blue-700:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(29 78 216 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-gray-600:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(75 85 99 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-gray-700:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(55 65 81 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-gray-900:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-green-500:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(34 197 94 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-green-600:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(22 163 74 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-neutral-500\/30:hover {
+            background-color: rgb(115 115 115 / 0.3)
+        }
+
+        .hover\:bg-neutral-600:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(82 82 82 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-neutral-700:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(64 64 64 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-neutral-700\/20:hover {
+            background-color: rgb(64 64 64 / 0.2)
+        }
+
+        .hover\:bg-neutral-700\/30:hover {
+            background-color: rgb(64 64 64 / 0.3)
+        }
+
+        .hover\:bg-neutral-700\/40:hover {
+            background-color: rgb(64 64 64 / 0.4)
+        }
+
+        .hover\:bg-neutral-700\/50:hover {
+            background-color: rgb(64 64 64 / 0.5)
+        }
+
+        .hover\:bg-neutral-700\/70:hover {
+            background-color: rgb(64 64 64 / 0.7)
+        }
+
+        .hover\:bg-neutral-800\/80:hover {
+            background-color: rgb(38 38 38 / 0.8)
+        }
+
+        .hover\:bg-orange-500:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(249 115 22 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-purple-500\/40:hover {
+            background-color: rgb(168 85 247 / 0.4)
+        }
+
+        .hover\:bg-purple-700:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(126 34 206 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-red-500:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(239 68 68 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-red-500\/30:hover {
+            background-color: rgb(239 68 68 / 0.3)
+        }
+
+        .hover\:bg-yellow-500:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(234 179 8 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:from-purple-700:hover {
+            --tw-gradient-from: #7e22ce var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(126 34 206 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+        }
+
+        .hover\:to-blue-600:hover {
+            --tw-gradient-to: #2563eb var(--tw-gradient-to-position)
+        }
+
+        .hover\:text-blue-300:hover {
+            --tw-text-opacity: 1;
+            color: rgb(147 197 253 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:text-blue-400:hover {
+            --tw-text-opacity: 1;
+            color: rgb(96 165 250 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:text-gray-200:hover {
+            --tw-text-opacity: 1;
+            color: rgb(229 231 235 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:text-gray-300:hover {
+            --tw-text-opacity: 1;
+            color: rgb(209 213 219 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:text-neutral-300:hover {
+            --tw-text-opacity: 1;
+            color: rgb(212 212 212 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:text-purple-300:hover {
+            --tw-text-opacity: 1;
+            color: rgb(216 180 254 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:text-purple-400:hover {
+            --tw-text-opacity: 1;
+            color: rgb(192 132 252 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:text-red-300:hover {
+            --tw-text-opacity: 1;
+            color: rgb(252 165 165 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:text-red-500:hover {
+            --tw-text-opacity: 1;
+            color: rgb(239 68 68 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:text-white:hover {
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:text-yellow-400:hover {
+            --tw-text-opacity: 1;
+            color: rgb(250 204 21 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:opacity-100:hover {
+            opacity: 1
+        }
+
+        .hover\:shadow-xl:hover {
+            --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+        }
+
+        .focus\:not-sr-only:focus {
+            position: static;
+            width: auto;
+            height: auto;
+            padding: 0;
+            margin: 0;
+            overflow: visible;
+            clip: auto;
+            white-space: normal
+        }
+
+        .focus\:absolute:focus {
+            position: absolute
+        }
+
+        .focus\:left-0:focus {
+            left: 0px
+        }
+
+        .focus\:top-0:focus {
+            top: 0px
+        }
+
+        .focus\:z-50:focus {
+            z-index: 50
+        }
+
+        .focus\:border-blue-500:focus {
+            --tw-border-opacity: 1;
+            border-color: rgb(59 130 246 / var(--tw-border-opacity, 1))
+        }
+
+        .focus\:border-blue-500\/40:focus {
+            border-color: rgb(59 130 246 / 0.4)
+        }
+
+        .focus\:border-neutral-200\/40:focus {
+            border-color: rgb(229 229 229 / 0.4)
+        }
+
+        .focus\:border-purple-500:focus {
+            --tw-border-opacity: 1;
+            border-color: rgb(168 85 247 / var(--tw-border-opacity, 1))
+        }
+
+        .focus\:border-red-500:focus {
+            --tw-border-opacity: 1;
+            border-color: rgb(239 68 68 / var(--tw-border-opacity, 1))
+        }
+
+        .focus\:border-transparent:focus {
+            border-color: transparent
+        }
+
+        .focus\:bg-white:focus {
+            --tw-bg-opacity: 1;
+            background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1))
+        }
+
+        .focus\:p-4:focus {
+            padding: 1rem
+        }
+
+        .focus\:text-black:focus {
+            --tw-text-opacity: 1;
+            color: rgb(0 0 0 / var(--tw-text-opacity, 1))
+        }
+
+        .focus\:text-white:focus {
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity, 1))
+        }
+
+        .focus\:outline-none:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px
+        }
+
+        .focus\:ring-1:focus {
+            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+            box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)
+        }
+
+        .focus\:ring-2:focus {
+            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+            box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)
+        }
+
+        .focus\:ring-inset:focus {
+            --tw-ring-inset: inset
+        }
+
+        .focus\:ring-blue-500:focus {
+            --tw-ring-opacity: 1;
+            --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity, 1))
+        }
+
+        .focus\:ring-blue-500\/40:focus {
+            --tw-ring-color: rgb(59 130 246 / 0.4)
+        }
+
+        .focus\:ring-blue-500\/50:focus {
+            --tw-ring-color: rgb(59 130 246 / 0.5)
+        }
+
+        .focus\:ring-neutral-400:focus {
+            --tw-ring-opacity: 1;
+            --tw-ring-color: rgb(163 163 163 / var(--tw-ring-opacity, 1))
+        }
+
+        .focus\:ring-neutral-400\/40:focus {
+            --tw-ring-color: rgb(163 163 163 / 0.4)
+        }
+
+        .focus\:ring-neutral-400\/50:focus {
+            --tw-ring-color: rgb(163 163 163 / 0.5)
+        }
+
+        .focus\:ring-purple-500:focus {
+            --tw-ring-opacity: 1;
+            --tw-ring-color: rgb(168 85 247 / var(--tw-ring-opacity, 1))
+        }
+
+        .focus\:ring-white:focus {
+            --tw-ring-opacity: 1;
+            --tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity, 1))
+        }
+
+        .focus\:ring-opacity-50:focus {
+            --tw-ring-opacity: 0.5
+        }
+
+        .focus\:ring-offset-2:focus {
+            --tw-ring-offset-width: 2px
+        }
+
+        .focus\:ring-offset-gray-800:focus {
+            --tw-ring-offset-color: #1f2937
+        }
+
+        .focus\:ring-offset-neutral-800:focus {
+            --tw-ring-offset-color: #262626
+        }
+
+        .disabled\:cursor-not-allowed:disabled {
+            cursor: not-allowed
+        }
+
+        .disabled\:opacity-50:disabled {
+            opacity: 0.5
+        }
+
+        .group:focus-within .group-focus-within\:-top-2 {
+            top: -0.5rem
+        }
+
+        .group:focus-within .group-focus-within\:text-xs {
+            font-size: 0.75rem;
+            line-height: 1rem
+        }
+
+        .group:focus-within .group-focus-within\:text-purple-400 {
+            --tw-text-opacity: 1;
+            color: rgb(192 132 252 / var(--tw-text-opacity, 1))
+        }
+
+        .group:hover .group-hover\:translate-x-1 {
+            --tw-translate-x: 0.25rem;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .group:hover .group-hover\:text-purple-400 {
+            --tw-text-opacity: 1;
+            color: rgb(192 132 252 / var(--tw-text-opacity, 1))
+        }
+
+        .group:hover .group-hover\:opacity-100 {
+            opacity: 1
+        }
+
+        .peer:checked~.peer-checked\:bg-blue-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(37 99 235 / var(--tw-bg-opacity, 1))
+        }
+
+        .peer:checked~.peer-checked\:bg-purple-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(147 51 234 / var(--tw-bg-opacity, 1))
+        }
+
+        .peer:checked~.peer-checked\:after\:translate-x-full::after {
+            content: var(--tw-content);
+            --tw-translate-x: 100%;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .peer:checked~.peer-checked\:after\:border-white::after {
+            content: var(--tw-content);
+            --tw-border-opacity: 1;
+            border-color: rgb(255 255 255 / var(--tw-border-opacity, 1))
+        }
+
+        .peer:focus~.peer-focus\:outline-none {
+            outline: 2px solid transparent;
+            outline-offset: 2px
+        }
+
+        .peer:focus~.peer-focus\:ring-2 {
+            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+            box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)
+        }
+
+        .peer:focus~.peer-focus\:ring-4 {
+            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+            box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)
+        }
+
+        .peer:focus~.peer-focus\:ring-blue-300\/20 {
+            --tw-ring-color: rgb(147 197 253 / 0.2)
+        }
+
+        .peer:focus~.peer-focus\:ring-purple-500 {
+            --tw-ring-opacity: 1;
+            --tw-ring-color: rgb(168 85 247 / var(--tw-ring-opacity, 1))
+        }
+
+        @media (min-width: 640px) {
+            .sm\:col-span-2 {
+                grid-column: span 2 / span 2
+            }
+
+            .sm\:col-span-3 {
+                grid-column: span 3 / span 3
+            }
+
+            .sm\:col-span-6 {
+                grid-column: span 6 / span 6
+            }
+
+            .sm\:mb-0 {
+                margin-bottom: 0px
+            }
+
+            .sm\:mt-0 {
+                margin-top: 0px
+            }
+
+            .sm\:h-56 {
+                height: 14rem
+            }
+
+            .sm\:h-\[60vh\] {
+                height: 60vh
+            }
+
+            .sm\:grid-cols-2 {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+
+            .sm\:grid-cols-4 {
+                grid-template-columns: repeat(4, minmax(0, 1fr))
+            }
+
+            .sm\:grid-cols-6 {
+                grid-template-columns: repeat(6, minmax(0, 1fr))
+            }
+
+            .sm\:flex-row {
+                flex-direction: row
+            }
+
+            .sm\:items-center {
+                align-items: center
+            }
+
+            .sm\:p-6 {
+                padding: 1.5rem
+            }
+
+            .sm\:p-8 {
+                padding: 2rem
+            }
+
+            .sm\:px-6 {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem
+            }
+
+            .sm\:py-0 {
+                padding-top: 0px;
+                padding-bottom: 0px
+            }
+
+            .sm\:text-3xl {
+                font-size: 1.875rem;
+                line-height: 2.25rem
+            }
+
+            .sm\:text-4xl {
+                font-size: 2.25rem;
+                line-height: 2.5rem
+            }
+        }
+
+        @media (min-width: 768px) {
+            .md\:right-6 {
+                right: 1.5rem
+            }
+
+            .md\:mb-0 {
+                margin-bottom: 0px
+            }
+
+            .md\:mr-8 {
+                margin-right: 2rem
+            }
+
+            .md\:mt-0 {
+                margin-top: 0px
+            }
+
+            .md\:block {
+                display: block
+            }
+
+            .md\:flex {
+                display: flex
+            }
+
+            .md\:h-96 {
+                height: 24rem
+            }
+
+            .md\:h-auto {
+                height: auto
+            }
+
+            .md\:w-1\/3 {
+                width: 33.333333%
+            }
+
+            .md\:w-1\/4 {
+                width: 25%
+            }
+
+            .md\:w-2\/3 {
+                width: 66.666667%
+            }
+
+            .md\:w-3\/4 {
+                width: 75%
+            }
+
+            .md\:grid-cols-2 {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+
+            .md\:grid-cols-3 {
+                grid-template-columns: repeat(3, minmax(0, 1fr))
+            }
+
+            .md\:grid-cols-4 {
+                grid-template-columns: repeat(4, minmax(0, 1fr))
+            }
+
+            .md\:flex-row {
+                flex-direction: row
+            }
+
+            .md\:items-center {
+                align-items: center
+            }
+
+            .md\:justify-between {
+                justify-content: space-between
+            }
+
+            .md\:p-10 {
+                padding: 2.5rem
+            }
+
+            .md\:p-12 {
+                padding: 3rem
+            }
+
+            .md\:p-6 {
+                padding: 1.5rem
+            }
+
+            .md\:text-2xl {
+                font-size: 1.5rem;
+                line-height: 2rem
+            }
+
+            .md\:text-4xl {
+                font-size: 2.25rem;
+                line-height: 2.5rem
+            }
+
+            .md\:text-5xl {
+                font-size: 3rem;
+                line-height: 1
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .lg\:col-span-1 {
+                grid-column: span 1 / span 1
+            }
+
+            .lg\:col-span-2 {
+                grid-column: span 2 / span 2
+            }
+
+            .lg\:mb-0 {
+                margin-bottom: 0px
+            }
+
+            .lg\:mt-0 {
+                margin-top: 0px
+            }
+
+            .lg\:block {
+                display: block
+            }
+
+            .lg\:flex {
+                display: flex
+            }
+
+            .lg\:grid {
+                display: grid
+            }
+
+            .lg\:hidden {
+                display: none
+            }
+
+            .lg\:h-\[70vh\] {
+                height: 70vh
+            }
+
+            .lg\:w-1\/3 {
+                width: 33.333333%
+            }
+
+            .lg\:w-2\/3 {
+                width: 66.666667%
+            }
+
+            .lg\:grid-cols-2 {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+
+            .lg\:grid-cols-3 {
+                grid-template-columns: repeat(3, minmax(0, 1fr))
+            }
+
+            .lg\:grid-cols-4 {
+                grid-template-columns: repeat(4, minmax(0, 1fr))
+            }
+
+            .lg\:gap-12 {
+                gap: 3rem
+            }
+
+            .lg\:space-x-8> :not([hidden])~ :not([hidden]) {
+                --tw-space-x-reverse: 0;
+                margin-right: calc(2rem * var(--tw-space-x-reverse));
+                margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)))
+            }
+
+            .lg\:p-8 {
+                padding: 2rem
+            }
+
+            .lg\:px-8 {
+                padding-left: 2rem;
+                padding-right: 2rem
+            }
+        }
+    </style>
+    <style>
+        @keyframes blob {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+    </style>
+
+    <style>
+        @keyframes blob {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&amp;callback=initMap" async=""
+        defer=""></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/60/9/common.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/60/9/util.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/60/9/map.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/60/9/marker.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/60/9/infowindow.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/60/9/log.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/60/9/onion.js"></script>
+</head>
+
+<body class="antialiased text-gray-800 min-h-screen flex flex-col">
+
+    <div id="6d603bb8-43f7-4980-89c7-2da26565a690"
+    data-section_id="6d603bb8-43f7-4980-89c7-2da26565a690" data-type="content"
+    data-order="10" class="sectionCode"
+    data-section-id="6d603bb8-43f7-4980-89c7-2da26565a690">
+
+    <div id="root">
+        <section id="ratings"
+            class="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 py-16 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto" id="el-d3kwcv6w">
+                <!-- Header -->
+                <div class="text-center mb-12" id="el-8369gl7h">
+                    <h1 class="text-3xl sm:text-4xl font-bold mb-2 text-white"
+                        id="el-f7wtwl4j">Ratings &amp; Reviews</h1>
+                    <p class="text-gray-300 text-lg max-w-2xl mx-auto" id="el-p6g8rkcr">
+                        Share your experience and see what others think about this event</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8" id="el-cyia7kfj">
+                    <!-- Left Column: Submit Rating -->
+                    <div class="lg:col-span-1" id="el-a52fcylr">
+                        <div class="bg-gray-800 rounded-xl shadow-xl p-6 border border-gray-700"
+                            id="el-g06cajak">
+                            <h2 class="text-xl font-bold mb-6 text-white" id="el-hhhq01fn">
+                                Leave Your Review</h2>
+
+                            <!-- Rating Stars -->
+                            <div class="mb-8" id="el-5nogcpt6">
+                                <label class="block text-sm font-medium text-gray-300 mb-3"
+                                    id="el-xhzy6rmx">Your Rating</label>
+                                <div class="flex items-center" x-data="{ rating: 0 }"
+                                    id="el-rwzsffv9">
+                                    <!-- Star 1 -->
+                                    <button @click="rating = 1"
+                                        :class="rating >= 1 ? 'text-yellow-400' : 'text-gray-400'"
+                                        class="w-10 h-10 hover:text-yellow-400 focus:outline-none transition-colors text-gray-400"
+                                        id="el-157w2rg4">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="h-10 w-10" viewBox="0 0 20 20"
+                                            fill="currentColor" id="el-azh96mcu">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                id="el-vxubopbk"></path>
+                                        </svg>
+                                    </button>
+                                    <!-- Star 2 -->
+                                    <button @click="rating = 2"
+                                        :class="rating >= 2 ? 'text-yellow-400' : 'text-gray-400'"
+                                        class="w-10 h-10 hover:text-yellow-400 focus:outline-none transition-colors text-gray-400"
+                                        id="el-16777pkz">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="h-10 w-10" viewBox="0 0 20 20"
+                                            fill="currentColor" id="el-0t33panj">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                id="el-ld5t0woq"></path>
+                                        </svg>
+                                    </button>
+                                    <!-- Star 3 -->
+                                    <button @click="rating = 3"
+                                        :class="rating >= 3 ? 'text-yellow-400' : 'text-gray-400'"
+                                        class="w-10 h-10 hover:text-yellow-400 focus:outline-none transition-colors text-gray-400"
+                                        id="el-idtotk99">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="h-10 w-10" viewBox="0 0 20 20"
+                                            fill="currentColor" id="el-0jhvpskg">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                id="el-sgz9wfh1"></path>
+                                        </svg>
+                                    </button>
+                                    <!-- Star 4 -->
+                                    <button @click="rating = 4"
+                                        :class="rating >= 4 ? 'text-yellow-400' : 'text-gray-400'"
+                                        class="w-10 h-10 hover:text-yellow-400 focus:outline-none transition-colors text-gray-400"
+                                        id="el-qv00dubn">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="h-10 w-10" viewBox="0 0 20 20"
+                                            fill="currentColor" id="el-c6xh0v8u">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                id="el-31vm7ix6"></path>
+                                        </svg>
+                                    </button>
+                                    <!-- Star 5 -->
+                                    <button @click="rating = 5"
+                                        :class="rating >= 5 ? 'text-yellow-400' : 'text-gray-400'"
+                                        class="w-10 h-10 hover:text-yellow-400 focus:outline-none transition-colors text-gray-400"
+                                        id="el-41h6x8tt">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="h-10 w-10" viewBox="0 0 20 20"
+                                            fill="currentColor" id="el-0pxvxfg6">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                id="el-ppa8nggj"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Review Title -->
+                            <div class="mb-6" id="el-cc4jdbmu">
+                                <label for="review-title"
+                                    class="block text-sm font-medium text-gray-300 mb-2"
+                                    id="el-3ebilcvj">Review Title</label>
+                                <input type="text" id="review-title"
+                                    class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all placeholder-gray-400"
+                                    placeholder="Summarize your experience">
+                            </div>
+
+                            <!-- Review Comment -->
+                            <div class="mb-8" id="el-3wzncsgk">
+                                <label for="review-comment"
+                                    class="block text-sm font-medium text-gray-300 mb-2"
+                                    id="el-rpfq4xsf">Your Review</label>
+                                <textarea id="review-comment" rows="4"
+                                    class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all placeholder-gray-400"
+                                    placeholder="Share the details of your experience"></textarea>
+                            </div>
+
+                            <!-- Add Media Button -->
+                            <div class="mb-8" id="el-8ps5ub58">
+                                <button
+                                    class="w-full flex items-center justify-center px-4 py-3 border border-gray-600 rounded-lg text-gray-300 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-colors"
+                                    id="el-4e3s35lf">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                                        fill="currentColor" id="el-wrn72u68">
+                                        <path fill-rule="evenodd"
+                                            d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
+                                            clip-rule="evenodd" id="el-afenoul6"></path>
+                                    </svg>
+                                    <span id="el-57wf5x75">Add Photos or Videos</span>
+                                </button>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="button"
+                                class="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 px-4 rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-800"
+                                id="el-hi69rb39">
+                                Submit Review
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Rating Stats & Reviews -->
+                    <div class="lg:col-span-2" id="el-wilong8v">
+                        <!-- Rating Summary Card -->
+                        <div class="bg-gray-800 rounded-xl shadow-xl p-6 border border-gray-700 mb-6"
+                            id="el-fh6zghjj">
+                            <div class="flex flex-col md:flex-row md:items-center"
+                                id="el-ewhbyrp7">
+                                <!-- Overall Rating -->
+                                <div class="flex flex-col items-center mb-6 md:mb-0 md:mr-8"
+                                    id="el-wl9ekbgc">
+                                    <div class="text-5xl font-bold text-white mb-2"
+                                        id="el-tx14sqhr">4.7</div>
+                                    <div class="flex mb-2" id="el-w3znb83s">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="h-5 w-5 text-yellow-400"
+                                            viewBox="0 0 20 20" fill="currentColor"
+                                            id="el-ru2rcsl7">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                id="el-sb3yn6q9"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="h-5 w-5 text-yellow-400"
+                                            viewBox="0 0 20 20" fill="currentColor"
+                                            id="el-0isuw7eh">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                id="el-9zd8lv8l"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="h-5 w-5 text-yellow-400"
+                                            viewBox="0 0 20 20" fill="currentColor"
+                                            id="el-mnwj7hm8">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                id="el-dtg38iqh"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="h-5 w-5 text-yellow-400"
+                                            viewBox="0 0 20 20" fill="currentColor"
+                                            id="el-811i3gn4">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                id="el-0vnwaprs"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="h-5 w-5 text-gray-400"
+                                            viewBox="0 0 20 20" fill="currentColor"
+                                            id="el-ppw7zjwr">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                id="el-cw3wzg1x"></path>
+                                        </svg>
+                                    </div>
+                                    <p class="text-gray-400 text-sm" id="el-ov20790z">Based
+                                        on 128 reviews</p>
+                                </div>
+
+                                <!-- Rating Breakdown -->
+                                <div class="flex-1" id="el-xyz0h3cx">
+                                    <div class="space-y-3" id="el-36lql6md">
+                                        <!-- 5 Stars -->
+                                        <div class="flex items-center" id="el-rap92kuu">
+                                            <span class="w-10 text-xs text-gray-300"
+                                                id="el-b1z1ndum">5 star</span>
+                                            <div class="flex-1 h-3 mx-2 bg-gray-700 rounded-full overflow-hidden"
+                                                id="el-8cgibyw8">
+                                                <div class="bg-yellow-400 h-full rounded-full"
+                                                    style="width: 76%" id="el-tqgw9kbd">
+                                                </div>
+                                            </div>
+                                            <span
+                                                class="w-10 text-xs text-right text-gray-300"
+                                                id="el-eqt1zviw">76%</span>
+                                        </div>
+                                        <!-- 4 Stars -->
+                                        <div class="flex items-center" id="el-ola9v363">
+                                            <span class="w-10 text-xs text-gray-300"
+                                                id="el-jvccw9r6">4 star</span>
+                                            <div class="flex-1 h-3 mx-2 bg-gray-700 rounded-full overflow-hidden"
+                                                id="el-d6u9l4ly">
+                                                <div class="bg-yellow-400 h-full rounded-full"
+                                                    style="width: 18%" id="el-qrnrp28s">
+                                                </div>
+                                            </div>
+                                            <span
+                                                class="w-10 text-xs text-right text-gray-300"
+                                                id="el-0b2by79x">18%</span>
+                                        </div>
+                                        <!-- 3 Stars -->
+                                        <div class="flex items-center" id="el-kfv99w6z">
+                                            <span class="w-10 text-xs text-gray-300"
+                                                id="el-t70skxh3">3 star</span>
+                                            <div class="flex-1 h-3 mx-2 bg-gray-700 rounded-full overflow-hidden"
+                                                id="el-sdbbswoh">
+                                                <div class="bg-yellow-400 h-full rounded-full"
+                                                    style="width: 4%" id="el-bn9gwxya">
+                                                </div>
+                                            </div>
+                                            <span
+                                                class="w-10 text-xs text-right text-gray-300"
+                                                id="el-hj024tsu">4%</span>
+                                        </div>
+                                        <!-- 2 Stars -->
+                                        <div class="flex items-center" id="el-bdquu3u7">
+                                            <span class="w-10 text-xs text-gray-300"
+                                                id="el-ijdrvan8">2 star</span>
+                                            <div class="flex-1 h-3 mx-2 bg-gray-700 rounded-full overflow-hidden"
+                                                id="el-hj61j6yk">
+                                                <div class="bg-yellow-400 h-full rounded-full"
+                                                    style="width: 2%" id="el-lro9745i">
+                                                </div>
+                                            </div>
+                                            <span
+                                                class="w-10 text-xs text-right text-gray-300"
+                                                id="el-4lqct6nf">2%</span>
+                                        </div>
+                                        <!-- 1 Star -->
+                                        <div class="flex items-center" id="el-xrwrdz8r">
+                                            <span class="w-10 text-xs text-gray-300"
+                                                id="el-c2uy5fpw">1 star</span>
+                                            <div class="flex-1 h-3 mx-2 bg-gray-700 rounded-full overflow-hidden"
+                                                id="el-mf2srvhq">
+                                                <div class="bg-yellow-400 h-full rounded-full"
+                                                    style="width: 0%" id="el-a87dbeuj">
+                                                </div>
+                                            </div>
+                                            <span
+                                                class="w-10 text-xs text-right text-gray-300"
+                                                id="el-y3s0i9jp">0%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Filter Reviews -->
+                        <div class="bg-gray-800 rounded-xl shadow-xl p-6 border border-gray-700 mb-6"
+                            id="el-cufiq3bd">
+                            <div class="flex flex-wrap items-center" id="el-5uygnus0">
+                                <div class="mr-4 mb-2 sm:mb-0" id="el-s1kvh1jm">
+                                    <span class="text-sm font-medium text-gray-300"
+                                        id="el-a4t4dqwz">Filter Reviews:</span>
+                                </div>
+                                <div class="flex flex-wrap gap-2" id="el-9g26fops">
+                                    <button
+                                        class="px-3 py-1 rounded-full text-xs font-medium bg-purple-600 text-white hover:bg-purple-700 transition-colors"
+                                        id="el-b45szahf">All</button>
+                                    <button
+                                        class="px-3 py-1 rounded-full text-xs font-medium bg-gray-700 text-gray-300 hover:bg-gray-600 transition-colors"
+                                        id="el-h8qcfmkc">5 Stars</button>
+                                    <button
+                                        class="px-3 py-1 rounded-full text-xs font-medium bg-gray-700 text-gray-300 hover:bg-gray-600 transition-colors"
+                                        id="el-rxar9hqe">4 Stars</button>
+                                    <button
+                                        class="px-3 py-1 rounded-full text-xs font-medium bg-gray-700 text-gray-300 hover:bg-gray-600 transition-colors"
+                                        id="el-cvvxgh6b">3 Stars</button>
+                                    <button
+                                        class="px-3 py-1 rounded-full text-xs font-medium bg-gray-700 text-gray-300 hover:bg-gray-600 transition-colors"
+                                        id="el-bnq2oo5l">2 Stars</button>
+                                    <button
+                                        class="px-3 py-1 rounded-full text-xs font-medium bg-gray-700 text-gray-300 hover:bg-gray-600 transition-colors"
+                                        id="el-qaj03urq">1 Star</button>
+                                    <button
+                                        class="px-3 py-1 rounded-full text-xs font-medium bg-gray-700 text-gray-300 hover:bg-gray-600 transition-colors"
+                                        id="el-7aandkk0">With Photos</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Reviews List -->
+                        <div class="space-y-6" id="el-4ss5aksp">
+                            <!-- Review 1 -->
+                            <div class="bg-gray-800 rounded-xl shadow-xl p-6 border border-gray-700 transition-transform hover:scale-[1.01]"
+                                id="el-m2gxt651">
+                                <div class="flex justify-between mb-4" id="el-zk2t6esw">
+                                    <div class="flex items-center" id="el-c1l51120">
+                                        <div class="h-10 w-10 rounded-full bg-purple-500 flex items-center justify-center"
+                                            id="el-lzb0wzn5">
+                                            <span class="text-white font-bold"
+                                                id="el-14ehf20e">JD</span>
+                                        </div>
+                                        <div class="ml-3" id="el-f8i5yi4v">
+                                            <h3 class="text-white font-medium"
+                                                id="el-airfh1a7">John Doe</h3>
+                                            <p class="text-xs text-gray-400"
+                                                id="el-1lf76699">Attended 5 events</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-gray-400 text-sm" id="el-4cv2d5th">2
+                                        days ago</div>
+                                </div>
+                                <div class="flex mb-3" id="el-4mx88k60">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20"
+                                        fill="currentColor" id="el-604qqpqv">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            id="el-m581n4gg"></path>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20"
+                                        fill="currentColor" id="el-83gac2sp">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            id="el-brjfhr7u"></path>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20"
+                                        fill="currentColor" id="el-yf8tkaq0">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            id="el-3xrdymxt"></path>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20"
+                                        fill="currentColor" id="el-3cr9ba9l">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            id="el-prp4sg7q"></path>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20"
+                                        fill="currentColor" id="el-r4g16839">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            id="el-50tgkmxn"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="text-white font-bold mb-2" id="el-3brg3d3q">
+                                    Amazing experience, would attend again!</h4>
+                                <p class="text-gray-300 mb-4" id="el-qciziw76">The event was
+                                    perfectly organized from start to finish. Sound quality
+                                    was exceptional and the lineup was incredible. The venue
+                                    staff were friendly and helpful throughout.</p>
+                                <div class="flex flex-wrap gap-3 mt-4" id="el-yxbzcffi">
+                                    <div class="h-20 w-20 rounded-lg overflow-hidden"
+                                        id="el-ypsvtagt">
+                                        <img src="https://images.unsplash.com/photo-1633613286991-611fe299c4be?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w2MzQ2fDB8MXxzZWFyY2h8Mnx8cmF0aW5ncyUyNTIwcHJvZmVzc2lvbmFsfGVufDB8MHx8fDE3NDUxODY0Nzd8MA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080?q=80"
+                                            alt="a row of yellow stars sitting on top of a blue and pink surface"
+                                            onerror="this.onerror=null; this.src='https://placehold.co/' + this.width + 'x' + this.height"
+                                            class="w-full h-full object-cover"
+                                            id="el-y62m11vi">
+                                    </div>
+                                </div>
+                                <div class="flex mt-4 text-sm" id="el-ptwsm8br">
+                                    <button
+                                        class="flex items-center text-gray-400 hover:text-purple-400 mr-4"
+                                        id="el-agv02wc7">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="h-4 w-4 mr-1" viewBox="0 0 20 20"
+                                            fill="currentColor" id="el-0osgfjdy">
+                                            <path
+                                                d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"
+                                                id="el-badwnf0u"></path>
+                                        </svg>
+                                        Helpful (24)
+                                    </button>
+                                    <button class="text-gray-400 hover:text-purple-400"
+                                        id="el-0xv3rial">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="h-4 w-4 mr-1 inline" viewBox="0 0 20 20"
+                                            fill="currentColor" id="el-yst2zoca">
+                                            <path fill-rule="evenodd"
+                                                d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z"
+                                                clip-rule="evenodd" id="el-d7stfbmd"></path>
+                                        </svg>
+                                        Share
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Review 2 -->
+                            <div class="bg-gray-800 rounded-xl shadow-xl p-6 border border-gray-700 transition-transform hover:scale-[1.01]"
+                                id="el-vnjqywka">
+                                <div class="flex justify-between mb-4" id="el-9pgnex6y">
+                                    <div class="flex items-center" id="el-tojwtsch">
+                                        <div class="h-10 w-10 rounded-full bg-green-500 flex items-center justify-center"
+                                            id="el-r78oupvr">
+                                            <span class="text-white font-bold"
+                                                id="el-00qtpbrz">AJ</span>
+                                        </div>
+                                        <div class="ml-3" id="el-6vis754g">
+                                            <h3 class="text-white font-medium"
+                                                id="el-n0lghwun">Alexandra Johnson</h3>
+                                            <p class="text-xs text-gray-400"
+                                                id="el-e1gsn4zv">Attended 12 events</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-gray-400 text-sm" id="el-3pbiuj95">1
+                                        week ago</div>
+                                </div>
+                                <div class="flex mb-3" id="el-2wx28wsd">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20"
+                                        fill="currentColor" id="el-4p7idgwr">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            id="el-knccanbt"></path>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20"
+                                        fill="currentColor" id="el-sdkccgvi">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            id="el-b5kyf43w"></path>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20"
+                                        fill="currentColor" id="el-lj4211cy">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            id="el-0p16csvb"></path>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20"
+                                        fill="currentColor" id="el-zeti4b8k">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            id="el-tj4imw82"></path>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 text-gray-400" viewBox="0 0 20 20"
+                                        fill="currentColor" id="el-oiybcdk5">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            id="el-0bg086u2"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="text-white font-bold mb-2" id="el-90g68oo5">Great
+                                    performances, minor organizational issues</h4>
+                                <p class="text-gray-300 mb-4" id="el-76vlapav">The event had
+                                    incredible performances and a great atmosphere. Only
+                                    complaint was the long wait at entry and some confusion
+                                    with the VIP areas. Overall a memorable experience
+                                    though!</p>
+                                <div class="flex flex-wrap gap-3 mt-4" id="el-izi4vyeu">
+                                    <div class="h-20 w-20 rounded-lg overflow-hidden"
+                                        id="el-42vq166v">
+                                        <img src="https://images.unsplash.com/photo-1680824564256-23b8ed3ab519?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w2MzQ2fDB8MXxzZWFyY2h8MXx8cmF0aW5ncyUyNTIwcHJvZmVzc2lvbmFsfGVufDB8MHx8fDE3NDUxODY0Nzd8MA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080?q=80"
+                                            alt="four star shaped cookies on a cooling rack"
+                                            onerror="this.onerror=null; this.src='https://placehold.co/' + this.width + 'x' + this.height"
+                                            class="w-full h-full object-cover"
+                                            id="el-xb1nz0sq">
+                                    </div>
+                                </div>
+                                <div class="flex mt-4 text-sm" id="el-x377mr8d">
+                                    <button
+                                        class="flex items-center text-gray-400 hover:text-purple-400 mr-4"
+                                        id="el-ig3afaon">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="h-4 w-4 mr-1" viewBox="0 0 20 20"
+                                            fill="currentColor" id="el-kmff833g">
+                                            <path
+                                                d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"
+                                                id="el-hoaul1b7"></path>
+                                        </svg>
+                                        Helpful (17)
+                                    </button>
+                                    <button class="text-gray-400 hover:text-purple-400"
+                                        id="el-bscvud59">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="h-4 w-4 mr-1 inline" viewBox="0 0 20 20"
+                                            fill="currentColor" id="el-bj0mcbg3">
+                                            <path fill-rule="evenodd"
+                                                d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z"
+                                                clip-rule="evenodd" id="el-juabekqc"></path>
+                                        </svg>
+                                        Share
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Review 3 -->
+                            <div class="bg-gray-800 rounded-xl shadow-xl p-6 border border-gray-700 transition-transform hover:scale-[1.01]"
+                                id="el-ymz0kh31">
+                                <div class="flex justify-between mb-4" id="el-60x3525t">
+                                    <div class="flex items-center" id="el-11rcysw3">
+                                        <div class="h-10 w-10 rounded-full bg-blue-500 flex items-center justify-center"
+                                            id="el-1rwqued7">
+                                            <span class="text-white font-bold"
+                                                id="el-c0mjgeq8">MT</span>
+                                        </div>
+                                        <div class="ml-3" id="el-trkuv6cb">
+                                            <h3 class="text-white font-medium"
+                                                id="el-6eb8sdgr">Michael Thompson</h3>
+                                            <p class="text-xs text-gray-400"
+                                                id="el-wjt8ovy4">Attended 3 events</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-gray-400 text-sm" id="el-0qog5qt1">3
+                                        weeks ago</div>
+                                </div>
+                                <div class="flex mb-3" id="el-67p5cif5">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20"
+                                        fill="currentColor" id="el-vzlivq2e">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            id="el-9kdfhldt"></path>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20"
+                                        fill="currentColor" id="el-z8my2rdn">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            id="el-jpgvhncj"></path>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20"
+                                        fill="currentColor" id="el-rfsqmunt">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            id="el-elyb15v2"></path>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20"
+                                        fill="currentColor" id="el-qpsr3vzh">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            id="el-xj575p1p"></path>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20"
+                                        fill="currentColor" id="el-91iq8jyh">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            id="el-cbul6kq2"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="text-white font-bold mb-2" id="el-6uz3b7af">Worth
+                                    every penny! Exceeded expectations</h4>
+                                <p class="text-gray-300 mb-4" id="el-zsmi7752">The event
+                                    exceeded my expectations in every way. From the
+                                    immersive decorations to the professional staff,
+                                    everything was top-notch. Will definitely attend next
+                                    year and bringing friends!</p>
+                                <div class="flex mt-4 text-sm" id="el-nd4grybe">
+                                    <button
+                                        class="flex items-center text-gray-400 hover:text-purple-400 mr-4"
+                                        id="el-1p2gj4ta">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="h-4 w-4 mr-1" viewBox="0 0 20 20"
+                                            fill="currentColor" id="el-z2joyrvl">
+                                            <path
+                                                d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"
+                                                id="el-fmkzgpcc"></path>
+                                        </svg>
+                                        Helpful (36)
+                                    </button>
+                                    <button class="text-gray-400 hover:text-purple-400"
+                                        id="el-qwhjp44i">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="h-4 w-4 mr-1 inline" viewBox="0 0 20 20"
+                                            fill="currentColor" id="el-20npkwop">
+                                            <path fill-rule="evenodd"
+                                                d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z"
+                                                clip-rule="evenodd" id="el-z1685cl5"></path>
+                                        </svg>
+                                        Share
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Load More Button -->
+                            <div class="text-center" id="el-tlt3cnkt">
+                                <button
+                                    class="inline-flex items-center px-6 py-3 border border-gray-600 rounded-lg text-gray-300 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-colors"
+                                    id="el-nrbbjfyx">
+                                    <span id="el-s6rhg45k">Load More Reviews</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 ml-2" viewBox="0 0 20 20"
+                                        fill="currentColor" id="el-qd7i21hq">
+                                        <path fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd" id="el-f8uwi8do"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attribution -->
+                <div class="mt-16 text-center text-xs text-gray-500" id="el-btjb4ctq">
+                    <p id="el-us2mofqp">Star rating image by Towfiqu barbhuiya
+                        (@towfiqu999999) on Unsplash</p>
+                    <p id="el-66v4w876">Star cookies image by Diane Helentjaris
+                        (@dhelentjaris) on Unsplash</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</div>
+</body>

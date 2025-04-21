@@ -1,0 +1,4539 @@
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <style>
+        .gm-err-container {
+            height: 100%;
+            width: 100%;
+            display: table;
+            background-color: #e8eaed;
+            position: relative;
+            left: 0;
+            top: 0
+        }
+
+        .gm-err-content {
+            border-radius: 1px;
+            padding-top: 0;
+            padding-left: 10%;
+            padding-right: 10%;
+            position: static;
+            vertical-align: middle;
+            display: table-cell
+        }
+
+        .gm-err-content a {
+            color: #3c4043
+        }
+
+        .gm-err-icon {
+            text-align: center
+        }
+
+        .gm-err-title {
+            margin: 5px;
+            margin-bottom: 20px;
+            color: #3c4043;
+            font-family: Roboto, Arial, sans-serif;
+            text-align: center;
+            font-size: 24px
+        }
+
+        .gm-err-message {
+            margin: 5px;
+            color: #3c4043;
+            font-family: Roboto, Arial, sans-serif;
+            text-align: center;
+            font-size: 12px
+        }
+
+        .gm-err-autocomplete {
+            padding-left: 20px;
+            background-repeat: no-repeat;
+            -webkit-background-size: 15px 15px;
+            background-size: 15px 15px
+        }
+    </style>
+    <style>
+        .gm-style-moc {
+            background-color: rgba(0, 0, 0, .59);
+            pointer-events: none;
+            text-align: center;
+            -webkit-transition: opacity ease-in-out;
+            transition: opacity ease-in-out
+        }
+
+        .gm-style-mot {
+            color: white;
+            font-family: Roboto, Arial, sans-serif;
+            font-size: 22px;
+            margin: 0;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%)
+        }
+    </style>
+    <style>
+        .gm-style img {
+            max-width: none;
+        }
+
+        .gm-style {
+            font: 400 11px Roboto, Arial, sans-serif;
+            text-decoration: none;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description"
+        content="Discover, create, and manage events with EventHub's comprehensive platform. Register for events, track attendance, and manage payments all in one place.">
+    <meta name="theme-color" content="#ffffff">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="">
+
+    <!-- Alpine.js - Load first -->
+    <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400..700;1,400..700&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet">
+    <style>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "DM Sans", sans-serif !important;
+        }
+
+        body,
+        div,
+        p {
+            font-family: "Inter", sans-serif !important;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+    <title>EventHub - Modern Event Management Platform</title>
+    <!-- SEO Description -->
+    <meta name="description"
+        content="Discover, create, and manage events with EventHub's comprehensive platform. Register for events, track attendance, and manage payments all in one place.">
+
+    <!-- Performance optimization: Preload critical resources -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+
+    <!-- Header Scripts -->
+    <script id="header-scripts">
+        // This script tag will be replaced with actual scripts.head content
+        if (window.scripts && window.scripts.head) {
+            document.getElementById('header-scripts').outerHTML = window.scripts.head;
+        }
+    </script>
+
+    <!-- Core CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // render the settings object
+        //console.log('settings', [object Object]);
+        document.addEventListener('DOMContentLoaded', function () {
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: {
+                                DEFAULT: '#2A2D3E',
+                                50: '#f8f8f8',
+                                100: '#e8e8e8',
+                                200: '#d3d3d3',
+                                300: '#a3a3a3',
+                                400: '#737373',
+                                500: '#525252',
+                                600: '#404040',
+                                700: '#262626',
+                                800: '#171717',
+                                900: '#0a0a0a',
+                                950: '#030303',
+                            },
+                            secondary: {
+                                DEFAULT: '#1F2235',
+                                50: '#f8f8f8',
+                                100: '#e8e8e8',
+                                200: '#d3d3d3',
+                                300: '#a3a3a3',
+                                400: '#737373',
+                                500: '#525252',
+                                600: '#404040',
+                                700: '#262626',
+                                800: '#171717',
+                                900: '#0a0a0a',
+                                950: '#030303',
+                            },
+                            accent: {
+                                DEFAULT: '',
+                                50: '#f8f8f8',
+                                100: '#e8e8e8',
+                                200: '#d3d3d3',
+                                300: '#a3a3a3',
+                                400: '#737373',
+                                500: '#525252',
+                                600: '#404040',
+                                700: '#262626',
+                                800: '#171717',
+                                900: '#0a0a0a',
+                                950: '#030303',
+                            },
+                        },
+                        fontFamily: {
+                            sans: ['DM Sans', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                            heading: ['Inter', 'Inter', 'system-ui', 'sans-serif'],
+                            body: ['Inter', 'Inter', 'system-ui', 'sans-serif'],
+                        },
+                        spacing: {
+                            '18': '4.5rem',
+                            '22': '5.5rem',
+                            '30': '7.5rem',
+                        },
+                        maxWidth: {
+                            '8xl': '88rem',
+                            '9xl': '96rem',
+                        },
+                        aspectRatio: {
+                            'portrait': '3/4',
+                            'landscape': '4/3',
+                            'ultrawide': '21/9',
+                        },
+                    },
+                },
+                variants: {
+                    extend: {
+                        opacity: ['disabled'],
+                        cursor: ['disabled'],
+                        backgroundColor: ['active', 'disabled'],
+                        textColor: ['active', 'disabled'],
+                    },
+                },
+            }
+        });
+    </script>
+
+    <!-- Utilities and Components -->
+    <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.1/apexcharts.min.js"></script>
+
+    <!-- Optimized Font Loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <style>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: DM Sans, Inter, system-ui, sans-serif;
+        }
+
+        body {
+            font-family: Inter, Inter, system-ui, sans-serif;
+        }
+    </style>
+    <style>
+        *,
+        ::before,
+        ::after {
+            --tw-border-spacing-x: 0;
+            --tw-border-spacing-y: 0;
+            --tw-translate-x: 0;
+            --tw-translate-y: 0;
+            --tw-rotate: 0;
+            --tw-skew-x: 0;
+            --tw-skew-y: 0;
+            --tw-scale-x: 1;
+            --tw-scale-y: 1;
+            --tw-pan-x: ;
+            --tw-pan-y: ;
+            --tw-pinch-zoom: ;
+            --tw-scroll-snap-strictness: proximity;
+            --tw-gradient-from-position: ;
+            --tw-gradient-via-position: ;
+            --tw-gradient-to-position: ;
+            --tw-ordinal: ;
+            --tw-slashed-zero: ;
+            --tw-numeric-figure: ;
+            --tw-numeric-spacing: ;
+            --tw-numeric-fraction: ;
+            --tw-ring-inset: ;
+            --tw-ring-offset-width: 0px;
+            --tw-ring-offset-color: #fff;
+            --tw-ring-color: rgb(59 130 246 / 0.5);
+            --tw-ring-offset-shadow: 0 0 #0000;
+            --tw-ring-shadow: 0 0 #0000;
+            --tw-shadow: 0 0 #0000;
+            --tw-shadow-colored: 0 0 #0000;
+            --tw-blur: ;
+            --tw-brightness: ;
+            --tw-contrast: ;
+            --tw-grayscale: ;
+            --tw-hue-rotate: ;
+            --tw-invert: ;
+            --tw-saturate: ;
+            --tw-sepia: ;
+            --tw-drop-shadow: ;
+            --tw-backdrop-blur: ;
+            --tw-backdrop-brightness: ;
+            --tw-backdrop-contrast: ;
+            --tw-backdrop-grayscale: ;
+            --tw-backdrop-hue-rotate: ;
+            --tw-backdrop-invert: ;
+            --tw-backdrop-opacity: ;
+            --tw-backdrop-saturate: ;
+            --tw-backdrop-sepia: ;
+            --tw-contain-size: ;
+            --tw-contain-layout: ;
+            --tw-contain-paint: ;
+            --tw-contain-style:
+        }
+
+        ::backdrop {
+            --tw-border-spacing-x: 0;
+            --tw-border-spacing-y: 0;
+            --tw-translate-x: 0;
+            --tw-translate-y: 0;
+            --tw-rotate: 0;
+            --tw-skew-x: 0;
+            --tw-skew-y: 0;
+            --tw-scale-x: 1;
+            --tw-scale-y: 1;
+            --tw-pan-x: ;
+            --tw-pan-y: ;
+            --tw-pinch-zoom: ;
+            --tw-scroll-snap-strictness: proximity;
+            --tw-gradient-from-position: ;
+            --tw-gradient-via-position: ;
+            --tw-gradient-to-position: ;
+            --tw-ordinal: ;
+            --tw-slashed-zero: ;
+            --tw-numeric-figure: ;
+            --tw-numeric-spacing: ;
+            --tw-numeric-fraction: ;
+            --tw-ring-inset: ;
+            --tw-ring-offset-width: 0px;
+            --tw-ring-offset-color: #fff;
+            --tw-ring-color: rgb(59 130 246 / 0.5);
+            --tw-ring-offset-shadow: 0 0 #0000;
+            --tw-ring-shadow: 0 0 #0000;
+            --tw-shadow: 0 0 #0000;
+            --tw-shadow-colored: 0 0 #0000;
+            --tw-blur: ;
+            --tw-brightness: ;
+            --tw-contrast: ;
+            --tw-grayscale: ;
+            --tw-hue-rotate: ;
+            --tw-invert: ;
+            --tw-saturate: ;
+            --tw-sepia: ;
+            --tw-drop-shadow: ;
+            --tw-backdrop-blur: ;
+            --tw-backdrop-brightness: ;
+            --tw-backdrop-contrast: ;
+            --tw-backdrop-grayscale: ;
+            --tw-backdrop-hue-rotate: ;
+            --tw-backdrop-invert: ;
+            --tw-backdrop-opacity: ;
+            --tw-backdrop-saturate: ;
+            --tw-backdrop-sepia: ;
+            --tw-contain-size: ;
+            --tw-contain-layout: ;
+            --tw-contain-paint: ;
+            --tw-contain-style:
+        }
+
+        /* ! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com */
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+            border-color: #e5e7eb
+        }
+
+        ::after,
+        ::before {
+            --tw-content: ''
+        }
+
+        :host,
+        html {
+            line-height: 1.5;
+            -webkit-text-size-adjust: 100%;
+            -moz-tab-size: 4;
+            tab-size: 4;
+            font-family: DM Sans, Inter, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;
+            font-feature-settings: normal;
+            font-variation-settings: normal;
+            -webkit-tap-highlight-color: transparent
+        }
+
+        body {
+            margin: 0;
+            line-height: inherit
+        }
+
+        hr {
+            height: 0;
+            color: inherit;
+            border-top-width: 1px
+        }
+
+        abbr:where([title]) {
+            -webkit-text-decoration: underline dotted;
+            text-decoration: underline dotted
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: inherit;
+            font-weight: inherit
+        }
+
+        a {
+            color: inherit;
+            text-decoration: inherit
+        }
+
+        b,
+        strong {
+            font-weight: bolder
+        }
+
+        code,
+        kbd,
+        pre,
+        samp {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-feature-settings: normal;
+            font-variation-settings: normal;
+            font-size: 1em
+        }
+
+        small {
+            font-size: 80%
+        }
+
+        sub,
+        sup {
+            font-size: 75%;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline
+        }
+
+        sub {
+            bottom: -.25em
+        }
+
+        sup {
+            top: -.5em
+        }
+
+        table {
+            text-indent: 0;
+            border-color: inherit;
+            border-collapse: collapse
+        }
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            font-family: inherit;
+            font-feature-settings: inherit;
+            font-variation-settings: inherit;
+            font-size: 100%;
+            font-weight: inherit;
+            line-height: inherit;
+            letter-spacing: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0
+        }
+
+        button,
+        select {
+            text-transform: none
+        }
+
+        button,
+        input:where([type=button]),
+        input:where([type=reset]),
+        input:where([type=submit]) {
+            -webkit-appearance: button;
+            appearance: button;
+            background-color: transparent;
+            background-image: none
+        }
+
+        :-moz-focusring {
+            outline: auto
+        }
+
+        :-moz-ui-invalid {
+            box-shadow: none
+        }
+
+        progress {
+            vertical-align: baseline
+        }
+
+        ::-webkit-inner-spin-button,
+        ::-webkit-outer-spin-button {
+            height: auto
+        }
+
+        [type=search] {
+            -webkit-appearance: textfield;
+            appearance: textfield;
+            outline-offset: -2px
+        }
+
+        ::-webkit-search-decoration {
+            -webkit-appearance: none
+        }
+
+        ::-webkit-file-upload-button {
+            -webkit-appearance: button;
+            font: inherit
+        }
+
+        summary {
+            display: list-item
+        }
+
+        blockquote,
+        dd,
+        dl,
+        figure,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        hr,
+        p,
+        pre {
+            margin: 0
+        }
+
+        fieldset {
+            margin: 0;
+            padding: 0
+        }
+
+        legend {
+            padding: 0
+        }
+
+        menu,
+        ol,
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0
+        }
+
+        dialog {
+            padding: 0
+        }
+
+        textarea {
+            resize: vertical
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            opacity: 1;
+            color: #9ca3af
+        }
+
+        [role=button],
+        button {
+            cursor: pointer
+        }
+
+        :disabled {
+            cursor: default
+        }
+
+        audio,
+        canvas,
+        embed,
+        iframe,
+        img,
+        object,
+        svg,
+        video {
+            display: block;
+        }
+
+        img,
+        video {
+            max-width: 100%;
+            height: auto
+        }
+
+        [hidden]:where(:not([hidden=until-found])) {
+            display: none
+        }
+
+        .container {
+            width: 100%
+        }
+
+        @media (min-width: 640px) {
+            .container {
+                max-width: 640px
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 768px
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 1024px
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .container {
+                max-width: 1280px
+            }
+        }
+
+        @media (min-width: 1536px) {
+            .container {
+                max-width: 1536px
+            }
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0
+        }
+
+        .pointer-events-none {
+            pointer-events: none
+        }
+
+        .fixed {
+            position: fixed
+        }
+
+        .absolute {
+            position: absolute
+        }
+
+        .relative {
+            position: relative
+        }
+
+        .sticky {
+            position: sticky
+        }
+
+        .inset-0 {
+            inset: 0px
+        }
+
+        .inset-y-0 {
+            top: 0px;
+            bottom: 0px
+        }
+
+        .-bottom-24 {
+            bottom: -6rem
+        }
+
+        .-bottom-8 {
+            bottom: -2rem
+        }
+
+        .-left-20 {
+            left: -5rem
+        }
+
+        .-right-1 {
+            right: -0.25rem
+        }
+
+        .-right-24 {
+            right: -6rem
+        }
+
+        .-top-1 {
+            top: -0.25rem
+        }
+
+        .-top-8 {
+            top: -2rem
+        }
+
+        .bottom-0 {
+            bottom: 0px
+        }
+
+        .bottom-6 {
+            bottom: 1.5rem
+        }
+
+        .bottom-\[88px\] {
+            bottom: 88px
+        }
+
+        .left-0 {
+            left: 0px
+        }
+
+        .left-1\/2 {
+            left: 50%
+        }
+
+        .left-3 {
+            left: 0.75rem
+        }
+
+        .right-0 {
+            right: 0px
+        }
+
+        .right-20 {
+            right: 5rem
+        }
+
+        .right-3 {
+            right: 0.75rem
+        }
+
+        .right-4 {
+            right: 1rem
+        }
+
+        .right-6 {
+            right: 1.5rem
+        }
+
+        .top-0 {
+            top: 0px
+        }
+
+        .top-10 {
+            top: 2.5rem
+        }
+
+        .top-2 {
+            top: 0.5rem
+        }
+
+        .top-2\.5 {
+            top: 0.625rem
+        }
+
+        .top-3 {
+            top: 0.75rem
+        }
+
+        .top-4 {
+            top: 1rem
+        }
+
+        .top-6 {
+            top: 1.5rem
+        }
+
+        .top-8 {
+            top: 2rem
+        }
+
+        .z-10 {
+            z-index: 10
+        }
+
+        .z-30 {
+            z-index: 30
+        }
+
+        .z-40 {
+            z-index: 40
+        }
+
+        .z-50 {
+            z-index: 50
+        }
+
+        .z-\[60\] {
+            z-index: 60
+        }
+
+        .m-2 {
+            margin: 0.5rem
+        }
+
+        .m-4 {
+            margin: 1rem
+        }
+
+        .mx-1 {
+            margin-left: 0.25rem;
+            margin-right: 0.25rem
+        }
+
+        .mx-2 {
+            margin-left: 0.5rem;
+            margin-right: 0.5rem
+        }
+
+        .mx-4 {
+            margin-left: 1rem;
+            margin-right: 1rem
+        }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .-mb-px {
+            margin-bottom: -1px
+        }
+
+        .-ml-1 {
+            margin-left: -0.25rem
+        }
+
+        .mb-1 {
+            margin-bottom: 0.25rem
+        }
+
+        .mb-10 {
+            margin-bottom: 2.5rem
+        }
+
+        .mb-12 {
+            margin-bottom: 3rem
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem
+        }
+
+        .mb-3 {
+            margin-bottom: 0.75rem
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem
+        }
+
+        .mb-8 {
+            margin-bottom: 2rem
+        }
+
+        .ml-1 {
+            margin-left: 0.25rem
+        }
+
+        .ml-2 {
+            margin-left: 0.5rem
+        }
+
+        .ml-3 {
+            margin-left: 0.75rem
+        }
+
+        .ml-4 {
+            margin-left: 1rem
+        }
+
+        .ml-5 {
+            margin-left: 1.25rem
+        }
+
+        .ml-auto {
+            margin-left: auto
+        }
+
+        .mr-1 {
+            margin-right: 0.25rem
+        }
+
+        .mr-2 {
+            margin-right: 0.5rem
+        }
+
+        .mr-3 {
+            margin-right: 0.75rem
+        }
+
+        .mr-4 {
+            margin-right: 1rem
+        }
+
+        .mt-0\.5 {
+            margin-top: 0.125rem
+        }
+
+        .mt-1 {
+            margin-top: 0.25rem
+        }
+
+        .mt-10 {
+            margin-top: 2.5rem
+        }
+
+        .mt-12 {
+            margin-top: 3rem
+        }
+
+        .mt-16 {
+            margin-top: 4rem
+        }
+
+        .mt-2 {
+            margin-top: 0.5rem
+        }
+
+        .mt-20 {
+            margin-top: 5rem
+        }
+
+        .mt-4 {
+            margin-top: 1rem
+        }
+
+        .mt-6 {
+            margin-top: 1.5rem
+        }
+
+        .mt-8 {
+            margin-top: 2rem
+        }
+
+        .mt-auto {
+            margin-top: auto
+        }
+
+        .block {
+            display: block
+        }
+
+        .inline-block {
+            display: inline-block
+        }
+
+        .inline {
+            display: inline
+        }
+
+        .flex {
+            display: flex
+        }
+
+        .inline-flex {
+            display: inline-flex
+        }
+
+        .grid {
+            display: grid
+        }
+
+        .hidden {
+            display: none
+        }
+
+        .aspect-\[16\/9\] {
+            aspect-ratio: 16/9
+        }
+
+        .h-1 {
+            height: 0.25rem
+        }
+
+        .h-1\.5 {
+            height: 0.375rem
+        }
+
+        .h-10 {
+            height: 2.5rem
+        }
+
+        .h-12 {
+            height: 3rem
+        }
+
+        .h-14 {
+            height: 3.5rem
+        }
+
+        .h-16 {
+            height: 4rem
+        }
+
+        .h-2 {
+            height: 0.5rem
+        }
+
+        .h-2\.5 {
+            height: 0.625rem
+        }
+
+        .h-20 {
+            height: 5rem
+        }
+
+        .h-24 {
+            height: 6rem
+        }
+
+        .h-3 {
+            height: 0.75rem
+        }
+
+        .h-3\.5 {
+            height: 0.875rem
+        }
+
+        .h-32 {
+            height: 8rem
+        }
+
+        .h-36 {
+            height: 9rem
+        }
+
+        .h-4 {
+            height: 1rem
+        }
+
+        .h-40 {
+            height: 10rem
+        }
+
+        .h-48 {
+            height: 12rem
+        }
+
+        .h-5 {
+            height: 1.25rem
+        }
+
+        .h-6 {
+            height: 1.5rem
+        }
+
+        .h-64 {
+            height: 16rem
+        }
+
+        .h-7 {
+            height: 1.75rem
+        }
+
+        .h-72 {
+            height: 18rem
+        }
+
+        .h-8 {
+            height: 2rem
+        }
+
+        .h-96 {
+            height: 24rem
+        }
+
+        .h-\[10\%\] {
+            height: 10%
+        }
+
+        .h-\[100\%\] {
+            height: 100%
+        }
+
+        .h-\[30\%\] {
+            height: 30%
+        }
+
+        .h-\[40\%\] {
+            height: 40%
+        }
+
+        .h-\[45\%\] {
+            height: 45%
+        }
+
+        .h-\[50\%\] {
+            height: 50%
+        }
+
+        .h-\[500px\] {
+            height: 500px
+        }
+
+        .h-\[50vh\] {
+            height: 50vh
+        }
+
+        .h-\[60\%\] {
+            height: 60%
+        }
+
+        .h-\[70\%\] {
+            height: 70%
+        }
+
+        .h-\[75\%\] {
+            height: 75%
+        }
+
+        .h-\[80\%\] {
+            height: 80%
+        }
+
+        .h-\[90\%\] {
+            height: 90%
+        }
+
+        .h-\[95\%\] {
+            height: 95%
+        }
+
+        .h-full {
+            height: 100%
+        }
+
+        .h-screen {
+            height: 100vh
+        }
+
+        .max-h-\[600px\] {
+            max-height: 600px
+        }
+
+        .max-h-\[80vh\] {
+            max-height: 80vh
+        }
+
+        .max-h-\[90vh\] {
+            max-height: 90vh
+        }
+
+        .min-h-screen {
+            min-height: 100vh
+        }
+
+        .w-0 {
+            width: 0px
+        }
+
+        .w-1\/12 {
+            width: 8.333333%
+        }
+
+        .w-10 {
+            width: 2.5rem
+        }
+
+        .w-11 {
+            width: 2.75rem
+        }
+
+        .w-12 {
+            width: 3rem
+        }
+
+        .w-14 {
+            width: 3.5rem
+        }
+
+        .w-16 {
+            width: 4rem
+        }
+
+        .w-2 {
+            width: 0.5rem
+        }
+
+        .w-2\.5 {
+            width: 0.625rem
+        }
+
+        .w-20 {
+            width: 5rem
+        }
+
+        .w-24 {
+            width: 6rem
+        }
+
+        .w-3 {
+            width: 0.75rem
+        }
+
+        .w-3\.5 {
+            width: 0.875rem
+        }
+
+        .w-32 {
+            width: 8rem
+        }
+
+        .w-36 {
+            width: 9rem
+        }
+
+        .w-4 {
+            width: 1rem
+        }
+
+        .w-5 {
+            width: 1.25rem
+        }
+
+        .w-6 {
+            width: 1.5rem
+        }
+
+        .w-64 {
+            width: 16rem
+        }
+
+        .w-7 {
+            width: 1.75rem
+        }
+
+        .w-72 {
+            width: 18rem
+        }
+
+        .w-8 {
+            width: 2rem
+        }
+
+        .w-96 {
+            width: 24rem
+        }
+
+        .w-\[350px\] {
+            width: 350px
+        }
+
+        .w-auto {
+            width: auto
+        }
+
+        .w-full {
+            width: 100%
+        }
+
+        .min-w-full {
+            min-width: 100%
+        }
+
+        .max-w-2xl {
+            max-width: 42rem
+        }
+
+        .max-w-3xl {
+            max-width: 48rem
+        }
+
+        .max-w-4xl {
+            max-width: 56rem
+        }
+
+        .max-w-6xl {
+            max-width: 72rem
+        }
+
+        .max-w-7xl {
+            max-width: 80rem
+        }
+
+        .max-w-\[80\%\] {
+            max-width: 80%
+        }
+
+        .max-w-\[calc\(100vw-2rem\)\] {
+            max-width: calc(100vw - 2rem)
+        }
+
+        .max-w-md {
+            max-width: 28rem
+        }
+
+        .max-w-none {
+            max-width: none
+        }
+
+        .flex-1 {
+            flex: 1 1 0%
+        }
+
+        .flex-shrink-0 {
+            flex-shrink: 0
+        }
+
+        .flex-grow {
+            flex-grow: 1
+        }
+
+        .table-auto {
+            table-layout: auto
+        }
+
+        .-translate-x-1\/2 {
+            --tw-translate-x: -50%;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .translate-y-10 {
+            --tw-translate-y: 2.5rem;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .transform {
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .transform-gpu {
+            transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        @keyframes pulse {
+            50% {
+                opacity: .5
+            }
+        }
+
+        .animate-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        .animate-spin {
+            animation: spin 1s linear infinite
+        }
+
+        .cursor-pointer {
+            cursor: pointer
+        }
+
+        .list-inside {
+            list-style-position: inside
+        }
+
+        .list-disc {
+            list-style-type: disc
+        }
+
+        .appearance-none {
+            -webkit-appearance: none;
+            appearance: none
+        }
+
+        .grid-cols-1 {
+            grid-template-columns: repeat(1, minmax(0, 1fr))
+        }
+
+        .grid-cols-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr))
+        }
+
+        .flex-col {
+            flex-direction: column
+        }
+
+        .flex-wrap {
+            flex-wrap: wrap
+        }
+
+        .items-start {
+            align-items: flex-start
+        }
+
+        .items-end {
+            align-items: flex-end
+        }
+
+        .items-center {
+            align-items: center
+        }
+
+        .justify-end {
+            justify-content: flex-end
+        }
+
+        .justify-center {
+            justify-content: center
+        }
+
+        .justify-between {
+            justify-content: space-between
+        }
+
+        .gap-12 {
+            gap: 3rem
+        }
+
+        .gap-2 {
+            gap: 0.5rem
+        }
+
+        .gap-3 {
+            gap: 0.75rem
+        }
+
+        .gap-4 {
+            gap: 1rem
+        }
+
+        .gap-6 {
+            gap: 1.5rem
+        }
+
+        .gap-8 {
+            gap: 2rem
+        }
+
+        .gap-x-4 {
+            column-gap: 1rem
+        }
+
+        .gap-x-6 {
+            column-gap: 1.5rem
+        }
+
+        .gap-y-2 {
+            row-gap: 0.5rem
+        }
+
+        .gap-y-6 {
+            row-gap: 1.5rem
+        }
+
+        .-space-x-px> :not([hidden])~ :not([hidden]) {
+            --tw-space-x-reverse: 0;
+            margin-right: calc(-1px * var(--tw-space-x-reverse));
+            margin-left: calc(-1px * calc(1 - var(--tw-space-x-reverse)))
+        }
+
+        .space-x-1> :not([hidden])~ :not([hidden]) {
+            --tw-space-x-reverse: 0;
+            margin-right: calc(0.25rem * var(--tw-space-x-reverse));
+            margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)))
+        }
+
+        .space-x-2> :not([hidden])~ :not([hidden]) {
+            --tw-space-x-reverse: 0;
+            margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+            margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)))
+        }
+
+        .space-x-3> :not([hidden])~ :not([hidden]) {
+            --tw-space-x-reverse: 0;
+            margin-right: calc(0.75rem * var(--tw-space-x-reverse));
+            margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)))
+        }
+
+        .space-x-4> :not([hidden])~ :not([hidden]) {
+            --tw-space-x-reverse: 0;
+            margin-right: calc(1rem * var(--tw-space-x-reverse));
+            margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)))
+        }
+
+        .space-x-8> :not([hidden])~ :not([hidden]) {
+            --tw-space-x-reverse: 0;
+            margin-right: calc(2rem * var(--tw-space-x-reverse));
+            margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)))
+        }
+
+        .space-y-1> :not([hidden])~ :not([hidden]) {
+            --tw-space-y-reverse: 0;
+            margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
+            margin-bottom: calc(0.25rem * var(--tw-space-y-reverse))
+        }
+
+        .space-y-2> :not([hidden])~ :not([hidden]) {
+            --tw-space-y-reverse: 0;
+            margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+            margin-bottom: calc(0.5rem * var(--tw-space-y-reverse))
+        }
+
+        .space-y-3> :not([hidden])~ :not([hidden]) {
+            --tw-space-y-reverse: 0;
+            margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+            margin-bottom: calc(0.75rem * var(--tw-space-y-reverse))
+        }
+
+        .space-y-4> :not([hidden])~ :not([hidden]) {
+            --tw-space-y-reverse: 0;
+            margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+            margin-bottom: calc(1rem * var(--tw-space-y-reverse))
+        }
+
+        .space-y-6> :not([hidden])~ :not([hidden]) {
+            --tw-space-y-reverse: 0;
+            margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+            margin-bottom: calc(1.5rem * var(--tw-space-y-reverse))
+        }
+
+        .divide-y> :not([hidden])~ :not([hidden]) {
+            --tw-divide-y-reverse: 0;
+            border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+            border-bottom-width: calc(1px * var(--tw-divide-y-reverse))
+        }
+
+        .divide-neutral-700\/30> :not([hidden])~ :not([hidden]) {
+            border-color: rgb(64 64 64 / 0.3)
+        }
+
+        .overflow-hidden {
+            overflow: hidden
+        }
+
+        .overflow-x-auto {
+            overflow-x: auto
+        }
+
+        .overflow-y-auto {
+            overflow-y: auto
+        }
+
+        .scroll-smooth {
+            scroll-behavior: smooth
+        }
+
+        .whitespace-nowrap {
+            white-space: nowrap
+        }
+
+        .rounded {
+            border-radius: 0.25rem
+        }
+
+        .rounded-full {
+            border-radius: 9999px
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem
+        }
+
+        .rounded-md {
+            border-radius: 0.375rem
+        }
+
+        .rounded-xl {
+            border-radius: 0.75rem
+        }
+
+        .rounded-l-lg {
+            border-top-left-radius: 0.5rem;
+            border-bottom-left-radius: 0.5rem
+        }
+
+        .rounded-l-md {
+            border-top-left-radius: 0.375rem;
+            border-bottom-left-radius: 0.375rem
+        }
+
+        .rounded-r-lg {
+            border-top-right-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem
+        }
+
+        .rounded-r-md {
+            border-top-right-radius: 0.375rem;
+            border-bottom-right-radius: 0.375rem
+        }
+
+        .rounded-t-lg {
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem
+        }
+
+        .rounded-t-sm {
+            border-top-left-radius: 0.125rem;
+            border-top-right-radius: 0.125rem
+        }
+
+        .rounded-t-xl {
+            border-top-left-radius: 0.75rem;
+            border-top-right-radius: 0.75rem
+        }
+
+        .rounded-tl-none {
+            border-top-left-radius: 0px
+        }
+
+        .rounded-tr-none {
+            border-top-right-radius: 0px
+        }
+
+        .border {
+            border-width: 1px
+        }
+
+        .border-2 {
+            border-width: 2px
+        }
+
+        .border-4 {
+            border-width: 4px
+        }
+
+        .border-b {
+            border-bottom-width: 1px
+        }
+
+        .border-b-2 {
+            border-bottom-width: 2px
+        }
+
+        .border-l-4 {
+            border-left-width: 4px
+        }
+
+        .border-r {
+            border-right-width: 1px
+        }
+
+        .border-t {
+            border-top-width: 1px
+        }
+
+        .border-dashed {
+            border-style: dashed
+        }
+
+        .border-blue-500 {
+            --tw-border-opacity: 1;
+            border-color: rgb(59 130 246 / var(--tw-border-opacity, 1))
+        }
+
+        .border-blue-500\/30 {
+            border-color: rgb(59 130 246 / 0.3)
+        }
+
+        .border-gray-600 {
+            --tw-border-opacity: 1;
+            border-color: rgb(75 85 99 / var(--tw-border-opacity, 1))
+        }
+
+        .border-gray-700 {
+            --tw-border-opacity: 1;
+            border-color: rgb(55 65 81 / var(--tw-border-opacity, 1))
+        }
+
+        .border-green-700 {
+            --tw-border-opacity: 1;
+            border-color: rgb(21 128 61 / var(--tw-border-opacity, 1))
+        }
+
+        .border-neutral-200\/10 {
+            border-color: rgb(229 229 229 / 0.1)
+        }
+
+        .border-neutral-200\/20 {
+            border-color: rgb(229 229 229 / 0.2)
+        }
+
+        .border-neutral-200\/30 {
+            border-color: rgb(229 229 229 / 0.3)
+        }
+
+        .border-neutral-600 {
+            --tw-border-opacity: 1;
+            border-color: rgb(82 82 82 / var(--tw-border-opacity, 1))
+        }
+
+        .border-neutral-600\/30 {
+            border-color: rgb(82 82 82 / 0.3)
+        }
+
+        .border-neutral-700 {
+            --tw-border-opacity: 1;
+            border-color: rgb(64 64 64 / var(--tw-border-opacity, 1))
+        }
+
+        .border-neutral-700\/20 {
+            border-color: rgb(64 64 64 / 0.2)
+        }
+
+        .border-neutral-700\/30 {
+            border-color: rgb(64 64 64 / 0.3)
+        }
+
+        .border-neutral-700\/50 {
+            border-color: rgb(64 64 64 / 0.5)
+        }
+
+        .border-neutral-800\/40 {
+            border-color: rgb(38 38 38 / 0.4)
+        }
+
+        .border-purple-500 {
+            --tw-border-opacity: 1;
+            border-color: rgb(168 85 247 / var(--tw-border-opacity, 1))
+        }
+
+        .border-purple-600 {
+            --tw-border-opacity: 1;
+            border-color: rgb(147 51 234 / var(--tw-border-opacity, 1))
+        }
+
+        .border-purple-800\/50 {
+            border-color: rgb(107 33 168 / 0.5)
+        }
+
+        .border-transparent {
+            border-color: transparent
+        }
+
+        .bg-\[\#111827\] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-\[\#1F2937\] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-\[\#1e2130\] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(30 33 48 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-\[\#2D3748\] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(45 55 72 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-\[\#2a2d3e\] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(42 45 62 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-amber-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(245 158 11 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-amber-500\/20 {
+            background-color: rgb(245 158 11 / 0.2)
+        }
+
+        .bg-black {
+            --tw-bg-opacity: 1;
+            background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-black\/50 {
+            background-color: rgb(0 0 0 / 0.5)
+        }
+
+        .bg-black\/70 {
+            background-color: rgb(0 0 0 / 0.7)
+        }
+
+        .bg-blue-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(59 130 246 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-blue-500\/20 {
+            background-color: rgb(59 130 246 / 0.2)
+        }
+
+        .bg-blue-500\/70 {
+            background-color: rgb(59 130 246 / 0.7)
+        }
+
+        .bg-blue-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(37 99 235 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-blue-900\/10 {
+            background-color: rgb(30 58 138 / 0.1)
+        }
+
+        .bg-blue-900\/20 {
+            background-color: rgb(30 58 138 / 0.2)
+        }
+
+        .bg-emerald-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(16 185 129 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-emerald-500\/20 {
+            background-color: rgb(16 185 129 / 0.2)
+        }
+
+        .bg-gray-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(107 114 128 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-gray-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(75 85 99 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-gray-700 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(55 65 81 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-gray-800 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-gray-900 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-green-100 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(220 252 231 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-green-400 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(74 222 128 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-green-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(34 197 94 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-green-500\/20 {
+            background-color: rgb(34 197 94 / 0.2)
+        }
+
+        .bg-green-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(22 163 74 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-green-600\/20 {
+            background-color: rgb(22 163 74 / 0.2)
+        }
+
+        .bg-green-800\/50 {
+            background-color: rgb(22 101 52 / 0.5)
+        }
+
+        .bg-indigo-500\/20 {
+            background-color: rgb(99 102 241 / 0.2)
+        }
+
+        .bg-neutral-500\/20 {
+            background-color: rgb(115 115 115 / 0.2)
+        }
+
+        .bg-neutral-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(82 82 82 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-neutral-700 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(64 64 64 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-neutral-700\/30 {
+            background-color: rgb(64 64 64 / 0.3)
+        }
+
+        .bg-neutral-700\/40 {
+            background-color: rgb(64 64 64 / 0.4)
+        }
+
+        .bg-neutral-700\/50 {
+            background-color: rgb(64 64 64 / 0.5)
+        }
+
+        .bg-neutral-700\/80 {
+            background-color: rgb(64 64 64 / 0.8)
+        }
+
+        .bg-neutral-800 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(38 38 38 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-neutral-800\/30 {
+            background-color: rgb(38 38 38 / 0.3)
+        }
+
+        .bg-neutral-800\/40 {
+            background-color: rgb(38 38 38 / 0.4)
+        }
+
+        .bg-neutral-800\/50 {
+            background-color: rgb(38 38 38 / 0.5)
+        }
+
+        .bg-neutral-800\/60 {
+            background-color: rgb(38 38 38 / 0.6)
+        }
+
+        .bg-neutral-800\/70 {
+            background-color: rgb(38 38 38 / 0.7)
+        }
+
+        .bg-neutral-800\/80 {
+            background-color: rgb(38 38 38 / 0.8)
+        }
+
+        .bg-neutral-900 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(23 23 23 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-orange-500\/20 {
+            background-color: rgb(249 115 22 / 0.2)
+        }
+
+        .bg-pink-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(236 72 153 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-pink-500\/20 {
+            background-color: rgb(236 72 153 / 0.2)
+        }
+
+        .bg-pink-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(219 39 119 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-purple-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(168 85 247 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-purple-500\/20 {
+            background-color: rgb(168 85 247 / 0.2)
+        }
+
+        .bg-purple-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(147 51 234 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-purple-600\/20 {
+            background-color: rgb(147 51 234 / 0.2)
+        }
+
+        .bg-purple-600\/50 {
+            background-color: rgb(147 51 234 / 0.5)
+        }
+
+        .bg-purple-900\/30 {
+            background-color: rgb(88 28 135 / 0.3)
+        }
+
+        .bg-red-100 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(254 226 226 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-red-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(239 68 68 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-red-500\/20 {
+            background-color: rgb(239 68 68 / 0.2)
+        }
+
+        .bg-red-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(220 38 38 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-teal-500\/20 {
+            background-color: rgb(20 184 166 / 0.2)
+        }
+
+        .bg-transparent {
+            background-color: transparent
+        }
+
+        .bg-yellow-100 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(254 249 195 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-yellow-400 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(250 204 21 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-yellow-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(234 179 8 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-yellow-500\/20 {
+            background-color: rgb(234 179 8 / 0.2)
+        }
+
+        .bg-yellow-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(202 138 4 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-opacity-50 {
+            --tw-bg-opacity: 0.5
+        }
+
+        .bg-gradient-to-br {
+            background-image: linear-gradient(to bottom right, var(--tw-gradient-stops))
+        }
+
+        .bg-gradient-to-r {
+            background-image: linear-gradient(to right, var(--tw-gradient-stops))
+        }
+
+        .bg-gradient-to-t {
+            background-image: linear-gradient(to top, var(--tw-gradient-stops))
+        }
+
+        .from-\[\#1a1c2e\] {
+            --tw-gradient-from: #1a1c2e var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(26 28 46 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+        }
+
+        .from-black\/70 {
+            --tw-gradient-from: rgb(0 0 0 / 0.7) var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+        }
+
+        .from-black\/80 {
+            --tw-gradient-from: rgb(0 0 0 / 0.8) var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+        }
+
+        .from-gray-900 {
+            --tw-gradient-from: #111827 var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(17 24 39 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+        }
+
+        .from-neutral-900 {
+            --tw-gradient-from: #171717 var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(23 23 23 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+        }
+
+        .from-purple-500 {
+            --tw-gradient-from: #a855f7 var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(168 85 247 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+        }
+
+        .from-purple-600 {
+            --tw-gradient-from: #9333ea var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(147 51 234 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+        }
+
+        .from-purple-800 {
+            --tw-gradient-from: #6b21a8 var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(107 33 168 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+        }
+
+        .via-neutral-900\/70 {
+            --tw-gradient-to: rgb(23 23 23 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), rgb(23 23 23 / 0.7) var(--tw-gradient-via-position), var(--tw-gradient-to)
+        }
+
+        .to-\[\#2d3748\] {
+            --tw-gradient-to: #2d3748 var(--tw-gradient-to-position)
+        }
+
+        .to-blue-500 {
+            --tw-gradient-to: #3b82f6 var(--tw-gradient-to-position)
+        }
+
+        .to-gray-800 {
+            --tw-gradient-to: #1f2937 var(--tw-gradient-to-position)
+        }
+
+        .to-indigo-900 {
+            --tw-gradient-to: #312e81 var(--tw-gradient-to-position)
+        }
+
+        .to-neutral-800 {
+            --tw-gradient-to: #262626 var(--tw-gradient-to-position)
+        }
+
+        .to-transparent {
+            --tw-gradient-to: transparent var(--tw-gradient-to-position)
+        }
+
+        .bg-clip-text {
+            -webkit-background-clip: text;
+            background-clip: text
+        }
+
+        .fill-current {
+            fill: currentColor
+        }
+
+        .object-contain {
+            object-fit: contain
+        }
+
+        .object-cover {
+            object-fit: cover
+        }
+
+        .p-1 {
+            padding: 0.25rem
+        }
+
+        .p-1\.5 {
+            padding: 0.375rem
+        }
+
+        .p-2 {
+            padding: 0.5rem
+        }
+
+        .p-2\.5 {
+            padding: 0.625rem
+        }
+
+        .p-3 {
+            padding: 0.75rem
+        }
+
+        .p-4 {
+            padding: 1rem
+        }
+
+        .p-5 {
+            padding: 1.25rem
+        }
+
+        .p-6 {
+            padding: 1.5rem
+        }
+
+        .p-8 {
+            padding: 2rem
+        }
+
+        .px-2 {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem
+        }
+
+        .px-2\.5 {
+            padding-left: 0.625rem;
+            padding-right: 0.625rem
+        }
+
+        .px-3 {
+            padding-left: 0.75rem;
+            padding-right: 0.75rem
+        }
+
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem
+        }
+
+        .px-6 {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem
+        }
+
+        .py-0 {
+            padding-top: 0px;
+            padding-bottom: 0px
+        }
+
+        .py-0\.5 {
+            padding-top: 0.125rem;
+            padding-bottom: 0.125rem
+        }
+
+        .py-1 {
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem
+        }
+
+        .py-1\.5 {
+            padding-top: 0.375rem;
+            padding-bottom: 0.375rem
+        }
+
+        .py-12 {
+            padding-top: 3rem;
+            padding-bottom: 3rem
+        }
+
+        .py-16 {
+            padding-top: 4rem;
+            padding-bottom: 4rem
+        }
+
+        .py-2 {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem
+        }
+
+        .py-2\.5 {
+            padding-top: 0.625rem;
+            padding-bottom: 0.625rem
+        }
+
+        .py-3 {
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem
+        }
+
+        .py-4 {
+            padding-top: 1rem;
+            padding-bottom: 1rem
+        }
+
+        .py-5 {
+            padding-top: 1.25rem;
+            padding-bottom: 1.25rem
+        }
+
+        .py-8 {
+            padding-top: 2rem;
+            padding-bottom: 2rem
+        }
+
+        .pb-3 {
+            padding-bottom: 0.75rem
+        }
+
+        .pb-6 {
+            padding-bottom: 1.5rem
+        }
+
+        .pl-10 {
+            padding-left: 2.5rem
+        }
+
+        .pl-3 {
+            padding-left: 0.75rem
+        }
+
+        .pl-6 {
+            padding-left: 1.5rem
+        }
+
+        .pl-7 {
+            padding-left: 1.75rem
+        }
+
+        .pr-4 {
+            padding-right: 1rem
+        }
+
+        .pt-16 {
+            padding-top: 4rem
+        }
+
+        .pt-2 {
+            padding-top: 0.5rem
+        }
+
+        .pt-3 {
+            padding-top: 0.75rem
+        }
+
+        .pt-4 {
+            padding-top: 1rem
+        }
+
+        .pt-5 {
+            padding-top: 1.25rem
+        }
+
+        .pt-6 {
+            padding-top: 1.5rem
+        }
+
+        .pt-8 {
+            padding-top: 2rem
+        }
+
+        .text-left {
+            text-align: left
+        }
+
+        .text-center {
+            text-align: center
+        }
+
+        .text-right {
+            text-align: right
+        }
+
+        .text-2xl {
+            font-size: 1.5rem;
+            line-height: 2rem
+        }
+
+        .text-3xl {
+            font-size: 1.875rem;
+            line-height: 2.25rem
+        }
+
+        .text-5xl {
+            font-size: 3rem;
+            line-height: 1
+        }
+
+        .text-base {
+            font-size: 1rem;
+            line-height: 1.5rem
+        }
+
+        .text-lg {
+            font-size: 1.125rem;
+            line-height: 1.75rem
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+            line-height: 1.25rem
+        }
+
+        .text-xl {
+            font-size: 1.25rem;
+            line-height: 1.75rem
+        }
+
+        .text-xs {
+            font-size: 0.75rem;
+            line-height: 1rem
+        }
+
+        .font-bold {
+            font-weight: 700
+        }
+
+        .font-medium {
+            font-weight: 500
+        }
+
+        .font-semibold {
+            font-weight: 600
+        }
+
+        .uppercase {
+            text-transform: uppercase
+        }
+
+        .leading-5 {
+            line-height: 1.25rem
+        }
+
+        .tracking-wider {
+            letter-spacing: 0.05em
+        }
+
+        .text-amber-300 {
+            --tw-text-opacity: 1;
+            color: rgb(252 211 77 / var(--tw-text-opacity, 1))
+        }
+
+        .text-amber-400 {
+            --tw-text-opacity: 1;
+            color: rgb(251 191 36 / var(--tw-text-opacity, 1))
+        }
+
+        .text-amber-500 {
+            --tw-text-opacity: 1;
+            color: rgb(245 158 11 / var(--tw-text-opacity, 1))
+        }
+
+        .text-blue-300 {
+            --tw-text-opacity: 1;
+            color: rgb(147 197 253 / var(--tw-text-opacity, 1))
+        }
+
+        .text-blue-400 {
+            --tw-text-opacity: 1;
+            color: rgb(96 165 250 / var(--tw-text-opacity, 1))
+        }
+
+        .text-blue-500 {
+            --tw-text-opacity: 1;
+            color: rgb(59 130 246 / var(--tw-text-opacity, 1))
+        }
+
+        .text-blue-600 {
+            --tw-text-opacity: 1;
+            color: rgb(37 99 235 / var(--tw-text-opacity, 1))
+        }
+
+        .text-emerald-400 {
+            --tw-text-opacity: 1;
+            color: rgb(52 211 153 / var(--tw-text-opacity, 1))
+        }
+
+        .text-emerald-500 {
+            --tw-text-opacity: 1;
+            color: rgb(16 185 129 / var(--tw-text-opacity, 1))
+        }
+
+        .text-gray-200 {
+            --tw-text-opacity: 1;
+            color: rgb(229 231 235 / var(--tw-text-opacity, 1))
+        }
+
+        .text-gray-300 {
+            --tw-text-opacity: 1;
+            color: rgb(209 213 219 / var(--tw-text-opacity, 1))
+        }
+
+        .text-gray-400 {
+            --tw-text-opacity: 1;
+            color: rgb(156 163 175 / var(--tw-text-opacity, 1))
+        }
+
+        .text-gray-500 {
+            --tw-text-opacity: 1;
+            color: rgb(107 114 128 / var(--tw-text-opacity, 1))
+        }
+
+        .text-gray-800 {
+            --tw-text-opacity: 1;
+            color: rgb(31 41 55 / var(--tw-text-opacity, 1))
+        }
+
+        .text-green-200 {
+            --tw-text-opacity: 1;
+            color: rgb(187 247 208 / var(--tw-text-opacity, 1))
+        }
+
+        .text-green-300 {
+            --tw-text-opacity: 1;
+            color: rgb(134 239 172 / var(--tw-text-opacity, 1))
+        }
+
+        .text-green-400 {
+            --tw-text-opacity: 1;
+            color: rgb(74 222 128 / var(--tw-text-opacity, 1))
+        }
+
+        .text-green-500 {
+            --tw-text-opacity: 1;
+            color: rgb(34 197 94 / var(--tw-text-opacity, 1))
+        }
+
+        .text-green-800 {
+            --tw-text-opacity: 1;
+            color: rgb(22 101 52 / var(--tw-text-opacity, 1))
+        }
+
+        .text-indigo-400 {
+            --tw-text-opacity: 1;
+            color: rgb(129 140 248 / var(--tw-text-opacity, 1))
+        }
+
+        .text-neutral-200 {
+            --tw-text-opacity: 1;
+            color: rgb(229 229 229 / var(--tw-text-opacity, 1))
+        }
+
+        .text-neutral-300 {
+            --tw-text-opacity: 1;
+            color: rgb(212 212 212 / var(--tw-text-opacity, 1))
+        }
+
+        .text-neutral-400 {
+            --tw-text-opacity: 1;
+            color: rgb(163 163 163 / var(--tw-text-opacity, 1))
+        }
+
+        .text-neutral-500 {
+            --tw-text-opacity: 1;
+            color: rgb(115 115 115 / var(--tw-text-opacity, 1))
+        }
+
+        .text-orange-400 {
+            --tw-text-opacity: 1;
+            color: rgb(251 146 60 / var(--tw-text-opacity, 1))
+        }
+
+        .text-pink-400 {
+            --tw-text-opacity: 1;
+            color: rgb(244 114 182 / var(--tw-text-opacity, 1))
+        }
+
+        .text-purple-200 {
+            --tw-text-opacity: 1;
+            color: rgb(233 213 255 / var(--tw-text-opacity, 1))
+        }
+
+        .text-purple-300 {
+            --tw-text-opacity: 1;
+            color: rgb(216 180 254 / var(--tw-text-opacity, 1))
+        }
+
+        .text-purple-400 {
+            --tw-text-opacity: 1;
+            color: rgb(192 132 252 / var(--tw-text-opacity, 1))
+        }
+
+        .text-purple-500 {
+            --tw-text-opacity: 1;
+            color: rgb(168 85 247 / var(--tw-text-opacity, 1))
+        }
+
+        .text-purple-600 {
+            --tw-text-opacity: 1;
+            color: rgb(147 51 234 / var(--tw-text-opacity, 1))
+        }
+
+        .text-red-400 {
+            --tw-text-opacity: 1;
+            color: rgb(248 113 113 / var(--tw-text-opacity, 1))
+        }
+
+        .text-red-500 {
+            --tw-text-opacity: 1;
+            color: rgb(239 68 68 / var(--tw-text-opacity, 1))
+        }
+
+        .text-red-800 {
+            --tw-text-opacity: 1;
+            color: rgb(153 27 27 / var(--tw-text-opacity, 1))
+        }
+
+        .text-teal-400 {
+            --tw-text-opacity: 1;
+            color: rgb(45 212 191 / var(--tw-text-opacity, 1))
+        }
+
+        .text-transparent {
+            color: transparent
+        }
+
+        .text-white {
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity, 1))
+        }
+
+        .text-yellow-400 {
+            --tw-text-opacity: 1;
+            color: rgb(250 204 21 / var(--tw-text-opacity, 1))
+        }
+
+        .text-yellow-800 {
+            --tw-text-opacity: 1;
+            color: rgb(133 77 14 / var(--tw-text-opacity, 1))
+        }
+
+        .line-through {
+            -webkit-text-decoration-line: line-through;
+            text-decoration-line: line-through
+        }
+
+        .antialiased {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale
+        }
+
+        .placeholder-gray-400::placeholder {
+            --tw-placeholder-opacity: 1;
+            color: rgb(156 163 175 / var(--tw-placeholder-opacity, 1))
+        }
+
+        .placeholder-neutral-400::placeholder {
+            --tw-placeholder-opacity: 1;
+            color: rgb(163 163 163 / var(--tw-placeholder-opacity, 1))
+        }
+
+        .opacity-0 {
+            opacity: 0
+        }
+
+        .opacity-10 {
+            opacity: 0.1
+        }
+
+        .opacity-20 {
+            opacity: 0.2
+        }
+
+        .opacity-25 {
+            opacity: 0.25
+        }
+
+        .opacity-75 {
+            opacity: 0.75
+        }
+
+        .mix-blend-multiply {
+            mix-blend-mode: multiply
+        }
+
+        .shadow-2xl {
+            --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+            --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+        }
+
+        .shadow-lg {
+            --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+        }
+
+        .shadow-md {
+            --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+        }
+
+        .shadow-sm {
+            --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+        }
+
+        .shadow-xl {
+            --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+        }
+
+        .blur-3xl {
+            --tw-blur: blur(64px);
+            filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
+        }
+
+        .filter {
+            filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
+        }
+
+        .backdrop-blur-lg {
+            --tw-backdrop-blur: blur(16px);
+            -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+            backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)
+        }
+
+        .backdrop-blur-sm {
+            --tw-backdrop-blur: blur(4px);
+            -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+            backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)
+        }
+
+        .transition-all {
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms
+        }
+
+        .transition-colors {
+            transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms
+        }
+
+        .transition-opacity {
+            transition-property: opacity;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms
+        }
+
+        .transition-transform {
+            transition-property: transform;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms
+        }
+
+        .delay-150 {
+            transition-delay: 150ms
+        }
+
+        .delay-75 {
+            transition-delay: 75ms
+        }
+
+        .duration-200 {
+            transition-duration: 200ms
+        }
+
+        .duration-300 {
+            transition-duration: 300ms
+        }
+
+        .after\:absolute::after {
+            content: var(--tw-content);
+            position: absolute
+        }
+
+        .after\:left-\[2px\]::after {
+            content: var(--tw-content);
+            left: 2px
+        }
+
+        .after\:top-\[2px\]::after {
+            content: var(--tw-content);
+            top: 2px
+        }
+
+        .after\:h-5::after {
+            content: var(--tw-content);
+            height: 1.25rem
+        }
+
+        .after\:w-5::after {
+            content: var(--tw-content);
+            width: 1.25rem
+        }
+
+        .after\:rounded-full::after {
+            content: var(--tw-content);
+            border-radius: 9999px
+        }
+
+        .after\:border::after {
+            content: var(--tw-content);
+            border-width: 1px
+        }
+
+        .after\:border-gray-300::after {
+            content: var(--tw-content);
+            --tw-border-opacity: 1;
+            border-color: rgb(209 213 219 / var(--tw-border-opacity, 1))
+        }
+
+        .after\:border-neutral-300::after {
+            content: var(--tw-content);
+            --tw-border-opacity: 1;
+            border-color: rgb(212 212 212 / var(--tw-border-opacity, 1))
+        }
+
+        .after\:bg-white::after {
+            content: var(--tw-content);
+            --tw-bg-opacity: 1;
+            background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1))
+        }
+
+        .after\:transition-all::after {
+            content: var(--tw-content);
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms
+        }
+
+        .after\:content-\[\'\'\]::after {
+            --tw-content: '';
+            content: var(--tw-content)
+        }
+
+        .hover\:-translate-y-1:hover {
+            --tw-translate-y: -0.25rem;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .hover\:translate-x-1:hover {
+            --tw-translate-x: 0.25rem;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .hover\:translate-y-\[-4px\]:hover {
+            --tw-translate-y: -4px;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .hover\:scale-105:hover {
+            --tw-scale-x: 1.05;
+            --tw-scale-y: 1.05;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .hover\:scale-110:hover {
+            --tw-scale-x: 1.1;
+            --tw-scale-y: 1.1;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .hover\:scale-\[1\.01\]:hover {
+            --tw-scale-x: 1.01;
+            --tw-scale-y: 1.01;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .hover\:border-neutral-200\/40:hover {
+            border-color: rgb(229 229 229 / 0.4)
+        }
+
+        .hover\:border-neutral-400:hover {
+            --tw-border-opacity: 1;
+            border-color: rgb(163 163 163 / var(--tw-border-opacity, 1))
+        }
+
+        .hover\:border-purple-500\/30:hover {
+            border-color: rgb(168 85 247 / 0.3)
+        }
+
+        .hover\:bg-\[\#374151\]:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(55 65 81 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-\[\#3a3d4e\]:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(58 61 78 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-blue-500\/30:hover {
+            background-color: rgb(59 130 246 / 0.3)
+        }
+
+        .hover\:bg-blue-700:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(29 78 216 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-gray-600:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(75 85 99 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-gray-700:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(55 65 81 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-gray-900:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-green-500:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(34 197 94 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-green-600:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(22 163 74 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-neutral-500\/30:hover {
+            background-color: rgb(115 115 115 / 0.3)
+        }
+
+        .hover\:bg-neutral-600:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(82 82 82 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-neutral-700:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(64 64 64 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-neutral-700\/20:hover {
+            background-color: rgb(64 64 64 / 0.2)
+        }
+
+        .hover\:bg-neutral-700\/30:hover {
+            background-color: rgb(64 64 64 / 0.3)
+        }
+
+        .hover\:bg-neutral-700\/40:hover {
+            background-color: rgb(64 64 64 / 0.4)
+        }
+
+        .hover\:bg-neutral-700\/50:hover {
+            background-color: rgb(64 64 64 / 0.5)
+        }
+
+        .hover\:bg-neutral-700\/70:hover {
+            background-color: rgb(64 64 64 / 0.7)
+        }
+
+        .hover\:bg-neutral-800\/80:hover {
+            background-color: rgb(38 38 38 / 0.8)
+        }
+
+        .hover\:bg-orange-500:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(249 115 22 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-purple-500\/40:hover {
+            background-color: rgb(168 85 247 / 0.4)
+        }
+
+        .hover\:bg-purple-700:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(126 34 206 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-red-500:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(239 68 68 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-red-500\/30:hover {
+            background-color: rgb(239 68 68 / 0.3)
+        }
+
+        .hover\:bg-yellow-500:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(234 179 8 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:from-purple-700:hover {
+            --tw-gradient-from: #7e22ce var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(126 34 206 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+        }
+
+        .hover\:to-blue-600:hover {
+            --tw-gradient-to: #2563eb var(--tw-gradient-to-position)
+        }
+
+        .hover\:text-blue-300:hover {
+            --tw-text-opacity: 1;
+            color: rgb(147 197 253 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:text-blue-400:hover {
+            --tw-text-opacity: 1;
+            color: rgb(96 165 250 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:text-gray-200:hover {
+            --tw-text-opacity: 1;
+            color: rgb(229 231 235 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:text-gray-300:hover {
+            --tw-text-opacity: 1;
+            color: rgb(209 213 219 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:text-neutral-300:hover {
+            --tw-text-opacity: 1;
+            color: rgb(212 212 212 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:text-purple-300:hover {
+            --tw-text-opacity: 1;
+            color: rgb(216 180 254 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:text-purple-400:hover {
+            --tw-text-opacity: 1;
+            color: rgb(192 132 252 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:text-red-300:hover {
+            --tw-text-opacity: 1;
+            color: rgb(252 165 165 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:text-red-500:hover {
+            --tw-text-opacity: 1;
+            color: rgb(239 68 68 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:text-white:hover {
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:text-yellow-400:hover {
+            --tw-text-opacity: 1;
+            color: rgb(250 204 21 / var(--tw-text-opacity, 1))
+        }
+
+        .hover\:opacity-100:hover {
+            opacity: 1
+        }
+
+        .hover\:shadow-xl:hover {
+            --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+        }
+
+        .focus\:not-sr-only:focus {
+            position: static;
+            width: auto;
+            height: auto;
+            padding: 0;
+            margin: 0;
+            overflow: visible;
+            clip: auto;
+            white-space: normal
+        }
+
+        .focus\:absolute:focus {
+            position: absolute
+        }
+
+        .focus\:left-0:focus {
+            left: 0px
+        }
+
+        .focus\:top-0:focus {
+            top: 0px
+        }
+
+        .focus\:z-50:focus {
+            z-index: 50
+        }
+
+        .focus\:border-blue-500:focus {
+            --tw-border-opacity: 1;
+            border-color: rgb(59 130 246 / var(--tw-border-opacity, 1))
+        }
+
+        .focus\:border-blue-500\/40:focus {
+            border-color: rgb(59 130 246 / 0.4)
+        }
+
+        .focus\:border-neutral-200\/40:focus {
+            border-color: rgb(229 229 229 / 0.4)
+        }
+
+        .focus\:border-purple-500:focus {
+            --tw-border-opacity: 1;
+            border-color: rgb(168 85 247 / var(--tw-border-opacity, 1))
+        }
+
+        .focus\:border-red-500:focus {
+            --tw-border-opacity: 1;
+            border-color: rgb(239 68 68 / var(--tw-border-opacity, 1))
+        }
+
+        .focus\:border-transparent:focus {
+            border-color: transparent
+        }
+
+        .focus\:bg-white:focus {
+            --tw-bg-opacity: 1;
+            background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1))
+        }
+
+        .focus\:p-4:focus {
+            padding: 1rem
+        }
+
+        .focus\:text-black:focus {
+            --tw-text-opacity: 1;
+            color: rgb(0 0 0 / var(--tw-text-opacity, 1))
+        }
+
+        .focus\:text-white:focus {
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity, 1))
+        }
+
+        .focus\:outline-none:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px
+        }
+
+        .focus\:ring-1:focus {
+            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+            box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)
+        }
+
+        .focus\:ring-2:focus {
+            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+            box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)
+        }
+
+        .focus\:ring-inset:focus {
+            --tw-ring-inset: inset
+        }
+
+        .focus\:ring-blue-500:focus {
+            --tw-ring-opacity: 1;
+            --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity, 1))
+        }
+
+        .focus\:ring-blue-500\/40:focus {
+            --tw-ring-color: rgb(59 130 246 / 0.4)
+        }
+
+        .focus\:ring-blue-500\/50:focus {
+            --tw-ring-color: rgb(59 130 246 / 0.5)
+        }
+
+        .focus\:ring-neutral-400:focus {
+            --tw-ring-opacity: 1;
+            --tw-ring-color: rgb(163 163 163 / var(--tw-ring-opacity, 1))
+        }
+
+        .focus\:ring-neutral-400\/40:focus {
+            --tw-ring-color: rgb(163 163 163 / 0.4)
+        }
+
+        .focus\:ring-neutral-400\/50:focus {
+            --tw-ring-color: rgb(163 163 163 / 0.5)
+        }
+
+        .focus\:ring-purple-500:focus {
+            --tw-ring-opacity: 1;
+            --tw-ring-color: rgb(168 85 247 / var(--tw-ring-opacity, 1))
+        }
+
+        .focus\:ring-white:focus {
+            --tw-ring-opacity: 1;
+            --tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity, 1))
+        }
+
+        .focus\:ring-opacity-50:focus {
+            --tw-ring-opacity: 0.5
+        }
+
+        .focus\:ring-offset-2:focus {
+            --tw-ring-offset-width: 2px
+        }
+
+        .focus\:ring-offset-gray-800:focus {
+            --tw-ring-offset-color: #1f2937
+        }
+
+        .focus\:ring-offset-neutral-800:focus {
+            --tw-ring-offset-color: #262626
+        }
+
+        .disabled\:cursor-not-allowed:disabled {
+            cursor: not-allowed
+        }
+
+        .disabled\:opacity-50:disabled {
+            opacity: 0.5
+        }
+
+        .group:focus-within .group-focus-within\:-top-2 {
+            top: -0.5rem
+        }
+
+        .group:focus-within .group-focus-within\:text-xs {
+            font-size: 0.75rem;
+            line-height: 1rem
+        }
+
+        .group:focus-within .group-focus-within\:text-purple-400 {
+            --tw-text-opacity: 1;
+            color: rgb(192 132 252 / var(--tw-text-opacity, 1))
+        }
+
+        .group:hover .group-hover\:translate-x-1 {
+            --tw-translate-x: 0.25rem;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .group:hover .group-hover\:text-purple-400 {
+            --tw-text-opacity: 1;
+            color: rgb(192 132 252 / var(--tw-text-opacity, 1))
+        }
+
+        .group:hover .group-hover\:opacity-100 {
+            opacity: 1
+        }
+
+        .peer:checked~.peer-checked\:bg-blue-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(37 99 235 / var(--tw-bg-opacity, 1))
+        }
+
+        .peer:checked~.peer-checked\:bg-purple-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(147 51 234 / var(--tw-bg-opacity, 1))
+        }
+
+        .peer:checked~.peer-checked\:after\:translate-x-full::after {
+            content: var(--tw-content);
+            --tw-translate-x: 100%;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .peer:checked~.peer-checked\:after\:border-white::after {
+            content: var(--tw-content);
+            --tw-border-opacity: 1;
+            border-color: rgb(255 255 255 / var(--tw-border-opacity, 1))
+        }
+
+        .peer:focus~.peer-focus\:outline-none {
+            outline: 2px solid transparent;
+            outline-offset: 2px
+        }
+
+        .peer:focus~.peer-focus\:ring-2 {
+            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+            box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)
+        }
+
+        .peer:focus~.peer-focus\:ring-4 {
+            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+            box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)
+        }
+
+        .peer:focus~.peer-focus\:ring-blue-300\/20 {
+            --tw-ring-color: rgb(147 197 253 / 0.2)
+        }
+
+        .peer:focus~.peer-focus\:ring-purple-500 {
+            --tw-ring-opacity: 1;
+            --tw-ring-color: rgb(168 85 247 / var(--tw-ring-opacity, 1))
+        }
+
+        @media (min-width: 640px) {
+            .sm\:col-span-2 {
+                grid-column: span 2 / span 2
+            }
+
+            .sm\:col-span-3 {
+                grid-column: span 3 / span 3
+            }
+
+            .sm\:col-span-6 {
+                grid-column: span 6 / span 6
+            }
+
+            .sm\:mb-0 {
+                margin-bottom: 0px
+            }
+
+            .sm\:mt-0 {
+                margin-top: 0px
+            }
+
+            .sm\:h-56 {
+                height: 14rem
+            }
+
+            .sm\:h-\[60vh\] {
+                height: 60vh
+            }
+
+            .sm\:grid-cols-2 {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+
+            .sm\:grid-cols-4 {
+                grid-template-columns: repeat(4, minmax(0, 1fr))
+            }
+
+            .sm\:grid-cols-6 {
+                grid-template-columns: repeat(6, minmax(0, 1fr))
+            }
+
+            .sm\:flex-row {
+                flex-direction: row
+            }
+
+            .sm\:items-center {
+                align-items: center
+            }
+
+            .sm\:p-6 {
+                padding: 1.5rem
+            }
+
+            .sm\:p-8 {
+                padding: 2rem
+            }
+
+            .sm\:px-6 {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem
+            }
+
+            .sm\:py-0 {
+                padding-top: 0px;
+                padding-bottom: 0px
+            }
+
+            .sm\:text-3xl {
+                font-size: 1.875rem;
+                line-height: 2.25rem
+            }
+
+            .sm\:text-4xl {
+                font-size: 2.25rem;
+                line-height: 2.5rem
+            }
+        }
+
+        @media (min-width: 768px) {
+            .md\:right-6 {
+                right: 1.5rem
+            }
+
+            .md\:mb-0 {
+                margin-bottom: 0px
+            }
+
+            .md\:mr-8 {
+                margin-right: 2rem
+            }
+
+            .md\:mt-0 {
+                margin-top: 0px
+            }
+
+            .md\:block {
+                display: block
+            }
+
+            .md\:flex {
+                display: flex
+            }
+
+            .md\:h-96 {
+                height: 24rem
+            }
+
+            .md\:h-auto {
+                height: auto
+            }
+
+            .md\:w-1\/3 {
+                width: 33.333333%
+            }
+
+            .md\:w-1\/4 {
+                width: 25%
+            }
+
+            .md\:w-2\/3 {
+                width: 66.666667%
+            }
+
+            .md\:w-3\/4 {
+                width: 75%
+            }
+
+            .md\:grid-cols-2 {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+
+            .md\:grid-cols-3 {
+                grid-template-columns: repeat(3, minmax(0, 1fr))
+            }
+
+            .md\:grid-cols-4 {
+                grid-template-columns: repeat(4, minmax(0, 1fr))
+            }
+
+            .md\:flex-row {
+                flex-direction: row
+            }
+
+            .md\:items-center {
+                align-items: center
+            }
+
+            .md\:justify-between {
+                justify-content: space-between
+            }
+
+            .md\:p-10 {
+                padding: 2.5rem
+            }
+
+            .md\:p-12 {
+                padding: 3rem
+            }
+
+            .md\:p-6 {
+                padding: 1.5rem
+            }
+
+            .md\:text-2xl {
+                font-size: 1.5rem;
+                line-height: 2rem
+            }
+
+            .md\:text-4xl {
+                font-size: 2.25rem;
+                line-height: 2.5rem
+            }
+
+            .md\:text-5xl {
+                font-size: 3rem;
+                line-height: 1
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .lg\:col-span-1 {
+                grid-column: span 1 / span 1
+            }
+
+            .lg\:col-span-2 {
+                grid-column: span 2 / span 2
+            }
+
+            .lg\:mb-0 {
+                margin-bottom: 0px
+            }
+
+            .lg\:mt-0 {
+                margin-top: 0px
+            }
+
+            .lg\:block {
+                display: block
+            }
+
+            .lg\:flex {
+                display: flex
+            }
+
+            .lg\:grid {
+                display: grid
+            }
+
+            .lg\:hidden {
+                display: none
+            }
+
+            .lg\:h-\[70vh\] {
+                height: 70vh
+            }
+
+            .lg\:w-1\/3 {
+                width: 33.333333%
+            }
+
+            .lg\:w-2\/3 {
+                width: 66.666667%
+            }
+
+            .lg\:grid-cols-2 {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+
+            .lg\:grid-cols-3 {
+                grid-template-columns: repeat(3, minmax(0, 1fr))
+            }
+
+            .lg\:grid-cols-4 {
+                grid-template-columns: repeat(4, minmax(0, 1fr))
+            }
+
+            .lg\:gap-12 {
+                gap: 3rem
+            }
+
+            .lg\:space-x-8> :not([hidden])~ :not([hidden]) {
+                --tw-space-x-reverse: 0;
+                margin-right: calc(2rem * var(--tw-space-x-reverse));
+                margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)))
+            }
+
+            .lg\:p-8 {
+                padding: 2rem
+            }
+
+            .lg\:px-8 {
+                padding-left: 2rem;
+                padding-right: 2rem
+            }
+        }
+    </style>
+    <style>
+        @keyframes blob {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+    </style>
+
+    <style>
+        @keyframes blob {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&amp;callback=initMap" async=""
+        defer=""></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/60/9/common.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/60/9/util.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/60/9/map.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/60/9/marker.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/60/9/infowindow.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/60/9/log.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/60/9/onion.js"></script>
+</head>
+
+<body class="antialiased text-gray-800 min-h-screen flex flex-col">
+
+
+    <div id="4a4998c4-4235-40d0-b859-32564eb97959" data-section_id="4a4998c4-4235-40d0-b859-32564eb97959"
+        data-type="content" data-order="5" class="sectionCode" data-section-id="4a4998c4-4235-40d0-b859-32564eb97959">
+
+        <div id="root">
+            <section id="dashboard-attendee"
+                class="bg-gradient-to-br from-neutral-900 to-neutral-800 min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+                <div class="max-w-7xl mx-auto" id="el-upkexv3f">
+                    <!-- Dashboard Header -->
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8"
+                        id="el-jcvw1nej">
+                        <div id="el-gobvqyaj">
+                            <h2 class="text-2xl sm:text-3xl font-bold text-white" id="el-lngb88ue">Attendee Dashboard
+                            </h2>
+                            <p class="text-neutral-400 mt-1" id="el-9cut4lbo">Manage your event
+                                registrations and activities</p>
+                        </div>
+                        <div class="mt-4 md:mt-0 flex items-center space-x-3" id="el-wx1kg7qm">
+                            <button id="openNotificationsBtn"
+                                class="relative p-2 rounded-full bg-neutral-800/80 hover:bg-neutral-700/70 border border-neutral-200/10 text-neutral-300 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500/50">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" id="el-5ce1bzv6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                                        id="el-y8poqpj1"></path>
+                                </svg>
+                                <span
+                                    class="absolute top-0 right-0 inline-flex items-center justify-center h-5 w-5 text-xs font-bold text-white bg-red-500 rounded-full"
+                                    id="el-d0ml43eo">3</span>
+                            </button>
+                            <button id="exportCalendarBtn"
+                                class="inline-flex items-center px-4 py-2 rounded-lg bg-neutral-800/80 hover:bg-neutral-700/70 border border-neutral-200/10 text-neutral-300 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500/50">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" id="el-n1kcepc1">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                                        id="el-ssk8t9ip"></path>
+                                </svg>
+                                Export to Calendar
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Analytics Overview -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8" id="el-djn57omp">
+                        <div class="bg-neutral-800/70 backdrop-blur-lg rounded-xl p-6 border border-neutral-200/10 shadow-lg flex items-center"
+                            id="el-fb5r72dc">
+                            <div class="rounded-full bg-blue-500/20 p-3 mr-4" id="el-ccqydfpg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-400" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" id="el-3dzhqk1z">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" id="el-tb214pc6"></path>
+                                </svg>
+                            </div>
+                            <div id="el-lhak0a14">
+                                <p class="text-neutral-400 text-sm" id="el-sau1yljq">Upcoming
+                                    Events</p>
+                                <p class="text-2xl font-bold text-white" id="el-y5i6bv86">5</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-neutral-800/70 backdrop-blur-lg rounded-xl p-6 border border-neutral-200/10 shadow-lg flex items-center"
+                            id="el-r1qmqmr8">
+                            <div class="rounded-full bg-purple-500/20 p-3 mr-4" id="el-wysaxfew">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" id="el-5t5ycfz8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                                        id="el-t97zc7gt"></path>
+                                </svg>
+                            </div>
+                            <div id="el-9u6j9ixa">
+                                <p class="text-neutral-400 text-sm" id="el-rqdcer80">Past Events
+                                </p>
+                                <p class="text-2xl font-bold text-white" id="el-1e05llfr">12</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-neutral-800/70 backdrop-blur-lg rounded-xl p-6 border border-neutral-200/10 shadow-lg flex items-center"
+                            id="el-cbt4g6sd">
+                            <div class="rounded-full bg-green-500/20 p-3 mr-4" id="el-q7rux3eb">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-400" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" id="el-4ds2tkaz">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" id="el-u9arcjno"></path>
+                                </svg>
+                            </div>
+                            <div id="el-xqgb8cd7">
+                                <p class="text-neutral-400 text-sm" id="el-oc3wy799">Tickets
+                                    Purchased</p>
+                                <p class="text-2xl font-bold text-white" id="el-yu83vm8u">8</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-neutral-800/70 backdrop-blur-lg rounded-xl p-6 border border-neutral-200/10 shadow-lg flex items-center"
+                            id="el-kysya46t">
+                            <div class="rounded-full bg-amber-500/20 p-3 mr-4" id="el-xjis6f2q">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-amber-400" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" id="el-wflt8u83">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                                        id="el-fo2fslq2"></path>
+                                </svg>
+                            </div>
+                            <div id="el-nvf7v8h9">
+                                <p class="text-neutral-400 text-sm" id="el-ocxw4u0p">Reviews
+                                    Given</p>
+                                <p class="text-2xl font-bold text-white" id="el-bfzh3dap">7</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Search and Filter Bar -->
+                    <div class="bg-neutral-800/70 backdrop-blur-lg rounded-xl p-4 mb-8 border border-neutral-200/10 shadow-lg"
+                        id="el-pdlhnb6m">
+                        <div class="flex flex-col md:flex-row gap-4" id="el-qzoklure">
+                            <div class="relative flex-grow" id="el-75vx06go">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                                    id="el-d6fi92he">
+                                    <svg class="h-5 w-5 text-neutral-400" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 20 20" fill="currentColor" id="el-okgezhu2">
+                                        <path fill-rule="evenodd"
+                                            d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                            clip-rule="evenodd" id="el-gi4ykmog"></path>
+                                    </svg>
+                                </div>
+                                <input type="text"
+                                    class="bg-neutral-700/50 border border-neutral-200/20 text-white placeholder-neutral-400 text-sm rounded-lg focus:ring-blue-500/40 focus:border-blue-500/40 block w-full pl-10 p-2.5"
+                                    placeholder="Search events..." id="el-urzs6qls">
+                            </div>
+                            <div class="flex flex-wrap gap-2" id="el-r40y67fp">
+                                <select
+                                    class="bg-neutral-700/50 border border-neutral-200/20 text-white text-sm rounded-lg focus:ring-blue-500/40 focus:border-blue-500/40 block p-2.5"
+                                    id="el-1k0c30i5">
+                                    <option selected="" value="" id="el-mqyrzlij">All Categories
+                                    </option>
+                                    <option value="music" id="el-n0ehpg6h">Music</option>
+                                    <option value="business" id="el-58hjqxp4">Business</option>
+                                    <option value="food" id="el-jtkaueud">Food &amp; Drink
+                                    </option>
+                                    <option value="art" id="el-wcn5urmz">Art &amp; Culture
+                                    </option>
+                                </select>
+                                <select
+                                    class="bg-neutral-700/50 border border-neutral-200/20 text-white text-sm rounded-lg focus:ring-blue-500/40 focus:border-blue-500/40 block p-2.5"
+                                    id="el-kyx7owg7">
+                                    <option selected="" value="" id="el-0m44f2jg">Status
+                                    </option>
+                                    <option value="upcoming" id="el-sn6zzwfj">Upcoming</option>
+                                    <option value="past" id="el-8myuqnmp">Past</option>
+                                    <option value="canceled" id="el-h809e44m">Canceled</option>
+                                </select>
+                                <button
+                                    class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-2 focus:ring-blue-500/50 rounded-lg text-sm px-4 py-2.5 focus:outline-none transition-colors"
+                                    id="el-53o6cssd">
+                                    Apply Filters
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Content - Events List -->
+                    <div class="mb-8" id="el-g0ulmvhq">
+                        <h3 class="text-xl font-bold text-white mb-6" id="el-l8bvsn2l">Upcoming
+                            Events</h3>
+
+                        <div class="space-y-6" id="el-hg1k5e8k">
+                            <!-- Event Card 1 -->
+                            <div class="bg-neutral-800/70 backdrop-blur-lg rounded-xl overflow-hidden border border-neutral-200/20 shadow-lg hover:border-neutral-200/40 hover:shadow-xl transition-all"
+                                id="el-nupr9ev6">
+                                <div class="md:flex" id="el-6xm18s1h">
+                                    <div class="md:w-1/4 h-48 md:h-auto relative overflow-hidden" id="el-56svsuh4">
+                                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w2MzQ2fDB8MXxzZWFyY2h8M3x8ZGFzaGJvYXJkLWF0dGVuZGVlJTI1MjBwcm9mZXNzaW9uYWx8ZW58MHwwfHx8MTc0NTE1MzAyMHww&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080?q=80"
+                                            alt="graphs of performance analytics on a laptop screen"
+                                            onerror="this.onerror=null; this.src='https://placehold.co/400x300?text=Event+Image'"
+                                            class="w-full h-full object-cover" id="el-x3o4aosp">
+                                        <div class="absolute top-0 right-0 m-2" id="el-odffn121">
+                                            <span
+                                                class="bg-green-500 text-white text-xs font-bold px-2.5 py-1 rounded-full"
+                                                id="el-ssmfyxqe">Confirmed</span>
+                                        </div>
+                                    </div>
+                                    <div class="p-6 md:w-3/4" id="el-3ytu2p7x">
+                                        <div class="flex flex-wrap items-center gap-3 mb-3" id="el-u7nkuzuw">
+                                            <div class="bg-neutral-700/50 rounded-full text-neutral-300 text-xs font-medium px-2.5 py-1 flex items-center"
+                                                id="el-f2t9rs6s">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 mr-1"
+                                                    fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                                    id="el-rqx5n8l5">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                                                        id="el-ndb6691q"></path>
+                                                </svg>
+                                                Sept 28, 2023
+                                            </div>
+                                            <div class="bg-neutral-700/50 rounded-full text-neutral-300 text-xs font-medium px-2.5 py-1 flex items-center"
+                                                id="el-1zkx48dw">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 mr-1"
+                                                    fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                                    id="el-z7d70cw8">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                                                        id="el-k2bgq99p"></path>
+                                                </svg>
+                                                10:00 AM
+                                            </div>
+                                            <div class="bg-blue-500/20 text-blue-300 rounded-full text-xs font-medium px-2.5 py-1"
+                                                id="el-8buski0x">
+                                                Business
+                                            </div>
+                                        </div>
+                                        <h4 class="text-xl font-bold text-white mb-2" id="el-srrxpu8x">Tech Startup
+                                            Conference 2023</h4>
+                                        <p class="text-neutral-400 text-sm mb-4" id="el-wwf7xeud">Join industry leaders
+                                            for a day of
+                                            networking and insights into the future of
+                                            technology startups.</p>
+                                        <div class="flex items-center mb-4" id="el-rksxl2sr">
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                class="h-4 w-4 text-neutral-400 mr-1" fill="none" viewBox="0 0 24 24"
+                                                stroke="currentColor" id="el-d9pwl4c2">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                                    id="el-zxl1y65e"></path>
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" id="el-d0gkrcsb"></path>
+                                            </svg>
+                                            <span class="text-neutral-400 text-sm" id="el-x6en5l5h">Tech Hub, San
+                                                Francisco</span>
+                                        </div>
+                                        <div class="flex flex-wrap gap-3 mt-4" id="el-cn5y4449">
+                                            <a href="#"
+                                                class="text-blue-400 hover:text-blue-300 font-medium text-sm focus:outline-none flex items-center"
+                                                id="el-tuuyflf2">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none"
+                                                    viewBox="0 0 24 24" stroke="currentColor" id="el-5bsfh4wo">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                                                        id="el-njynyj9g"></path>
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                                                        id="el-ef67o123"></path>
+                                                </svg>
+                                                View Details
+                                            </a>
+                                            <a href="#"
+                                                class="text-blue-400 hover:text-blue-300 font-medium text-sm focus:outline-none flex items-center"
+                                                id="el-k4mc9d0a">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none"
+                                                    viewBox="0 0 24 24" stroke="currentColor" id="el-immf5jux">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+                                                        id="el-nlgwffc1"></path>
+                                                </svg>
+                                                View Ticket
+                                            </a>
+                                            <a href="#"
+                                                class="text-neutral-400 hover:text-neutral-300 font-medium text-sm focus:outline-none flex items-center"
+                                                id="el-gf7rny55">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none"
+                                                    viewBox="0 0 24 24" stroke="currentColor" id="el-0zusdjok">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"
+                                                        id="el-ak6us27a"></path>
+                                                </svg>
+                                                Share
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Event Card 2 -->
+                            <div class="bg-neutral-800/70 backdrop-blur-lg rounded-xl overflow-hidden border border-neutral-200/20 shadow-lg hover:border-neutral-200/40 hover:shadow-xl transition-all"
+                                id="el-aaq4pd4r">
+                                <div class="md:flex" id="el-dhqkag0x">
+                                    <div class="md:w-1/4 h-48 md:h-auto relative overflow-hidden" id="el-d9uijg59">
+                                        <img src="https://images.unsplash.com/photo-1430080369629-afa4c2ae5121?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w2MzQ2fDB8MXxzZWFyY2h8Mnx8ZGFzaGJvYXJkLWF0dGVuZGVlJTI1MjBwcm9mZXNzaW9uYWx8ZW58MHwwfHx8MTc0NTE1MzAyMHww&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080?q=80"
+                                            alt="gray and brown classic vehicle speedometer pointing at zero"
+                                            onerror="this.onerror=null; this.src='https://placehold.co/400x300?text=Event+Image'"
+                                            class="w-full h-full object-cover" id="el-i2bwwpnx">
+                                        <div class="absolute top-0 right-0 m-2" id="el-39i4bccz">
+                                            <span
+                                                class="bg-green-500 text-white text-xs font-bold px-2.5 py-1 rounded-full"
+                                                id="el-pknhdcc9">Confirmed</span>
+                                        </div>
+                                    </div>
+                                    <div class="p-6 md:w-3/4" id="el-4q9hdqcv">
+                                        <div class="flex flex-wrap items-center gap-3 mb-3" id="el-ddzjqeef">
+                                            <div class="bg-neutral-700/50 rounded-full text-neutral-300 text-xs font-medium px-2.5 py-1 flex items-center"
+                                                id="el-62yo6e3w">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 mr-1"
+                                                    fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                                    id="el-14rq3bd4">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                                                        id="el-xomzpi0l"></path>
+                                                </svg>
+                                                Oct 10, 2023
+                                            </div>
+                                            <div class="bg-neutral-700/50 rounded-full text-neutral-300 text-xs font-medium px-2.5 py-1 flex items-center"
+                                                id="el-6dpgxfaf">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 mr-1"
+                                                    fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                                    id="el-ndhowsdx">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                                                        id="el-72b39vb2"></path>
+                                                </svg>
+                                                7:30 PM
+                                            </div>
+                                            <div class="bg-purple-500/20 text-purple-300 rounded-full text-xs font-medium px-2.5 py-1"
+                                                id="el-p7f516tl">
+                                                Music
+                                            </div>
+                                        </div>
+                                        <h4 class="text-xl font-bold text-white mb-2" id="el-ldcr067u">Indie Music
+                                            Showcase</h4>
+                                        <p class="text-neutral-400 text-sm mb-4" id="el-pn4397na">Experience the best
+                                            upcoming indie
+                                            artists in an intimate venue with great acoustics
+                                            and atmosphere.</p>
+                                        <div class="flex items-center mb-4" id="el-errok3un">
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                class="h-4 w-4 text-neutral-400 mr-1" fill="none" viewBox="0 0 24 24"
+                                                stroke="currentColor" id="el-zpqkfd42">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                                    id="el-7vckwnwq"></path>
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" id="el-yep7aihe"></path>
+                                            </svg>
+                                            <span class="text-neutral-400 text-sm" id="el-jix54wx5">The Sound Garden,
+                                                Austin</span>
+                                        </div>
+                                        <div class="flex flex-wrap gap-3 mt-4" id="el-rigl4s8q">
+                                            <a href="#"
+                                                class="text-blue-400 hover:text-blue-300 font-medium text-sm focus:outline-none flex items-center"
+                                                id="el-7rxpaew5">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none"
+                                                    viewBox="0 0 24 24" stroke="currentColor" id="el-okad24p6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                                                        id="el-wxaensvi"></path>
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                                                        id="el-dj6iye7o"></path>
+                                                </svg>
+                                                View Details
+                                            </a>
+                                            <a href="#"
+                                                class="text-blue-400 hover:text-blue-300 font-medium text-sm focus:outline-none flex items-center"
+                                                id="el-vmzvzjz0">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none"
+                                                    viewBox="0 0 24 24" stroke="currentColor" id="el-fbdvyl4v">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+                                                        id="el-870ariqm"></path>
+                                                </svg>
+                                                View Ticket
+                                            </a>
+                                            <a href="#"
+                                                class="text-neutral-400 hover:text-neutral-300 font-medium text-sm focus:outline-none flex items-center"
+                                                id="el-l9dqqbvq">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none"
+                                                    viewBox="0 0 24 24" stroke="currentColor" id="el-j9vohqf8">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"
+                                                        id="el-dn12unj5"></path>
+                                                </svg>
+                                                Share
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Event Card 3 -->
+                            <div class="bg-neutral-800/70 backdrop-blur-lg rounded-xl overflow-hidden border border-neutral-200/20 shadow-lg hover:border-neutral-200/40 hover:shadow-xl transition-all"
+                                id="el-8qrko5h3">
+                                <div class="md:flex" id="el-wjp61ty7">
+                                    <div class="md:w-1/4 h-48 md:h-auto relative overflow-hidden" id="el-4vijjvom">
+                                        <img src="https://images.unsplash.com/photo-1524114051012-0a2aa8dae4e1?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w2MzQ2fDB8MXxzZWFyY2h8MXx8ZGFzaGJvYXJkLWF0dGVuZGVlJTI1MjBwcm9mZXNzaW9uYWx8ZW58MHwwfHx8MTc0NTE1MzAyMHww&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080?q=80"
+                                            alt="person holding car steering wheel"
+                                            onerror="this.onerror=null; this.src='https://placehold.co/400x300?text=Event+Image'"
+                                            class="w-full h-full object-cover" id="el-9ehco9t7">
+                                        <div class="absolute top-0 right-0 m-2" id="el-1fytn80t">
+                                            <span
+                                                class="bg-amber-500 text-white text-xs font-bold px-2.5 py-1 rounded-full"
+                                                id="el-v4hodc9n">Pending</span>
+                                        </div>
+                                    </div>
+                                    <div class="p-6 md:w-3/4" id="el-urpbrt6o">
+                                        <div class="flex flex-wrap items-center gap-3 mb-3" id="el-k3hen6cq">
+                                            <div class="bg-neutral-700/50 rounded-full text-neutral-300 text-xs font-medium px-2.5 py-1 flex items-center"
+                                                id="el-l0rhqfav">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 mr-1"
+                                                    fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                                    id="el-n0doervh">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                                                        id="el-omrlxkqg"></path>
+                                                </svg>
+                                                Nov 5, 2023
+                                            </div>
+                                            <div class="bg-neutral-700/50 rounded-full text-neutral-300 text-xs font-medium px-2.5 py-1 flex items-center"
+                                                id="el-stw3o0fu">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 mr-1"
+                                                    fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                                    id="el-k2hzolhx">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                                                        id="el-uinfnemw"></path>
+                                                </svg>
+                                                9:00 AM
+                                            </div>
+                                            <div class="bg-green-500/20 text-green-300 rounded-full text-xs font-medium px-2.5 py-1"
+                                                id="el-cunsw7x9">
+                                                Automotive
+                                            </div>
+                                        </div>
+                                        <h4 class="text-xl font-bold text-white mb-2" id="el-m3tehq5i">Classic Car
+                                            Exhibition</h4>
+                                        <p class="text-neutral-400 text-sm mb-4" id="el-cmi0a3lc">Discover an impressive
+                                            collection
+                                            of classic cars from the 1950s to 1970s with
+                                            expert-led tours and demonstrations.</p>
+                                        <div class="flex items-center mb-4" id="el-7d62zqw9">
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                class="h-4 w-4 text-neutral-400 mr-1" fill="none" viewBox="0 0 24 24"
+                                                stroke="currentColor" id="el-qzgz6wor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                                    id="el-qekiigcx"></path>
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" id="el-nfq912qp"></path>
+                                            </svg>
+                                            <span class="text-neutral-400 text-sm" id="el-yfyauu8s">Automobile Museum,
+                                                Detroit</span>
+                                        </div>
+                                        <div class="flex flex-wrap gap-3 mt-4" id="el-4trow2oc">
+                                            <a href="#"
+                                                class="text-blue-400 hover:text-blue-300 font-medium text-sm focus:outline-none flex items-center"
+                                                id="el-pla8qtx3">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none"
+                                                    viewBox="0 0 24 24" stroke="currentColor" id="el-o0hspcbn">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                                                        id="el-xo7sbh1t"></path>
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                                                        id="el-uflv7c3p"></path>
+                                                </svg>
+                                                View Details
+                                            </a>
+                                            <a href="#"
+                                                class="text-blue-400 hover:text-blue-300 font-medium text-sm focus:outline-none flex items-center"
+                                                id="el-zheqs8w7">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none"
+                                                    viewBox="0 0 24 24" stroke="currentColor" id="el-bc2x70nr">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+                                                        id="el-gc9a1j64"></path>
+                                                </svg>
+                                                Complete Payment
+                                            </a>
+                                            <a href="#"
+                                                class="text-neutral-400 hover:text-neutral-300 font-medium text-sm focus:outline-none flex items-center"
+                                                id="el-qu24fpqm">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none"
+                                                    viewBox="0 0 24 24" stroke="currentColor" id="el-4hk5bmbl">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"
+                                                        id="el-prmbjn8w"></path>
+                                                </svg>
+                                                Share
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 text-center" id="el-zu4uhrra">
+                            <button
+                                class="text-blue-400 hover:text-blue-300 text-sm font-medium px-4 py-2 rounded-lg hover:bg-neutral-800/80 transition-colors"
+                                id="el-lwi5jk3v">
+                                View All Events
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activities -->
+                    <div class="bg-neutral-800/70 backdrop-blur-lg rounded-xl p-6 border border-neutral-200/10 shadow-lg mb-8"
+                        id="el-d46m1ql9">
+                        <h3 class="text-xl font-bold text-white mb-6" id="el-snukhrq5">Recent
+                            Activities</h3>
+                        <div class="overflow-x-auto" id="el-xuia0994">
+                            <table class="w-full min-w-full table-auto text-sm text-left" id="el-sv7bdkw2">
+                                <thead class="text-xs text-neutral-400 uppercase bg-neutral-700/30" id="el-dutgmdwx">
+                                    <tr id="el-0srpl4b4">
+                                        <th scope="col" class="px-6 py-3 rounded-l-lg" id="el-cnrj92u5">Event</th>
+                                        <th scope="col" class="px-6 py-3" id="el-51lk58j8">Date
+                                        </th>
+                                        <th scope="col" class="px-6 py-3" id="el-l00a9gwt">
+                                            Activity</th>
+                                        <th scope="col" class="px-6 py-3 rounded-r-lg" id="el-rpe1sxxe">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="el-6i2z9ie2">
+                                    <tr class="border-b border-neutral-700/30" id="el-d681j0v9">
+                                        <td class="px-6 py-4 text-white" id="el-q166ukfq">Summer
+                                            Night Festival</td>
+                                        <td class="px-6 py-4 text-neutral-400" id="el-roa3ptc1">
+                                            Aug 12, 2023</td>
+                                        <td class="px-6 py-4 text-neutral-400" id="el-m18c9jx3">
+                                            Ticket purchased</td>
+                                        <td class="px-6 py-4" id="el-gbb34atz"><span
+                                                class="bg-green-500/20 text-green-300 text-xs font-medium px-2.5 py-1 rounded-full"
+                                                id="el-nwxl3ojv">Complete</span></td>
+                                    </tr>
+                                    <tr class="border-b border-neutral-700/30" id="el-g7vgeeru">
+                                        <td class="px-6 py-4 text-white" id="el-1mbomaqp">Tech
+                                            Startup Conference</td>
+                                        <td class="px-6 py-4 text-neutral-400" id="el-5ltovxv5">
+                                            Sept 5, 2023</td>
+                                        <td class="px-6 py-4 text-neutral-400" id="el-o49zowx8">
+                                            Registration confirmed</td>
+                                        <td class="px-6 py-4" id="el-buzh3spr"><span
+                                                class="bg-green-500/20 text-green-300 text-xs font-medium px-2.5 py-1 rounded-full"
+                                                id="el-cxuo2rq0">Complete</span></td>
+                                    </tr>
+                                    <tr class="border-b border-neutral-700/30" id="el-4oph1bkt">
+                                        <td class="px-6 py-4 text-white" id="el-6xo50cu3">Wine
+                                            Tasting Gala</td>
+                                        <td class="px-6 py-4 text-neutral-400" id="el-au4j4pgw">
+                                            July 28, 2023</td>
+                                        <td class="px-6 py-4 text-neutral-400" id="el-kc0xlw2d">
+                                            Left a review</td>
+                                        <td class="px-6 py-4" id="el-ecq3nozv"><span
+                                                class="bg-green-500/20 text-green-300 text-xs font-medium px-2.5 py-1 rounded-full"
+                                                id="el-sgm0cn36">Complete</span></td>
+                                    </tr>
+                                    <tr id="el-dlnzpwa7">
+                                        <td class="px-6 py-4 text-white" id="el-skcf8k5d">
+                                            Classic Car Exhibition</td>
+                                        <td class="px-6 py-4 text-neutral-400" id="el-0eolsn7g">
+                                            Sept 18, 2023</td>
+                                        <td class="px-6 py-4 text-neutral-400" id="el-ulcpahqc">
+                                            Payment initiated</td>
+                                        <td class="px-6 py-4" id="el-fgckdghi"><span
+                                                class="bg-amber-500/20 text-amber-300 text-xs font-medium px-2.5 py-1 rounded-full"
+                                                id="el-a7g8wtj6">Pending</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Photo credit -->
+                    <div class="text-center mt-8" id="el-q92udgb7">
+                        <p class="text-neutral-500 text-xs" id="el-yhfafivt">
+                            Photos by: Erik Witsoe, Benjamin Child, and Luke Chesser
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Notifications Modal -->
+                <div id="notificationsModal"
+                    class="fixed inset-0 bg-black/70 flex items-center justify-center z-50 hidden" aria-modal="true"
+                    aria-hidden="true">
+                    <div class="bg-neutral-800 rounded-xl max-w-md w-full max-h-[600px] overflow-y-auto m-4 shadow-2xl"
+                        id="notificationsContent">
+                        <div class="sticky top-0 bg-neutral-800 border-b border-neutral-700 rounded-t-xl p-4 flex justify-between items-center"
+                            id="el-9kaxac79">
+                            <h3 class="text-lg font-bold text-white" id="el-j45vcm1t">
+                                Notifications</h3>
+                            <div class="flex items-center space-x-3" id="el-sjg6gj19">
+                                <button id="markAllReadBtn"
+                                    class="text-sm text-blue-400 hover:text-blue-300 focus:outline-none">
+                                    Mark all as read
+                                </button>
+                                <button id="closeNotificationsBtn"
+                                    class="text-neutral-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-neutral-400/50 rounded-lg p-1.5">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg" id="el-ljj0z7a7">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M6 18L18 6M6 6l12 12" id="el-5pqifdms"></path>
+                                    </svg>
+                                    <span class="sr-only" id="el-n75ulibm">Close modal</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="p-4" id="el-r8rsa6l9">
+                            <div class="space-y-4" id="el-pio90i48">
+                                <!-- Unread Notifications -->
+                                <div class="p-4 bg-blue-900/20 border-l-4 border-blue-500 rounded-lg flex"
+                                    id="el-e88jkda8">
+                                    <div class="flex-shrink-0 mr-3" id="el-vmrtm4jz">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-400"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-ii0ebyjm">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                                id="el-walsbgle"></path>
+                                        </svg>
+                                    </div>
+                                    <div id="el-usppdwzl">
+                                        <p class="text-white" id="el-aq7smsz4">Your ticket for
+                                            <span class="font-medium" id="el-hlt0193k">Tech
+                                                Startup Conference</span> has been confirmed.
+                                        </p>
+                                        <p class="text-xs text-neutral-400 mt-1" id="el-sryj37on">10 minutes ago</p>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 bg-blue-900/20 border-l-4 border-blue-500 rounded-lg flex"
+                                    id="el-voigkzp7">
+                                    <div class="flex-shrink-0 mr-3" id="el-h059uwe3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-400"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-q8do1y1p">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
+                                                id="el-dylk6sxx"></path>
+                                        </svg>
+                                    </div>
+                                    <div id="el-lcxxg26p">
+                                        <p class="text-white" id="el-2f7eg7k8">Reminder: Please
+                                            complete your payment for <span class="font-medium" id="el-0udlayhs">Classic
+                                                Car Exhibition</span>.
+                                        </p>
+                                        <p class="text-xs text-neutral-400 mt-1" id="el-zpnmnwdi">1 hour ago</p>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 bg-blue-900/20 border-l-4 border-blue-500 rounded-lg flex"
+                                    id="el-kb2eaz3x">
+                                    <div class="flex-shrink-0 mr-3" id="el-5ca6is9g">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-400"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-5vpk6n9s">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" id="el-xkidovuy"></path>
+                                        </svg>
+                                    </div>
+                                    <div id="el-9tx81ha0">
+                                        <p class="text-white" id="el-w6z6de6k"><span class="font-medium"
+                                                id="el-r0d064mc">Indie Music
+                                                Showcase</span> is coming up in 5 days. Don't
+                                            forget!</p>
+                                        <p class="text-xs text-neutral-400 mt-1" id="el-39fa21rq">3 hours ago</p>
+                                    </div>
+                                </div>
+
+                                <!-- Read Notifications -->
+                                <div class="p-4 bg-neutral-700/30 rounded-lg flex opacity-75" id="el-anka6rru">
+                                    <div class="flex-shrink-0 mr-3" id="el-jsen3vs8">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-neutral-400"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-8vcvt3wb">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
+                                                id="el-c3mucwyp"></path>
+                                        </svg>
+                                    </div>
+                                    <div id="el-uugmqe2j">
+                                        <p class="text-white" id="el-jq1qhy1v">New comment on
+                                            your review for <span class="font-medium" id="el-lzkyfq6u">Summer Night
+                                                Festival</span>.
+                                        </p>
+                                        <p class="text-xs text-neutral-400 mt-1" id="el-iz7hs6ch">1 day ago</p>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 bg-neutral-700/30 rounded-lg flex opacity-75" id="el-q09m3f2r">
+                                    <div class="flex-shrink-0 mr-3" id="el-uim5gh6n">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-neutral-400"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-cm491hgj">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                                                id="el-xkc0ji5q"></path>
+                                        </svg>
+                                    </div>
+                                    <div id="el-xo8tubpt">
+                                        <p class="text-white" id="el-gm94s0g1">Your ticket
+                                            purchase for <span class="font-medium" id="el-4ndde8pp">Wine Tasting
+                                                Gala</span> was
+                                            successful.</p>
+                                        <p class="text-xs text-neutral-400 mt-1" id="el-lt8xz9g4">3 days ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calendar Export Modal -->
+                <div id="calendarModal" class="fixed inset-0 bg-black/70 flex items-center justify-center z-50 hidden"
+                    aria-modal="true" aria-hidden="true">
+                    <div class="bg-neutral-800 rounded-xl max-w-md w-full m-4 shadow-2xl" id="calendarContent">
+                        <div class="p-4 border-b border-neutral-700 flex justify-between items-center" id="el-hbev0egz">
+                            <h3 class="text-lg font-bold text-white" id="el-sim8gwqy">Export to
+                                Calendar</h3>
+                            <button id="closeCalendarBtn"
+                                class="text-neutral-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-neutral-400/50 rounded-lg p-1.5">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg" id="el-6qgyclru">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M6 18L18 6M6 6l12 12" id="el-c5fvrd9n"></path>
+                                </svg>
+                                <span class="sr-only" id="el-vugmc5c6">Close modal</span>
+                            </button>
+                        </div>
+
+                        <div class="p-6" id="el-dalsz3bw">
+                            <p class="text-neutral-300 mb-6" id="el-sllhon83">Choose which
+                                events to export to your calendar:</p>
+
+                            <div class="space-y-4 mb-6" id="el-uomujdkr">
+                                <div class="flex items-center" id="el-ybw8blzs">
+                                    <input id="checkbox-all" type="checkbox"
+                                        class="w-4 h-4 text-blue-600 bg-neutral-700 border-neutral-600 rounded focus:ring-blue-500/50 focus:ring-offset-neutral-800">
+                                    <label for="checkbox-all" class="ml-2 text-sm font-medium text-white"
+                                        id="el-2icdwp6r">Select All</label>
+                                </div>
+
+                                <div class="pl-6 space-y-3" id="el-d23g3hnd">
+                                    <div class="flex items-center" id="el-xeyujd7q">
+                                        <input id="checkbox-event1" type="checkbox"
+                                            class="w-4 h-4 text-blue-600 bg-neutral-700 border-neutral-600 rounded focus:ring-blue-500/50 focus:ring-offset-neutral-800">
+                                        <label for="checkbox-event1" class="ml-2 text-sm font-medium text-neutral-300"
+                                            id="el-r7dc27b8">Tech Startup Conference (Sept
+                                            28)</label>
+                                    </div>
+
+                                    <div class="flex items-center" id="el-akdda3sb">
+                                        <input id="checkbox-event2" type="checkbox"
+                                            class="w-4 h-4 text-blue-600 bg-neutral-700 border-neutral-600 rounded focus:ring-blue-500/50 focus:ring-offset-neutral-800">
+                                        <label for="checkbox-event2" class="ml-2 text-sm font-medium text-neutral-300"
+                                            id="el-8g3r25z9">Indie Music Showcase (Oct
+                                            10)</label>
+                                    </div>
+
+                                    <div class="flex items-center" id="el-w4vl5m6d">
+                                        <input id="checkbox-event3" type="checkbox"
+                                            class="w-4 h-4 text-blue-600 bg-neutral-700 border-neutral-600 rounded focus:ring-blue-500/50 focus:ring-offset-neutral-800">
+                                        <label for="checkbox-event3" class="ml-2 text-sm font-medium text-neutral-300"
+                                            id="el-onrbk0kp">Classic Car Exhibition (Nov
+                                            5)</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-6" id="el-x3wajzny">
+                                <label for="calendar-type" class="block mb-2 text-sm font-medium text-neutral-300"
+                                    id="el-9z4xd21x">Calendar Type</label>
+                                <select id="calendar-type"
+                                    class="bg-neutral-700/50 border border-neutral-600 text-white text-sm rounded-lg focus:ring-blue-500/40 focus:border-blue-500/40 block w-full p-2.5">
+                                    <option value="google" id="el-lt42v53l">Google Calendar
+                                    </option>
+                                    <option value="outlook" id="el-mwxjq4fx">Outlook</option>
+                                    <option value="apple" id="el-xrn2hsnm">Apple Calendar
+                                    </option>
+                                    <option value="ical" id="el-zeqj91ye">iCal File (.ics)
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="flex justify-end space-x-3" id="el-i2zih2t4">
+                                <button id="cancelCalendarBtn"
+                                    class="px-4 py-2 rounded-lg border border-neutral-600 text-white hover:bg-neutral-700 transition-all focus:outline-none focus:ring-2 focus:ring-neutral-400/40">
+                                    Cancel
+                                </button>
+                                <button type="submit"
+                                    class="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-all focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+                                    id="el-c3vprwe1">
+                                    Export
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    // Notifications Modal Functionality
+                    const notificationsModal = document.getElementById('notificationsModal');
+                    const openNotificationsBtn = document.getElementById('openNotificationsBtn');
+                    const closeNotificationsBtn = document.getElementById('closeNotificationsBtn');
+                    const notificationsContent = document.getElementById('notificationsContent');
+                    const markAllReadBtn = document.getElementById('markAllReadBtn');
+
+                    // Open notifications modal
+                    openNotificationsBtn.addEventListener('click', () => {
+                        notificationsModal.classList.remove('hidden');
+                        document.body.style.overflow = 'hidden';
+                        // Set focus on close button
+                        setTimeout(() => {
+                            closeNotificationsBtn.focus();
+                        }, 100);
+                    });
+
+                    // Close notifications modal
+                    function closeNotificationsModal() {
+                        notificationsModal.classList.add('hidden');
+                        document.body.style.overflow = '';
+                        // Return focus to button that opened the modal
+                        openNotificationsBtn.focus();
+                    }
+
+                    closeNotificationsBtn.addEventListener('click', closeNotificationsModal);
+
+                    // Close on click outside
+                    notificationsModal.addEventListener('click', (e) => {
+                        if (!notificationsContent.contains(e.target)) {
+                            closeNotificationsModal();
+                        }
+                    });
+
+                    // Close on ESC key
+                    document.addEventListener('keydown', (e) => {
+                        if (e.key === 'Escape' && !notificationsModal.classList.contains('hidden')) {
+                            closeNotificationsModal();
+                        }
+                    });
+
+                    // Mark all as read
+                    markAllReadBtn.addEventListener('click', () => {
+                        const unreadNotifications = document.querySelectorAll('.bg-blue-900\\/20');
+                        unreadNotifications.forEach(notification => {
+                            notification.classList.remove('bg-blue-900/20', 'border-l-4', 'border-blue-500');
+                            notification.classList.add('bg-neutral-700/30', 'opacity-75');
+                            const icon = notification.querySelector('svg');
+                            icon.classList.remove('text-blue-400');
+                            icon.classList.add('text-neutral-400');
+                        });
+
+                        // Update the notification badge
+                        const badge = openNotificationsBtn.querySelector('span');
+                        badge.textContent = '0';
+                        badge.classList.add('hidden');
+                    });
+
+                    // Focus trap within notifications modal
+                    notificationsContent.addEventListener('keydown', (e) => {
+                        if (e.key === 'Tab') {
+                            const focusableElements = notificationsContent.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+                            const firstElement = focusableElements[0];
+                            const lastElement = focusableElements[focusableElements.length - 1];
+
+                            if (e.shiftKey && document.activeElement === firstElement) {
+                                e.preventDefault();
+                                lastElement.focus();
+                            } else if (!e.shiftKey && document.activeElement === lastElement) {
+                                e.preventDefault();
+                                firstElement.focus();
+                            }
+                        }
+                    });
+
+                    // Calendar Export Modal Functionality
+                    const calendarModal = document.getElementById('calendarModal');
+                    const exportCalendarBtn = document.getElementById('exportCalendarBtn');
+                    const closeCalendarBtn = document.getElementById('closeCalendarBtn');
+                    const cancelCalendarBtn = document.getElementById('cancelCalendarBtn');
+                    const calendarContent = document.getElementById('calendarContent');
+
+                    // Open calendar modal
+                    exportCalendarBtn.addEventListener('click', () => {
+                        calendarModal.classList.remove('hidden');
+                        document.body.style.overflow = 'hidden';
+                        // Set focus on close button
+                        setTimeout(() => {
+                            closeCalendarBtn.focus();
+                        }, 100);
+                    });
+
+                    // Close calendar modal
+                    function closeCalendarModal() {
+                        calendarModal.classList.add('hidden');
+                        document.body.style.overflow = '';
+                        // Return focus to button that opened the modal
+                        exportCalendarBtn.focus();
+                    }
+
+                    closeCalendarBtn.addEventListener('click', closeCalendarModal);
+                    cancelCalendarBtn.addEventListener('click', closeCalendarModal);
+
+                    // Close on click outside
+                    calendarModal.addEventListener('click', (e) => {
+                        if (!calendarContent.contains(e.target)) {
+                            closeCalendarModal();
+                        }
+                    });
+
+                    // Close on ESC key
+                    document.addEventListener('keydown', (e) => {
+                        if (e.key === 'Escape' && !calendarModal.classList.contains('hidden')) {
+                            closeCalendarModal();
+                        }
+                    });
+
+                    // Select all checkbox functionality
+                    const selectAllCheckbox = document.getElementById('checkbox-all');
+                    const eventCheckboxes = document.querySelectorAll('#checkbox-event1, #checkbox-event2, #checkbox-event3');
+
+                    selectAllCheckbox.addEventListener('change', () => {
+                        const isChecked = selectAllCheckbox.checked;
+                        eventCheckboxes.forEach(checkbox => {
+                            checkbox.checked = isChecked;
+                        });
+                    });
+
+                    // Update "select all" checkbox when individual checkboxes change
+                    eventCheckboxes.forEach(checkbox => {
+                        checkbox.addEventListener('change', () => {
+                            const allChecked = Array.from(eventCheckboxes).every(c => c.checked);
+                            selectAllCheckbox.checked = allChecked;
+                        });
+                    });
+
+                    // Focus trap within calendar modal
+                    calendarContent.addEventListener('keydown', (e) => {
+                        if (e.key === 'Tab') {
+                            const focusableElements = calendarContent.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+                            const firstElement = focusableElements[0];
+                            const lastElement = focusableElements[focusableElements.length - 1];
+
+                            if (e.shiftKey && document.activeElement === firstElement) {
+                                e.preventDefault();
+                                lastElement.focus();
+                            } else if (!e.shiftKey && document.activeElement === lastElement) {
+                                e.preventDefault();
+                                firstElement.focus();
+                            }
+                        }
+                    });
+                </script>
+            </section>
+        </div>
+
+    </div>
+</body>
